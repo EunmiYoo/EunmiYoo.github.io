@@ -1,4 +1,4 @@
-<h4 id="1-first-connect-to-ssh-with-your-ip-address-">1. First, connect to ssh with your ip address :</h4>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-30T01:13:53+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Site Title</title><subtitle>An amazing website.</subtitle><author><name>Your Name</name></author><entry><title type="html">Snow-crash Level00</title><link href="http://localhost:4000/level00/" rel="alternate" type="text/html" title="Snow-crash Level00" /><published>2023-11-29T00:00:00+01:00</published><updated>2023-11-29T00:00:00+01:00</updated><id>http://localhost:4000/level00</id><content type="html" xml:base="http://localhost:4000/level00/"><![CDATA[<h4 id="1-first-connect-to-ssh-with-your-ip-address-">1. First, connect to ssh with your ip address :</h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -i ~/.ssh/id_rsa.pub level00@165.22.17.96 -p 4242
 </code></pre></div></div>
@@ -125,4 +125,4 @@ Don't forget to launch getflag !
 flag00@SnowCrash:~$ getflag
 Check flag.Here is your token : x24ti5gi3x0ol2eh4esiuxias
 flag00@SnowCrash:~$
-</code></pre></div></div>
+</code></pre></div></div>]]></content><author><name>Your Name</name></author><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry></feed>
