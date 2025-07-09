@@ -122,7 +122,7 @@
    ========================================================================== */
 
 .author__avatar {
-  display: table-cell;
+  display: block;
   vertical-align: top;
   width: 36px;
   height: 36px;
@@ -145,7 +145,7 @@
 }
 
 .author__content {
-  display: table-cell;
+  display: block;
   vertical-align: top;
   padding-left: 15px;
   padding-right: 25px;
