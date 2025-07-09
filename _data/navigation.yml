@@ -11,3 +11,12 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+sidebar-category:
+  - title: "categories"
+    children:
+      - title: "블로그"
+        url: "/blog"
+      - title: "42"
+        url:  "/42"
+      - title: "코드잇스프린트"
+        url:  "/sprint"

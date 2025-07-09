@@ -1,0 +1,772 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Snow-crash Level01 - DévEnCours</title>
+<meta name="description" content="Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.">
+
+
+  <meta name="author" content="Yoo">
+  
+  <meta property="article:author" content="Yoo">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="DévEnCours">
+<meta property="og:title" content="Snow-crash Level01">
+<meta property="og:url" content="http://localhost:4000/cyber-security/level01/">
+
+
+  <meta property="og:description" content="Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-12-11T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-12-11T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/cyber-security/level01/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Yoo",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="DévEnCours Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          DévEnCours
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://github.com/EunmiYoo">Yoo's github</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="page__container" style="display: flex; gap: 2rem;">
+        <div class="initial-content">
+          
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Yoo</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>École 42 in Paris</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Paris, France</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  <div style="margin-top: 2rem;">
+      
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#cyber-security" class="page__taxonomy-item p-category" rel="tag">cyber-security</a>
+    
+    </span>
+  </p>
+
+  </div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Snow-crash Level01">
+    <meta itemprop="description" content="Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.">
+    <meta itemprop="datePublished" content="2023-12-11T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-12-11T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/cyber-security/level01/" class="u-url" itemprop="url">Snow-crash Level01
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#1-the-password-of-level01-is-the-token-that-got-from-level00">1. The password of level01 is the token that got from level00.</a></li><li><a href="#2-so-try-login-to-level01-with-the-password-we-got-from-level00">2. So, try login to level01 with the password we got from level00.</a></li><li><a href="#3--try-to-apply-the-same-logic-as-level00">3.  try to apply the same logic as level00.</a></li><li><a href="#4-try-another-one">4. try another one.</a></li><li><a href="#5-so-try-to-find-the-other-command-with-the-password">5. So, try to find the other command with the password.</a></li><li><a href="#6-try-to-put-this-password--this-was-wrong-password">6. Try to put this password ? This was wrong password</a></li><li><a href="#7-lets-check-if-its-correct-">7. Let’s check if it’s correct !</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h4 id="1-the-password-of-level01-is-the-token-that-got-from-level00">1. The password of level01 is the token that got from level00.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> x24ti5gi3x0ol2eh4esiuxias
+</code></pre></div></div>
+<h4 id="2-so-try-login-to-level01-with-the-password-we-got-from-level00">2. So, try login to level01 with the password we got from level00.</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flag00@SnowCrash:~$ su level01
+Password: (x24ti5gi3x0ol2eh4esiuxias)
+level01@SnowCrash:~$
+</code></pre></div></div>
+<h4 id="3--try-to-apply-the-same-logic-as-level00">3.  try to apply the same logic as level00.</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find / -type f -user "flag01" 2&gt;/dev/null
+find / -type f -user "user01" 2&gt;/dev/null
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2&gt;/dev/null 
+Redirect error messages to null,
+effectively suppressing them =&gt; Nothing came out
+</code></pre></div></div>
+
+<h4 id="4-try-another-one">4. try another one.</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find / -type f -user "level01" 2&gt;/dev/null
+</code></pre></div></div>
+<p>with this command, I got the results as below,</p>
+
+<p>but nothing is related to the “password” or “flag01” or “user01”</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/proc/2049/task/2049/fdinfo/0
+/proc/2049/task/2049/fdinfo/1
+/proc/2049/task/2049/fdinfo/2
+/proc/2049/task/2049/fdinfo/255
+/proc/2049/task/2049/ns/net
+/proc/2049/task/2049/ns/uts
+/proc/2049/task/2049/ns/ipc
+/proc/2049/task/2049/environ
+/proc/2049/task/2049/auxv
+/proc/2049/task/2049/status
+/proc/2049/task/2049/personality
+/proc/2049/task/2049/limits
+.....
+....
+...
+..
+</code></pre></div></div>
+<h4 id="5-so-try-to-find-the-other-command-with-the-password">5. So, try to find the other command with the password.</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level01@SnowCrash:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+bin:x:2:2:bin:/bin:/bin/sh
+sys:x:3:3:sys:/dev:/bin/sh
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/bin/sh
+man:x:6:12:man:/var/cache/man:/bin/sh
+lp:x:7:7:lp:/var/spool/lpd:/bin/sh
+mail:x:8:8:mail:/var/mail:/bin/sh
+news:x:9:9:news:/var/spool/news:/bin/sh
+uucp:x:10:10:uucp:/var/spool/uucp:/bin/sh
+proxy:x:13:13:proxy:/bin:/bin/sh
+www-data:x:33:33:www-data:/var/www:/bin/sh
+backup:x:34:34:backup:/var/backups:/bin/sh
+list:x:38:38:Mailing List Manager:/var/list:/bin/sh
+irc:x:39:39:ircd:/var/run/ircd:/bin/sh
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/bin/sh
+nobody:x:65534:65534:nobody:/nonexistent:/bin/sh
+libuuid:x:100:101::/var/lib/libuuid:/bin/sh
+syslog:x:101:103::/home/syslog:/bin/false
+messagebus:x:102:106::/var/run/dbus:/bin/false
+whoopsie:x:103:107::/nonexistent:/bin/false
+landscape:x:104:110::/var/lib/landscape:/bin/false
+sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin
+level00:x:2000:2000::/home/user/level00:/bin/bash
+level01:x:2001:2001::/home/user/level01:/bin/bash
+level02:x:2002:2002::/home/user/level02:/bin/bash
+level03:x:2003:2003::/home/user/level03:/bin/bash
+level04:x:2004:2004::/home/user/level04:/bin/bash
+level05:x:2005:2005::/home/user/level05:/bin/bash
+level06:x:2006:2006::/home/user/level06:/bin/bash
+level07:x:2007:2007::/home/user/level07:/bin/bash
+level08:x:2008:2008::/home/user/level08:/bin/bash
+level09:x:2009:2009::/home/user/level09:/bin/bash
+level10:x:2010:2010::/home/user/level10:/bin/bash
+level11:x:2011:2011::/home/user/level11:/bin/bash
+level12:x:2012:2012::/home/user/level12:/bin/bash
+level13:x:2013:2013::/home/user/level13:/bin/bash
+level14:x:2014:2014::/home/user/level14:/bin/bash
+flag00:x:3000:3000::/home/flag/flag00:/bin/bash
+flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
+flag02:x:3002:3002::/home/flag/flag02:/bin/bash
+flag03:x:3003:3003::/home/flag/flag03:/bin/bash
+flag04:x:3004:3004::/home/flag/flag04:/bin/bash
+flag05:x:3005:3005::/home/flag/flag05:/bin/bash
+flag06:x:3006:3006::/home/flag/flag06:/bin/bash
+flag07:x:3007:3007::/home/flag/flag07:/bin/bash
+flag08:x:3008:3008::/home/flag/flag08:/bin/bash
+flag09:x:3009:3009::/home/flag/flag09:/bin/bash
+flag10:x:3010:3010::/home/flag/flag10:/bin/bash
+flag11:x:3011:3011::/home/flag/flag11:/bin/bash
+flag12:x:3012:3012::/home/flag/flag12:/bin/bash
+flag13:x:3013:3013::/home/flag/flag13:/bin/bash
+flag14:x:3014:3014::/home/flag/flag14:/bin/bash
+level01@SnowCrash:~$
+</code></pre></div></div>
+
+<p>flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
+=&gt; Found the clue of flag01, maybe decode the “42hDRfypTqqnw”?</p>
+
+<h4 id="6-try-to-put-this-password--this-was-wrong-password">6. Try to put this password ? This was wrong password</h4>
+
+<p>The password is hashed, so need to find the algorithm to find the way to crack the hashed password</p>
+
+<p>=&gt; Need to use “John the Ripper” to crack the password, but John is not installed on the file</p>
+
+<p>https://www.openwall.com/john/</p>
+
+<p>John the Ripper : is the open source password cracking tool available for many operating systems.</p>
+
+<p>Need to know the notion of “hash”</p>
+
+<p>One way function =======&gt; Input -&gt; Hash Function -&gt; Output &lt;======= Impossible to reverse the hash</p>
+
+<p>Before executing the “John the Ripper”, first, we need to copy our password safely.
+scp :Secure Copy -P 4242 :connection for ssh, we use port 4242 level01@127.0.0.1: : user’s name and host address /etc/passwd : path of file that we will copy . : the place where we save our copy, “Current directory”</p>
+
+<p>scp -P 4242 level01@127.0.0.1:/etc/passwd .</p>
+
+<p>=&gt; Install the “John the Ripper”</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install john
+</code></pre></div></div>
+<p>=&gt; Crack the password.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "42hDRfypTqqnw" &gt; text
+john text --show
+ ?:abcdefg
+
+1 password hash cracked, 0 left
+</code></pre></div></div>
+
+<p>We got the password : abcdefg</p>
+
+<h4 id="7-lets-check-if-its-correct-">7. Let’s check if it’s correct !</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level01@SnowCrash:~$ su flag01
+Password: (abcdefg)
+Don't forget to launch getflag !
+flag01@SnowCrash:~$ getflag
+Check flag.Here is your token : f2av5il02puano7naaf6adaaf
+flag01@SnowCrash:~$
+</code></pre></div></div>
+<p>Voila ! 😁</p>
+
+<p>See you next level02 !</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#cybersecurity" class="page__taxonomy-item p-category" rel="tag">CyberSecurity</a><span class="sep">, </span>
+    
+      <a href="/tags/#git" class="page__taxonomy-item p-category" rel="tag">Git</a><span class="sep">, </span>
+    
+      <a href="/tags/#github" class="page__taxonomy-item p-category" rel="tag">Github</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#cyber-security" class="page__taxonomy-item p-category" rel="tag">cyber-security</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-12-11">December 11, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Snow-crash+Level01%20http%3A%2F%2Flocalhost%3A4000%2Fcyber-security%2Flevel01%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcyber-security%2Flevel01%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcyber-security%2Flevel01%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/cyber-security/Level00/" class="pagination--pager" title="Snow-crash Level00
+">Previous</a>
+    
+    
+      <a href="/cyber-security/Level03/" class="pagination--pager" title="Snow-crash Level03
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/WeeklyPaper/" rel="permalink">Weeklypaper
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cyber-security/Level09/" rel="permalink">Snow-crash Level09
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cyber-security/Level08/" rel="permalink">Snow-crash Level08
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cyber-security/Level07/" rel="permalink">Snow-crash Level07
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+        </div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Yoo. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
