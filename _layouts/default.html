@@ -17,9 +17,25 @@
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
     {% include_cached skip-links.html %}
     {% include_cached masthead.html %}
+    <div class="page__container" style="display: flex; gap: 2rem;">
+  <!-- Sidebar -->
+      <aside class="sidebar" style="min-width: 200px;">
+        <h3>Categories</h3>
+        <ul>
+          {% for category in site.categories %}
+            <li>
+              <a href="{{ site.baseurl }}/categories/{{ category[0] | slugify }}/">
+                {{ category[0] }} ({{ category[1].size }})
+              </a>
+            </li>
+         {% endfor %}
+        </ul>
+      </aside>
 
-    <div class="initial-content">
-      {{ content }}
+      
+        <div class="initial-content">
+          {{ content }}
+        </div>
     </div>
 
     {% if site.search == true %}
