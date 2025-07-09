@@ -1,10 +1,9 @@
-
 ---
-title: "blog"
+title: "ecole42"
 layout: archive
-permalink: /blog
+permalink: /ecole42
 ---
 
 
-{% assign posts = site.categories.blog%}
+{% assign posts = site.categories.ecole42 %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}

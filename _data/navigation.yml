@@ -14,9 +14,9 @@ main:
 sidebar-category:
   - title: "categories"
     children:
-      - title: "블로그"
+      - title: "Daily"
         url: "/blog"
-      - title: "42"
-        url:  "/42"
-      - title: "코드잇스프린트"
+      - title: "42 Paris"
+        url:  "/ecole42"
+      - title: "Codeit sprint"
         url:  "/sprint"
