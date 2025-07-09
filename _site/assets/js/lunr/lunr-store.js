@@ -1,10 +1,4 @@
 var store = [{
-        "title": "Level05",
-        "excerpt":"title: “Snow-crash Level05” excerpt: “Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.” tags: CyberSecurity Github Git toc: true toc_sticky: true date: 2024-2-13 last_modified_at: 2024-02-13 categories: ecole42 1. The password of Level05 is the token...","categories": [],
-        "tags": [],
-        "url": "/Level05/",
-        "teaser": null
-      },{
         "title": "Snow-crash use as UTM(virtualization)",
         "excerpt":"M1 맥북위에 UTM 가상머신을 이용한 스노우크래시 프로그램 띄우기 (1). UTM download -&gt; + 버튼 (프로젝트 생성) (2). Linux 선택 (3). snowcrash 이미지 업로드 (4). 장치 메모리 크기 설정 (5). 초기 설정 후 다시 정보로 들어가 UEFI BOOT 언체크 (6). 디스플레이 virtio-vga-gl로 선택 (7). 네트워크 Emulated VLAN 선택 (8). 포트 포워딩...","categories": ["ecole42"],
         "tags": ["CyberSecurity","Github","Git","M1-","UTM","snow-crash","MacM1"],
@@ -41,10 +35,16 @@ var store = [{
         "url": "/ecole42/Level04/",
         "teaser": null
       },{
-        "title": "Snow-crash Level06",
-        "excerpt":"1. The password of Level06 is the token that got from Level05. viuaaale9huek52boumoomioc 2. So, try login to Level06 with the password we got from Level05 and try to put the command ls. We can see the file Level06. level05@SnowCrash:/var/mail$ su level06 Password: level06@SnowCrash:~$ ls -la total 24 dr-xr-x---+ 1...","categories": ["ecole42s"],
+        "title": "Snow-crash Level05",
+        "excerpt":"1. The password of Level05 is the token that got from Level04. ne2searoevaevoem4ov4ar8ap 2. So, try login to Level05 with the password we got from Level04 and try to put the command ‘ls -la’. Let’s see inside in level05. level05@localhost's password: ne2searoevaevoem4ov4ar8ap You have new mail. level05@SnowCrash:~$ level05@SnowCrash:~$ ls -la...","categories": ["ecole42"],
         "tags": ["CyberSecurity","Github","Git"],
-        "url": "/ecole42s/Level06/",
+        "url": "/ecole42/Level05/",
+        "teaser": null
+      },{
+        "title": "Snow-crash Level06",
+        "excerpt":"1. The password of Level06 is the token that got from Level05. viuaaale9huek52boumoomioc 2. So, try login to Level06 with the password we got from Level05 and try to put the command ls. We can see the file Level06. level05@SnowCrash:/var/mail$ su level06 Password: level06@SnowCrash:~$ ls -la total 24 dr-xr-x---+ 1...","categories": ["ecole42"],
+        "tags": ["CyberSecurity","Github","Git"],
+        "url": "/ecole42/Level06/",
         "teaser": null
       },{
         "title": "Snow-crash Level07",
@@ -65,7 +65,13 @@ var store = [{
         "url": "/ecole42/Level09/",
         "teaser": null
       },{
-        "title": "Weekly paper - sprint bootcam",
+        "title": "test",
+        "excerpt":"이건 테스트용  ","categories": ["blog"],
+        "tags": ["python","AI engineering","Github"],
+        "url": "/blog/daily/",
+        "teaser": null
+      },{
+        "title": "Weekly paper - sprint bootcamp",
         "excerpt":" ","categories": ["sprint"],
         "tags": ["python","AI engineering","Github"],
         "url": "/sprint/WeeklyPaper/",

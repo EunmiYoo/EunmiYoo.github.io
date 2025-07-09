@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/Level05/</loc>
-<lastmod>2023-02-14T00:00:00+09:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/ecole42/UTM/</loc>
 <lastmod>2023-11-28T00:00:00+09:00</lastmod>
 </url>
@@ -29,7 +25,11 @@
 <lastmod>2024-02-13T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/ecole42s/Level06/</loc>
+<loc>http://localhost:4000/ecole42/Level05/</loc>
+<lastmod>2024-02-13T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ecole42/Level06/</loc>
 <lastmod>2024-02-14T00:00:00+09:00</lastmod>
 </url>
 <url>
@@ -45,8 +45,15 @@
 <lastmod>2024-02-15T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/blog/daily/</loc>
+<lastmod>2025-07-09T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/sprint/WeeklyPaper/</loc>
 <lastmod>2025-07-09T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/blog</loc>
 </url>
 <url>
 <loc>http://localhost:4000/ecole42</loc>
