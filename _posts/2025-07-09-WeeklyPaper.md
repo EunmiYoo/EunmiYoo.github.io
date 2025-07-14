@@ -15,7 +15,7 @@ last_modified_at: 2025-07-09
 categories: 
  - sprint
 ---
-<span style="font-size: 11px; color: gris">
+<span style="font-size: 10px; color: gris">
 
 ### *선형대수학이란 어떤 학문이며, 왜 머신러닝에 필요할까?*
 <br/>
@@ -75,5 +75,5 @@ categories:
   - 대체: 이상치를 삭제하기 어렵거나, 이상치 자체가 특정 정보를 담고 있을 수 있지만 모델 학습에 방해가 될 때 사용(평균,중앙값,최빈값 대체)
   - 분석 유지: 이상치가 단순한 오류가 아니라 실제로 중요한 의미를 가지는 경우, 따로 분석하여 그 원인과 특성을 깊이 파악
     
-
+</span>
      
