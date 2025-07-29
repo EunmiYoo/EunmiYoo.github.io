@@ -1,5 +1,5 @@
 ---
-title: "Deeplearning"
+title: "Deep Learning"
 layout: archive
 permalink: /deeplearning
 ---
