@@ -1,5 +1,5 @@
 ---
-title: "sprint"
+title: "스프린트 부트캠프"
 layout: archive
 permalink: /sprint
 ---

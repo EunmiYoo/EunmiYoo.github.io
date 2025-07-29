@@ -1,5 +1,5 @@
 ---
-title:  "Weekly paper 1 - sprint bootcamp"
+title:  "위클리 페이퍼 1"
 excerpt: 
 
 tags:

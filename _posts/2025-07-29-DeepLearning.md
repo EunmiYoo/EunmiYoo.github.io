@@ -1,5 +1,5 @@
 ---
-title: "Deep Learning - 딥러닝의 핵심 개념과 최적화"
+title: "[Deep Learning] 딥러닝의 핵심 개념과 최적화"
 excerpt: "딥러닝 모델의 최적화 방법과 핵심 개념들을 체계적으로 알아보자"
 
 tags:
