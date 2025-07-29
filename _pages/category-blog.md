@@ -1,5 +1,5 @@
 ---
-title: "blog"
+title: "공부 memo"
 layout: archive
 permalink: /blog
 ---

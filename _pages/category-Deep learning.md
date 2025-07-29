@@ -1,5 +1,5 @@
 ---
-title: "Deep Learning"
+title: "Deep Learning(딥러닝)"
 layout: archive
 permalink: /deeplearning
 ---

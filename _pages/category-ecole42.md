@@ -1,5 +1,5 @@
 ---
-title: "ecole42"
+title: "Ecole42"
 layout: archive
 permalink: /ecole42
 ---
