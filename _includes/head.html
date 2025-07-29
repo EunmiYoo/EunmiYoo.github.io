@@ -18,6 +18,28 @@
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
 
+<!-- Custom CSS for font size adjustment -->
+<style>
+  /* 본문 글씨체 크기 조정 */
+  body {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* 본문 텍스트 크기 조정 */
+  p, li, blockquote, pre, code {
+    font-size: 14px !important;
+  }
+  
+  /* 제목 크기도 약간 조정 */
+  h1 { font-size: 1.8em !important; }
+  h2 { font-size: 1.5em !important; }
+  h3 { font-size: 1.3em !important; }
+  h4 { font-size: 1.2em !important; }
+  h5 { font-size: 1.1em !important; }
+  h6 { font-size: 1em !important; }
+</style>
+
 {% if site.head_scripts %}
   {% for script in site.head_scripts %}
     <script src="{{ script | relative_url }}"></script>

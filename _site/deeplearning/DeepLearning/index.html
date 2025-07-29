@@ -1,0 +1,965 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Deep Learning] 딥러닝의 핵심 개념과 최적화 - DévEnCours</title>
+<meta name="description" content="딥러닝 모델의 최적화 방법과 핵심 개념들을 체계적으로 알아보자">
+
+
+  <meta name="author" content="Yoo">
+  
+  <meta property="article:author" content="Yoo">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="DévEnCours">
+<meta property="og:title" content="[Deep Learning] 딥러닝의 핵심 개념과 최적화">
+<meta property="og:url" content="/deeplearning/DeepLearning/">
+
+
+  <meta property="og:description" content="딥러닝 모델의 최적화 방법과 핵심 개념들을 체계적으로 알아보자">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-07-29T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2025-07-29T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/deeplearning/DeepLearning/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Yoo",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="DévEnCours Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- Custom CSS for font size adjustment -->
+<style>
+  /* 본문 글씨체 크기 조정 */
+  body {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* 본문 텍스트 크기 조정 */
+  p, li, blockquote, pre, code {
+    font-size: 14px !important;
+  }
+  
+  /* 제목 크기도 약간 조정 */
+  h1 { font-size: 1.8em !important; }
+  h2 { font-size: 1.5em !important; }
+  h3 { font-size: 1.3em !important; }
+  h4 { font-size: 1.2em !important; }
+  h5 { font-size: 1.1em !important; }
+  h6 { font-size: 1em !important; }
+</style>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          DévEnCours
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://github.com/EunmiYoo">Yoo's github</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="page__container" style="display: flex; gap: 2rem;">
+        <div class="initial-content">
+          
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="/" itemprop="url">Yoo</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>École 42 in Paris</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Paris, France</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  <!-- <div style="margin-top: 2rem;">
+      
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#deeplearning" class="page__taxonomy-item p-category" rel="tag">deeplearning</a>
+    
+    </span>
+  </p>
+
+  </div> -->
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">categories</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/blog">Daily</a></li>
+          
+            <li><a href="/ecole42">42 Paris</a></li>
+          
+            <li><a href="/sprint">Codeit sprint</a></li>
+          
+            <li><a href="/deeplearning">Deep learning</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Deep Learning] 딥러닝의 핵심 개념과 최적화">
+    <meta itemprop="description" content="딥러닝 모델의 최적화 방법과 핵심 개념들을 체계적으로 알아보자">
+    <meta itemprop="datePublished" content="2025-07-29T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-07-29T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="/deeplearning/DeepLearning/" class="u-url" itemprop="url">[Deep Learning] 딥러닝의 핵심 개념과 최적화
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#딥러닝-모델의-최적화가-어려운-이유">딥러닝 모델의 최적화가 어려운 이유</a><ul><li><a href="#1-모델의-비선형성">1. 모델의 비선형성</a></li><li><a href="#2-고차원성과-과적합">2. 고차원성과 과적합</a></li><li><a href="#3-그래디언트-소실-gradient-vanishing">3. 그래디언트 소실 (Gradient Vanishing)</a></li><li><a href="#4-하이퍼파라미터의-민감성">4. 하이퍼파라미터의 민감성</a></li></ul></li><li><a href="#하이퍼파라미터-hyperparameter">하이퍼파라미터 (Hyperparameter)</a><ul><li><a href="#1-배치-크기-batch-size">1. 배치 크기 (Batch Size)</a></li><li><a href="#2-학습률-learning-rate-α">2. 학습률 (Learning Rate, α)</a></li><li><a href="#3-에폭-수-epoch">3. 에폭 수 (Epoch)</a></li><li><a href="#4-옵티마이저-optimizer">4. 옵티마이저 (Optimizer)</a></li></ul></li><li><a href="#활성화-함수-activation-function">활성화 함수 (Activation Function)</a><ul><li><a href="#1-시그모이드-함수-sigmoid">1. 시그모이드 함수 (Sigmoid)</a></li><li><a href="#2-하이퍼볼릭-탄젠트-함수-tanh">2. 하이퍼볼릭 탄젠트 함수 (tanh)</a></li><li><a href="#3-relu-함수-rectified-linear-unit">3. ReLU 함수 (Rectified Linear Unit)</a></li><li><a href="#4-leaky-relu-함수">4. Leaky ReLU 함수</a></li></ul></li><li><a href="#경사하강법-gradient-descent">경사하강법 (Gradient Descent)</a><ul><li><a href="#용어-정리">용어 정리</a></li><li><a href="#1-배치-경사하강법-batch-gradient-descent">1. 배치 경사하강법 (Batch Gradient Descent)</a></li><li><a href="#2-확률적-경사하강법-stochastic-gradient-descent-sgd">2. 확률적 경사하강법 (Stochastic Gradient Descent, SGD)</a></li><li><a href="#3-미니배치-경사하강법-mini-batch-gradient-descent">3. 미니배치 경사하강법 (Mini-batch Gradient Descent)</a></li></ul></li><li><a href="#출력-함수-output-function">출력 함수 (Output Function)</a><ul><li><a href="#회귀-문제">회귀 문제</a></li><li><a href="#분류-문제">분류 문제</a><ul><li><a href="#이진-분류">이진 분류</a></li><li><a href="#다중-분류">다중 분류</a></li></ul></li></ul></li><li><a href="#손실-함수-loss-function">손실 함수 (Loss Function)</a><ul><li><a href="#목표">목표</a></li><li><a href="#종류별-손실-함수">종류별 손실 함수</a><ul><li><a href="#1-회귀-문제">1. 회귀 문제</a></li><li><a href="#2-분류-문제">2. 분류 문제</a></li></ul></li></ul></li><li><a href="#핵심-포인트-정리">핵심 포인트 정리</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="딥러닝-모델의-최적화가-어려운-이유">딥러닝 모델의 최적화가 어려운 이유</h2>
+
+<p>딥러닝 모델을 최적화하는 과정에서 발생하는 주요 문제들과 그 원인을 살펴보겠습니다.</p>
+
+<h3 id="1-모델의-비선형성">1. 모델의 비선형성</h3>
+
+<p><strong>활성화 함수의 비선형성</strong>으로 인해 손실 함수의 지형이 매우 복잡해집니다.</p>
+
+<ul>
+  <li><strong>비볼록(Non-convex) 지형</strong> 형성</li>
+  <li>복잡하고 울퉁불퉁한 표면</li>
+  <li><strong>전역 최솟값을 찾기 어려움</strong></li>
+</ul>
+
+<h3 id="2-고차원성과-과적합">2. 고차원성과 과적합</h3>
+
+<p><strong>많은 개수의 파라미터</strong>를 포함하여 차원이 증가하면서 발생하는 문제:</p>
+
+<ul>
+  <li><strong>과적합 위험 증가</strong></li>
+  <li>과적합: 학습 데이터에 너무 과도하게 맞춰져서 새로운 데이터에 대한 예측 성능 저하</li>
+  <li>모델의 일반화 능력 저하</li>
+</ul>
+
+<h3 id="3-그래디언트-소실-gradient-vanishing">3. 그래디언트 소실 (Gradient Vanishing)</h3>
+
+<p><strong>시그모이드 함수</strong>의 특성으로 인한 문제:</p>
+
+<ul>
+  <li>0과 1 사이를 벗어나면 기울기가 0에 수렴</li>
+  <li><strong>연쇄 법칙(체인룰)</strong>에 따라 여러 층을 거치면서 작은 기울기 값들이 계속 곱해짐</li>
+  <li>앞쪽(입력층에 가까운) 층으로 갈수록 기울기가 기하급수적으로 작아짐</li>
+  <li><strong>가중치 업데이트가 거의 이루어지지 않음</strong></li>
+</ul>
+
+<h3 id="4-하이퍼파라미터의-민감성">4. 하이퍼파라미터의 민감성</h3>
+
+<p><strong>사용자가 사전에 설정해야 할 값</strong>으로, 성능 최적화에 매우 중요:</p>
+
+<ul>
+  <li>설정 변수의 적절한 조정이 최적의 모델을 위해 필수</li>
+  <li>잘못된 설정 시 모델 성능 크게 저하</li>
+</ul>
+
+<hr />
+
+<h2 id="하이퍼파라미터-hyperparameter">하이퍼파라미터 (Hyperparameter)</h2>
+
+<p>딥러닝 모델링 시 <strong>필수적으로 고려할 사항</strong>으로, 사용자가 사전에 설정해야 하는 값입니다.</p>
+
+<h3 id="1-배치-크기-batch-size">1. 배치 크기 (Batch Size)</h3>
+
+<p><strong>한 번의 학습에 사용되는 샘플의 수</strong></p>
+
+<ul>
+  <li><strong>메모리 사용량</strong> 때문에 배치 사이즈를 한 번에 올릴 수 없음</li>
+  <li><strong>학습 속도</strong>에 직접적인 영향</li>
+  <li>일반적으로 32, 64, 128, 256 등 사용</li>
+</ul>
+
+<h3 id="2-학습률-learning-rate-α">2. 학습률 (Learning Rate, α)</h3>
+
+<p><strong>가중치를 어느 정도로 업데이트할지 결정하는 매개변수</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>새로운 가중치 = 이전 가중치 - 학습률(α) × 기울기
+</code></pre></div></div>
+
+<p><strong>문제점:</strong></p>
+<ul>
+  <li><strong>너무 낮으면</strong>: 학습이 지나치게 느려짐</li>
+  <li><strong>너무 높으면</strong>: 손실함수가 최적값 주변에서 요동치거나 발산</li>
+</ul>
+
+<h3 id="3-에폭-수-epoch">3. 에폭 수 (Epoch)</h3>
+
+<p><strong>전체 훈련 데이터셋이 네트워크를 통과하는 횟수</strong></p>
+
+<ul>
+  <li><strong>너무 많으면</strong>: 학습 시간 증가, 과적합 초래</li>
+  <li><strong>너무 적으면</strong>: 학습 부족으로 성능 저하</li>
+</ul>
+
+<h3 id="4-옵티마이저-optimizer">4. 옵티마이저 (Optimizer)</h3>
+
+<p><strong>손실함수를 최소화하기 위해 모델의 가중치를 어떻게 업데이트할지 결정</strong></p>
+
+<ul>
+  <li>확률적 경사하강법 (SGD)</li>
+  <li>Adam</li>
+  <li>Momentum</li>
+  <li>RMSprop 등</li>
+</ul>
+
+<hr />
+
+<h2 id="활성화-함수-activation-function">활성화 함수 (Activation Function)</h2>
+
+<p><strong>뉴런에서 입력신호의 총합을 받아 출력신호로 변환하는 역할</strong></p>
+
+<h3 id="1-시그모이드-함수-sigmoid">1. 시그모이드 함수 (Sigmoid)</h3>
+
+<p><strong>초기 신경망에서 널리 사용</strong></p>
+
+<ul>
+  <li><strong>출력 범위</strong>: 0~1</li>
+  <li><strong>문제점</strong>: 0과 1을 벗어난 부분에서 <strong>그래디언트 소실 문제</strong>가 심함</li>
+</ul>
+
+<h3 id="2-하이퍼볼릭-탄젠트-함수-tanh">2. 하이퍼볼릭 탄젠트 함수 (tanh)</h3>
+
+<p><strong>시그모이드의 변형함수</strong></p>
+
+<ul>
+  <li><strong>출력 범위</strong>: -1~1로 확장</li>
+  <li><strong>장점</strong>: 학습 초기에 빠른 수렴에 도움</li>
+  <li><strong>문제점</strong>: 여전히 그래디언트 소실 문제 존재</li>
+</ul>
+
+<h3 id="3-relu-함수-rectified-linear-unit">3. ReLU 함수 (Rectified Linear Unit)</h3>
+
+<p><strong>현대 신경망에서 가장 인기 있는 함수</strong></p>
+
+<ul>
+  <li><strong>양수 입력</strong>: 그대로 출력, 그래디언트 감소하지 않고 효과적으로 전달</li>
+  <li><strong>음수 입력</strong>: 0을 출력, 그래디언트도 0, 가중치 업데이트 제한</li>
+</ul>
+
+<h3 id="4-leaky-relu-함수">4. Leaky ReLU 함수</h3>
+
+<p><strong>ReLU 함수의 보완 버전</strong></p>
+
+<ul>
+  <li><strong>음수 입력</strong>: 아주 작은 기울기 유지</li>
+  <li><strong>장점</strong>: ReLU의 장점을 유지하면서 그래디언트 소실 문제 완화</li>
+</ul>
+
+<hr />
+
+<h2 id="경사하강법-gradient-descent">경사하강법 (Gradient Descent)</h2>
+
+<p><strong>최적화 알고리즘의 일종</strong>으로, 여러 번 반복하여 최적의 가중치를 찾아나가는 과정</p>
+
+<h3 id="용어-정리">용어 정리</h3>
+
+<ul>
+  <li><strong>배치 (Batch)</strong>: 한 번의 학습 단계에 사용되는 학습 데이터의 묶음</li>
+  <li><strong>에폭 (Epoch)</strong>: 전체 학습 데이터셋을 한 번 학습하는 과정</li>
+</ul>
+
+<h3 id="1-배치-경사하강법-batch-gradient-descent">1. 배치 경사하강법 (Batch Gradient Descent)</h3>
+
+<p><strong>기울기 계산에 전체 데이터셋 사용</strong></p>
+
+<ul>
+  <li><strong>장점</strong>: 모든 데이터를 보고 최적을 찾음</li>
+  <li><strong>단점</strong>: 대규모 데이터셋에서는 <strong>계산 비용이 높음</strong></li>
+</ul>
+
+<h3 id="2-확률적-경사하강법-stochastic-gradient-descent-sgd">2. 확률적 경사하강법 (Stochastic Gradient Descent, SGD)</h3>
+
+<p><strong>각 반복에서 무작위로 선택된 하나의 데이터 샘플 사용</strong></p>
+
+<ul>
+  <li><strong>장점</strong>: 배치보다 계산 속도 빠름</li>
+  <li><strong>단점</strong>: 경사의 추정이 불안정해서 학습 과정이 매끄럽지 않음</li>
+</ul>
+
+<h3 id="3-미니배치-경사하강법-mini-batch-gradient-descent">3. 미니배치 경사하강법 (Mini-batch Gradient Descent)</h3>
+
+<p><strong>배치 경사하강과 확률적 경사하강의 절충안</strong></p>
+
+<ul>
+  <li><strong>장점</strong>:
+    <ul>
+      <li>높은 메모리 효율</li>
+      <li>빠른 계산 속도</li>
+      <li>지역 최솟값에 갇힐 가능성 감소</li>
+    </ul>
+  </li>
+  <li><strong>단점</strong>: 배치 크기 등 하이퍼파라미터에 매우 민감</li>
+</ul>
+
+<hr />
+
+<h2 id="출력-함수-output-function">출력 함수 (Output Function)</h2>
+
+<h3 id="회귀-문제">회귀 문제</h3>
+<ul>
+  <li><strong>출력</strong>: 연속적인 값</li>
+  <li><strong>예시</strong>: 집값 예측, 온도 예측</li>
+</ul>
+
+<h3 id="분류-문제">분류 문제</h3>
+
+<h4 id="이진-분류">이진 분류</h4>
+<ul>
+  <li><strong>함수</strong>: 시그모이드 함수</li>
+  <li><strong>출력</strong>: 0과 1 사이의 확률값</li>
+</ul>
+
+<h4 id="다중-분류">다중 분류</h4>
+<ul>
+  <li><strong>함수</strong>: 소프트맥스 함수 (Softmax)</li>
+  <li><strong>출력</strong>: 각 클래스에 대한 확률 분포</li>
+</ul>
+
+<hr />
+
+<h2 id="손실-함수-loss-function">손실 함수 (Loss Function)</h2>
+
+<p><strong>모델이 실제값을 얼마나 잘 예측하는지를 측정</strong>하는 함수</p>
+
+<h3 id="목표">목표</h3>
+<p>예측값과 실제값의 차이인 손실함수의 값을 <strong>가능한 작게</strong> 만들어야 함</p>
+
+<h3 id="종류별-손실-함수">종류별 손실 함수</h3>
+
+<h4 id="1-회귀-문제">1. 회귀 문제</h4>
+<ul>
+  <li><strong>MSE (Mean Squared Error, 평균제곱오차)</strong></li>
+  <li>숫자를 예측하는 문제에 사용</li>
+</ul>
+
+<h4 id="2-분류-문제">2. 분류 문제</h4>
+
+<p><strong>이진 분류</strong></p>
+<ul>
+  <li><strong>이진 교차 엔트로피 (Binary Cross Entropy)</strong></li>
+  <li>두 가지 클래스 중 하나로 분류하는 문제</li>
+</ul>
+
+<p><strong>다중 분류</strong></p>
+<ul>
+  <li><strong>교차 엔트로피 (Cross Entropy)</strong></li>
+  <li>세 가지 이상의 클래스 중 하나로 분류하는 문제</li>
+</ul>
+
+<hr />
+
+<h2 id="핵심-포인트-정리">핵심 포인트 정리</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>개념</th>
+      <th>설명</th>
+      <th>중요성</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>비선형성</strong></td>
+      <td>활성화 함수로 인한 복잡한 손실 함수 지형</td>
+      <td>전역 최솟값 찾기 어려움</td>
+    </tr>
+    <tr>
+      <td><strong>고차원성</strong></td>
+      <td>많은 파라미터로 인한 과적합 위험</td>
+      <td>일반화 능력 저하</td>
+    </tr>
+    <tr>
+      <td><strong>그래디언트 소실</strong></td>
+      <td>깊은 네트워크에서 기울기 전파 문제</td>
+      <td>학습 효율성 저하</td>
+    </tr>
+    <tr>
+      <td><strong>하이퍼파라미터</strong></td>
+      <td>사용자가 설정하는 학습 관련 변수</td>
+      <td>모델 성능에 직접적 영향</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ai-engineering" class="page__taxonomy-item p-category" rel="tag">AI engineering</a><span class="sep">, </span>
+    
+      <a href="/tags/#deep-learning" class="page__taxonomy-item p-category" rel="tag">deep learning</a><span class="sep">, </span>
+    
+      <a href="/tags/#machine-learning" class="page__taxonomy-item p-category" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      <a href="/tags/#neural-networks" class="page__taxonomy-item p-category" rel="tag">neural networks</a><span class="sep">, </span>
+    
+      <a href="/tags/#python" class="page__taxonomy-item p-category" rel="tag">python</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#deeplearning" class="page__taxonomy-item p-category" rel="tag">deeplearning</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-07-29">July 29, 2025</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BDeep+Learning%5D+%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%98+%ED%95%B5%EC%8B%AC+%EA%B0%9C%EB%85%90%EA%B3%BC+%EC%B5%9C%EC%A0%81%ED%99%94%20%2Fdeeplearning%2FDeepLearning%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fdeeplearning%2FDeepLearning%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fdeeplearning%2FDeepLearning%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/deeplearning/CNN/" class="pagination--pager" title="[Deep Learning] CNN (Convolutional Neural Network)
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/deeplearning/CNN/" rel="permalink">[Deep Learning] CNN (Convolutional Neural Network)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">컴퓨터 비전의 핵심 기술, CNN의 원리와 특징에 대해 알아보자
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sprint/Weekly-Paper-3/" rel="permalink">위클리 페이퍼 3
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">결정 트리의 장단점, 부스팅 기법, 차원 축소 방법에 대한 심화 학습
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sprint/WeeklyPaPer2/" rel="permalink">위클리 페이퍼 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">지도학습과 비지도학습, 손실 함수, 편향-분산 트레이드오프, K-폴드 교차 검증에 대한 심화 학습
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sprint/WeeklyPaper/" rel="permalink">위클리 페이퍼 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+        </div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Yoo. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

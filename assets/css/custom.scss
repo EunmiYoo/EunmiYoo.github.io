@@ -1,0 +1,21 @@
+---
+---
+
+/* 본문 글씨체 크기 조정 */
+body {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 본문 텍스트 크기 조정 */
+p, li, blockquote, pre, code {
+  font-size: 14px;
+}
+
+/* 제목 크기도 약간 조정 */
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.2em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; } 
