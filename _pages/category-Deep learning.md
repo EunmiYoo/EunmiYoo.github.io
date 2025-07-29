@@ -1,5 +1,5 @@
 ---
 title: "Deeplearning"
 layout: archive
-permalink: /deeplearning
+permalink: /sprint/deeplearning
 ---
