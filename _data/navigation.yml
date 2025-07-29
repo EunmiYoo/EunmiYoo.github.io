@@ -20,3 +20,5 @@ sidebar-category:
         url:  "/ecole42"
       - title: "Codeit sprint"
         url:  "/sprint"
+      - title: "Deep learning"
+        url: "/sprint/deeplearning"
