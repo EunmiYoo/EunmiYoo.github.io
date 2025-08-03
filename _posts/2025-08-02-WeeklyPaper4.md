@@ -6,9 +6,9 @@ tags:
   - python
   - AI engineering
   - machine learning
-  - decision tree
-  - boosting
-  - dimensionality reduction
+  - deep learning
+  - hyperparameter
+  
 
 toc: true
 toc_sticky: true
@@ -58,9 +58,9 @@ categories:
 
 ---
 
-##  딥러닝 성능 향상을 위한 하이퍼 파라미터
+##  딥러닝 성능 향상을 위한 하이퍼파라미터
 
-### 하이퍼 파라미터란?
+### 하이퍼파라미터란?
 
 **사용자가 사전에 설정해야 하는 값**으로, 딥러닝 모델의 **성능 최적화를 위해 매우 중요한 요소**.
 
