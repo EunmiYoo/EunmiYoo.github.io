@@ -1,0 +1,26 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8f9fa"/>
+  
+  <!-- AI Circle (Outermost) -->
+  <circle cx="300" cy="200" r="150" fill="#e3f2fd" stroke="#1976d2" stroke-width="3"/>
+  <text x="300" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1976d2">Artificial Intelligence</text>
+  <text x="300" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#1976d2">(AI)</text>
+  
+  <!-- Machine Learning Circle (Middle) -->
+  <circle cx="300" cy="200" r="100" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="3"/>
+  <text x="300" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#7b1fa2">Machine Learning</text>
+  <text x="300" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#7b1fa2">(ML)</text>
+  
+  <!-- Deep Learning Circle (Innermost) -->
+  <circle cx="300" cy="200" r="50" fill="#e8f5e8" stroke="#388e3c" stroke-width="3"/>
+  <text x="300" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#388e3c">Deep Learning</text>
+  <text x="300" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#388e3c">(DL)</text>
+  
+  <!-- Arrows showing relationship -->
+  <text x="450" y="150" font-family="Arial, sans-serif" font-size="14" fill="#666">⊃</text>
+  <text x="450" y="200" font-family="Arial, sans-serif" font-size="14" fill="#666">⊃</text>
+  
+  <!-- Description -->
+  <text x="300" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#333">딥러닝 ⊂ 머신러닝 ⊂ 인공지능</text>
+</svg> 
