@@ -97,6 +97,16 @@ PyTorch와 TensorFlow는 딥러닝 분야에서 가장 널리 사용되는 두 �
 - **벡터**: 1차원 텐서  
 - **행렬**: 2차원 텐서
 
+```python
+import torch
+# 스칼라
+s = torch.tensor(3)
+# 벡터
+v = torch.tensor([1, 2, 3])
+# 행렬
+m = torch.tensor([[1, 2], [3, 4]])
+print(s.ndim, v.ndim, m.ndim)  # 0, 1, 2
+```
 ### 텐서의 용도
 딥러닝 모델의 다음 요소들을 나타내는 데 사용됨:
 - **입력 데이터**
