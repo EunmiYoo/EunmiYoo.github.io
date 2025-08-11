@@ -1,5 +1,5 @@
 ---
-title: "[Weekly Daily 5] 딥러닝 프레임워크 PyTorch와 TensorFlow 비교 분석"
+title: "위클리 데일리 5"
 excerpt: "딥러닝 분야의 양대 프레임워크 PyTorch와 TensorFlow의 특징과 차이점, 그리고 PyTorch 텐서의 개념을 알아보자"
 
 tags:
